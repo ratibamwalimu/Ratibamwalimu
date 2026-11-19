@@ -4589,8 +4589,8 @@ try{adAllSync()}catch(e){}
 (function(){var D=["Jumapili","Jumatatu","Jumanne","Jumatano","Alhamisi","Ijumaa","Jumamosi"],M=["Januari","Februari","Machi","Aprili","Mei","Juni","Julai","Agosti","Septemba","Oktoba","Novemba","Desemba"];
 function p(n){return(n<10?"0":"")+n}
 function set(sel,t){[].forEach.call(document.querySelectorAll(sel),function(e){if(e.textContent!==t)e.textContent=t})}
-function tick(){var d=new Date();set(".rw-time",p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds()));set(".rw-date",D[d.getDay()]+",\n"+d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear())}
-tick();setInterval(tick,1000);document.addEventListener("visibilitychange",tick)})();
+function tick(){if(document.hidden)return;var hv=document.getElementById("v-nyumbani");if(!hv||!hv.classList.contains("on"))return;var d=new Date();set(".rw-time",p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds()));set(".rw-date",D[d.getDay()]+",\n"+d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear())}
+tick();setInterval(tick,1000);document.addEventListener("visibilitychange",tick);document.addEventListener("click",function(){setTimeout(tick,80)});window.addEventListener("hashchange",tick)})();
 
 </script>
 <div id="rgOv" role="alert" aria-live="polite"><div class="rgCard"><div class="rgTt">Tengeneza ratiba kuu</div><div class="rgBox"><svg viewBox="0 0 120 120"><circle class="rgTr" cx="60" cy="60" r="52"/><circle class="rgPg" id="rgPg" cx="60" cy="60" r="52"/><circle class="rgSp" cx="60" cy="60" r="58"/></svg><div class="rgPc"><span id="rgN">0</span><small>%</small></div></div><div class="rgTx">Subiri, inapanga masomo na walimu…</div></div></div>
@@ -4769,18 +4769,17 @@ main#v-mipangilio.view.on>section.rw-c4{display:flex!important}
 main#v-mipangilio.view.on>section.rw-c4:not(#rwLangCard){order:1}
 main#v-mipangilio.view.on>#rwLangCard{order:2}
 main#v-mipangilio.view.on>section.rw-c5:not(#rwInst):not(#rwDon){order:3;grid-column:1/-1!important}
-main#v-mipangilio.view.on>#rwInst{order:4;grid-column:span 1!important}
-main#v-mipangilio.view.on>#rwDon{order:5;grid-column:span 1!important}
+main#v-mipangilio.view.on>#rwInst{order:4;grid-column:1/-1!important}
+main#v-mipangilio.view.on>#rwDon{order:5;grid-column:1/-1!important}
 main#v-mipangilio.view.on>section.rw-c1{order:6}
 main#v-mipangilio.view.on>section.rw-c2{order:7}
 main#v-mipangilio.view.on>#rwOwner{order:8}
 @media(min-width:700px){main#v-mipangilio.view.on>#rwInst,main#v-mipangilio.view.on>#rwDon{grid-column:span 3!important}}
-@media(max-width:699px){main#v-mipangilio #rwInst .rw-ih img{width:40px;height:40px}main#v-mipangilio #rwDon .rw-dd,main#v-mipangilio #rwInst .rw-dd{font-size:calc(12px*var(--fs,1))}}
 /* Mipangilio: vichwa katikati na kadi laini */
 main#v-mipangilio.view.on>section.card>h2,main#v-mipangilio #rwInst .rw-ih h2,main#v-mipangilio .rw-about>summary>span:not(.own-s){font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:800;letter-spacing:.2px}
 main#v-mipangilio.view.on>section.card>h2,main#v-mipangilio #rwInst .rw-ih h2{font-size:calc(19px*var(--fs,1))}
 main#v-mipangilio .rw-about>summary>span:not(.own-s){font-size:calc(17px*var(--fs,1))}
-main#v-mipangilio.view.on>section.card{border-radius:22px;border:1px solid color-mix(in srgb,var(--c,#2563EB) 14%,var(--line,#e5e7eb));box-shadow:0 8px 24px -12px rgba(14,27,77,.28),0 2px 6px -2px rgba(14,27,77,.10)}
+main#v-mipangilio.view.on>section.card{border-radius:22px;border:1px solid var(--line,#e5e7eb);box-shadow:0 4px 12px -6px rgba(14,27,77,.25)}
 main#v-mipangilio.view.on>section.card>h2,main#v-mipangilio .rw-dd,main#v-mipangilio .rw-dn{text-align:center}
 main#v-mipangilio.view.on>section.rw-c4{flex-direction:column;align-items:center!important;justify-content:center;gap:12px;text-align:center}
 main#v-mipangilio .rw-c4 .rw-thw{justify-content:center;flex-direction:column;gap:8px}
