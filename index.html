@@ -370,6 +370,15 @@ table.rk{font-size:calc(12px*var(--fs,1))}.rk th,.rk td{padding:3px}.rk td.vt{wr
 .spn{display:inline-block;width:14px;height:14px;margin-left:10px;vertical-align:-2px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spn .7s linear infinite}
 #gen:disabled{opacity:.85;cursor:progress}
 @keyframes spn{to{transform:rotate(360deg)}}
+/* Kitufe cha "Jaza azimio": ufito wa rangi unaozunguka pembeni mwa kitufe */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes ring{to{--ang:360deg}}
+#gen,button[data-rw="gen"]{--gb:#0F7A6C;border:3px solid transparent;
+ background:linear-gradient(var(--gb),var(--gb)) padding-box,conic-gradient(from var(--ang),#F59E0B,rgba(245,158,11,0) 35%,rgba(245,158,11,0) 65%,#F59E0B) border-box;
+ animation:ring 2.4s linear infinite}
+#gen:hover,button[data-rw="gen"]:hover{--gb:#0B6358}
+#gen:disabled{animation-duration:1.2s}
+@media(prefers-reduced-motion:reduce){#gen,button[data-rw="gen"]{animation:none;border-color:#F59E0B;background:var(--gb)}}
 @media(prefers-reduced-motion:reduce){.spn{animation-duration:1.6s}}
 
 .stn{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:8px;border-radius:50%;background:rgba(255,255,255,.28);font-weight:700;font-size:calc(13px*var(--fs,1))}
@@ -1516,6 +1525,7 @@ header>.rw-brand .rw-lg{width:36px;height:36px}
 button.wa{background:#0E8F47!important;color:#fff!important}button.wa:hover{background:#0B7A3C!important}button.wa .rw-i{fill:currentColor;stroke:none}
 .bar>button.dng{padding:8px 14px;flex:1 1 140px}
 .bar:has(>#reset){flex-wrap:nowrap;width:100%;gap:6px}.bar:has(>#reset)>button{flex:1 1 0;min-width:0;padding:8px 6px;font-size:calc(14px*var(--fs,1));white-space:nowrap}
+@media(max-width:480px){.bar:has(>#reset){flex-wrap:wrap}.bar:has(>#reset)>button{flex:1 1 calc(50% - 6px);white-space:normal;overflow-wrap:anywhere;line-height:1.25;min-height:42px;padding:8px 10px}}
 @media print{html{zoom:1!important}}
 </style>
 <script>
@@ -2184,6 +2194,7 @@ var LABSX={sw:["Umahiri mkuu","Umahiri mahususi","Shughuli kuu za ujifunzaji","S
 function isEn(){return S.info.somo==="English"}
 function UI(){return document.documentElement.lang==="en"}
 function adLen(){var d=S&&S.info&&S.info.darasa;return d==="Awali"?20:(d==="La Kwanza"||d==="La Pili")?30:((R&&R.len)||40)}
+function adMuda(v){v=String(v==null?"":v).trim();return(!v||/^Dakika (20|30|40)$/.test(v))?"Dakika "+adLen():v}
 function adUI(){try{var a=document.getElementById("aSomo"),sj=(a&&a.value)||(S&&S.info&&S.info.somo)||"";return UI()&&sj!=="Kiswahili"}catch(e){return UI()}}
 function X(k){return UI()&&window.rwTx?window.rwTx(k):k}
 function CL(c){var d=drs(c);return UI()?String(d).replace(/^DRS /,"Class ").replace(/^Awali$/,"Pre-primary"):d}
@@ -3200,7 +3211,7 @@ function asave(){try{localStorage.setItem(AK,JSON.stringify(A))}catch(e){}}
 $("adForm").innerHTML=AF.map(function(f){var t=f[2],big=t==="ta",ty=(t==="num"||t==="tot")?"number":t;return "<div style='"+(big?"grid-column:1/-1":"")+"'><label for='ad_"+f[0]+"'>"+f[1]+(MUST.indexOf(f[0])>=0?" *":"")+"</label>"+(big?"<textarea id='ad_"+f[0]+"'></textarea>":"<input id='ad_"+f[0]+"' type='"+ty+"'"+(t==="tot"?" readonly tabindex='-1'":"")+(t==="num"?" inputmode='numeric' min='0'":"")+">")+"</div>"}).join("");
 $("adSt").innerHTML=ST.map(function(t,i){function d(k){return " data-i='"+i+"' data-k='"+k+"'"}return "<div class='stg'><h3><span class='stt'>"+t+"</span> <button type='button' class='warn' data-use='"+i+"' style='padding:3px 8px;font-size:12px;margin-left:6px'>Hariri pendekezo</button></h3><div class='grid'><div><label>Muda (dakika)</label><input"+d("d")+" inputmode='numeric'></div><div><label>Shughuli za ufundishaji</label><textarea"+d("m")+"></textarea></div><div><label>Shughuli za ujifunzaji</label><textarea"+d("w")+"></textarea></div><div><label>Vigezo vya upimaji</label><textarea"+d("v")+"></textarea></div></div></div>"}).join("")+"<div class='stg'><h3>MAONI *</h3><textarea id='ad_maoni'></textarea></div><div class='stg ad7only'><h3>TAFAKURI</h3><textarea id='ad_tafakuri'></textarea></div><div class='stg ad7only'><h3>TATHMINI</h3><textarea id='ad_tathmini'></textarea></div>";
 function adFill(){
- if(!A.f.muda){A.f.muda="Dakika "+adLen();asave()}
+ var m0=adMuda(A.f.muda);if(m0!==A.f.muda){A.f.muda=m0;asave()}
  AF.concat([["maoni"],["tafakuri"],["tathmini"]]).forEach(function(f){if(f[2]!=="tot")$("ad_"+f[0]).value=adBx(A.f[f[0]]||"")});
  var sg=A.sug||[];
  [].forEach.call($("adSt").querySelectorAll("[data-i]"),function(el){var i=+el.getAttribute("data-i"),k=el.getAttribute("data-k");el.value=adBx(A.s[i][k]||"");el.placeholder=sg[i]&&sg[i][k]?adBxP()+adBx(sg[i][k]):""});
@@ -3637,7 +3648,7 @@ function adAllGen(){
    if(!plHas(r))return;
    var n=src.cnt(r);
    for(var k=1;k<=n;k++){
-    A=adNew();A.f.muda=(sA.f&&sA.f.muda)||("Dakika "+adLen());
+    A=adNew();A.f.muda=adMuda(sA.f&&sA.f.muda);
     var pm2=/\(([^()]*)\)\s*$/.exec(String(r.shughuliMahususi||"")),sb=pm2?pm2[1].split(/,\s*/).filter(Boolean):[],sub="";var rsh=String(r.shughuliMahususi||"").trim();if(!rsh){var cg=adCatActs(i);if(cg.length){var gp=cg.pos[i]||0,gt=cg.tot||1,aI=Math.floor(gp*cg.length/gt);rsh=cg[Math.min(cg.length-1,aI)];pm2=null;sb=[]}}if(sb.length>1&&sb.length>=n){var s0=Math.floor((k-1)*sb.length/n),s1=Math.max(s0+1,Math.floor(k*sb.length/n));sub=sb.slice(s0,Math.min(s1,sb.length)).join(", ")}else if(n>1||(rsh&&!r.shughuliMahususi)){var un=sb.length>1?sb:[(sb.length?rsh.replace(/\s*\([^()]*\)\s*$/,""):(rsh||String(r.shughuliKuu||""))).trim()],mu=un.length,ix=Math.floor((k-1)*mu/Math.max(n,1)),oc=0,tu=0;for(var q=1;q<=n;q++)if(Math.floor((q-1)*mu/n)===ix){if(q<k)oc++;tu++}var PF=isEn()?["","Reinforce: ","Apply in practice: ","Check understanding of: "]:["","Kuimarisha ","Kutumia kwa vitendo ","Kupima uelewa wa "],bt=un[ix]||"",ph=tu>1?Math.floor(oc*4/tu):0;sub=ph&&tu>1?PF[Math.min(3,ph)]+bt.charAt(0).toLowerCase()+bt.slice(1):bt}
     if(!sub&&!String(r.shughuliMahususi||"").trim())sub=rsh||String(r.shughuliKuu||"");
     adFromRow(i,sub);A.f.tarehe="";
@@ -3718,7 +3729,7 @@ function adSync(id,v,ev){var el=$(id);el.value=v;ev.forEach(function(n){el.dispa
  if(u!==el.value){el.value=u;try{el.setSelectionRange(st,en)}catch(x){}}
  adSync(k,u,["input"]);adPrevR()})});
 $("aDarasa").addEventListener("change",function(){var v=this.value;
- adSync("darasa",v,["change","input"]);A.pick=null;A.sug=null;try{["umk","umh","shk","shm"].forEach(function(k){A.f[k]=""});A.wk=""}catch(e){}asave();adInfoFill();adPickR();
+ adSync("darasa",v,["change","input"]);A.pick=null;A.sug=null;try{["umk","umh","shk","shm"].forEach(function(k){A.f[k]=""});A.wk=""}catch(e){}A.f.muda=adMuda(A.f.muda);asave();adInfoFill();adFill();adPickR();
  });
 $("aSomo").addEventListener("change",function(){
  adSync("somo",this.value,["input"]);A.pick=null;A.sug=null;try{["umk","umh","shk","shm"].forEach(function(k){A.f[k]=""});A.wk=""}catch(e){}asave();adInfoFill();adPickR();
