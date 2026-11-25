@@ -941,6 +941,15 @@ dialog#dndlg{margin:calc(14px + env(safe-area-inset-top,0px)) auto auto!importan
  #rAllBox .rpage{page:rt;box-sizing:border-box;padding:10mm!important}
 }
 table.ad-t th,#adPrev .ad-t th,#adAllPrintBox .ad-t th{text-align:center!important;vertical-align:middle!important}
+
+/* Mwezi: seli iliyounganishwa wima, herufi zimesimama */
+#rows td.mv{writing-mode:vertical-rl;text-orientation:upright;text-align:center;vertical-align:middle;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 6px;background:#F3F6FC!important}
+:root[data-theme="dark"] #rows td.mv{background:#1d263a!important}
+#rows td.mh{text-align:center;vertical-align:middle;font-weight:700;text-transform:uppercase;font-size:calc(9px*var(--fs,1));padding:4px 2px;background:#F3F6FC!important;word-break:break-word}
+#rows td[rowspan]{vertical-align:top}
+#rows td.mv[rowspan]{vertical-align:middle}
+#rows td.rj,#prev td.rj,td.rj[rowspan]{vertical-align:middle!important;text-align:center}
+#rows td.zl,#prev td.zl,td.zl[rowspan]{text-align:left!important;vertical-align:top!important}
 </style>
 <style id="rw-css">
 .rw-i{width:16px;height:16px;vertical-align:-3px;margin-right:6px;flex:none}
@@ -1591,6 +1600,51 @@ if(window.matchMedia){var m=window.matchMedia('print');(m.addEventListener?m.add
 #mmdlg .mm-o .mm-w{text-align:right}
 #mmdlg .mm-o[aria-checked="true"]{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,var(--card))}
 #mmdlg .mm-o:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+</style>
+<style id="az-print-fix">
+/* === Rekebisho: azimio litoshe A4 landscape bila maandishi kukatika === */
+@media print{
+ #prev table{table-layout:fixed;width:100%!important;border-collapse:collapse}
+ #prev tr,#prev tbody tr{break-inside:auto!important;page-break-inside:auto!important}
+ #prev td,#prev th{break-inside:auto;overflow:visible!important;white-space:normal!important;overflow-wrap:break-word!important;word-break:normal!important;hyphens:auto;vertical-align:top}
+ #prev td{font-size:9px!important;line-height:1.25;padding:2px 3px}
+ #prev th{font-size:7.5px!important}
+ #prev td.n{font-size:9px!important}
+ #prev tr.term,#prev tr.brk,#prev tr.exm{break-after:avoid;page-break-after:avoid}
+ #prev thead{display:table-header-group}
+ #prev .wrap,#prev #rows{overflow:visible!important}
+}
+</style>
+<style id="az-maoni-fit">
+/* Safu ya Maoni: nyembamba, ina upana wa neno "Maoni" tu (bila nafasi kulia wala kushoto) */
+#prev th.mn,#prev td.mn,.rw-box th.mn,.rw-box td.mn{width:4.2em!important;min-width:0!important;max-width:none!important;padding-left:1px!important;padding-right:1px!important;text-align:center;white-space:nowrap!important;overflow:visible!important;overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important;letter-spacing:0!important}
+#prev td.mn,.rw-box td.mn{font-size:8px!important}
+</style>
+<style id="az-maoni-print-fix">
+/* Uchapishaji/PDF: Maoni yasikatike mwisho wa ukurasa - maandishi yashuke mstari mpya ndani ya safu */
+@media print{
+ #prev th.mn,#prev td.mn{width:8.5%!important;min-width:0!important;max-width:none!important;white-space:normal!important;overflow:visible!important;overflow-wrap:anywhere!important;word-break:break-word!important;hyphens:auto!important;text-align:left!important;vertical-align:top!important;padding:2px 3px!important;font-size:9px!important;line-height:1.25!important}
+ #prev th.mn{text-align:center!important;font-size:7.5px!important}
+}
+</style>
+<style id="rm-card-phone">
+/* Simu: kadi zote 4 zinaonekana bila kusogeza; maandishi yana saizi moja. Picha ya juu inachukua nafasi inayobaki. */
+@media screen and (max-width:599px){
+html body main#v-nyumbani.view div.acts .act-card{display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:4px!important;padding:10px 11px!important;min-height:0!important;height:100%!important;container-type:normal!important}
+html body main#v-nyumbani.view div.acts .act-card .md-ico{width:34px!important;height:34px!important;min-height:34px!important;border-radius:10px!important;margin:0 0 2px!important}
+html body main#v-nyumbani.view div.acts .act-card .md-ico svg{width:20px!important;height:20px!important}
+html body main#v-nyumbani.view div.acts .act-card b{font-size:calc(17px*var(--fs,1))!important;line-height:1.2!important}
+html body main#v-nyumbani.view div.acts .act-card span:not(.md-ico){font-size:calc(13px*var(--fs,1))!important;line-height:1.3!important;display:block!important;overflow:visible!important}
+html body main#v-nyumbani.view.rm-fit>div.acts{flex:0 0 auto!important;height:auto!important;grid-template-rows:auto auto!important;grid-auto-rows:auto!important}
+html body main#v-nyumbani.view.rm-fit>.rw-hero{flex:1 1 0!important;min-height:0!important}
+}
+@media screen and (max-width:599px) and (max-height:640px){
+html body main#v-nyumbani.view div.acts .act-card{display:grid!important;grid-template-columns:28px minmax(0,1fr)!important;grid-template-rows:auto 1fr!important;column-gap:7px!important;align-content:start!important;padding:8px 9px!important}
+html body main#v-nyumbani.view div.acts .act-card .md-ico{grid-column:1;grid-row:1;width:28px!important;height:28px!important;min-height:28px!important;margin:0!important;align-self:center!important}
+html body main#v-nyumbani.view div.acts .act-card b{grid-column:2;grid-row:1;align-self:center;padding-right:8px}
+html body main#v-nyumbani.view div.acts .act-card span:not(.md-ico){grid-column:1/-1;grid-row:2}
+html body main#v-nyumbani.view div.acts .act-card::after{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -2269,7 +2323,7 @@ function L(j){return String((isEn()?LABSX.en:LABSX.sw)[j]||"").toUpperCase()}
 function setLang(){
  var en=isEn(),le=(en||UI())&&S.info.somo!=="Kiswahili",tb=$("rows").parentNode;
  tb.classList.toggle("v7",isVII());
- tb.querySelector("thead tr").innerHTML=COLS().map(function(f,j){return "<th"+(isVII()&&isSmallK(f[0])?" class='vt7'":"")+">"+esc(colLbl(f,j))+"</th>"}).join("")+"<th class=\"act noprint\"></th>";
+ tb.querySelector("thead tr").innerHTML=COLS().map(function(f,j){return "<th"+((isVII()&&isSmallK(f[0])?"vt7 ":"")+(f[0]==="maoni"?"mn":"")?" class='"+((isVII()&&isSmallK(f[0])?"vt7 ":"")+(f[0]==="maoni"?"mn":"")).trim()+"'":"")+">"+esc(colLbl(f,j))+"</th>"}).join("")+"<th class=\"act noprint\"></th>";
  $("pSomo").parentNode.firstChild.nodeValue=le?"SCHEME OF WORK FOR ":"AZIMIO LA ";
  var i=S.info;
  (function(){var N="<span class='tn'>"+esc(i.mwalimu?rwTC(i.mwalimu):"________")+"</span>",E=function(x){return esc(String(x==null?"":x))},sp="&nbsp;&nbsp; ";$("pMeta").innerHTML=le?"School: "+E(i.shule||"________")+sp+"Teacher: "+N+sp+"Class: "+E(CL(i.darasa))+sp+"Subject: "+E(X(i.somo||""))+sp+"Year: "+E(i.mwaka||"")+sp+E(tl(true)):"Shule: "+E(i.shule||"________")+sp+"Mwalimu: "+N+sp+"Darasa: "+E(drs(i.darasa))+sp+"Somo: "+E(i.somo||"")+sp+"Mwaka: "+E(i.mwaka||"")+sp+E(tl(false))})();
@@ -2416,12 +2470,67 @@ function rwSplitWeeks(){
   ch=1});
  if(ch){S.rows=out;try{save()}catch(e){}}
 }
+/* Maazimio yote upande wa mwezi: seli za mwezi huunganishwa wima (herufi zimesimama), na umahiri/shughuli huunganishwa ndani ya mwezi mmoja tu; kikundi kikivuka mwezi, maandishi hurudiwa mwezi mpya */
+function azPlan(R){
+ var keys=COLS().map(function(f){return f[0]}),TK=["umahiriMkuu","umahiriMahususi","shughuliKuu","shughuliMahususi"].filter(function(k){return keys.indexOf(k)>=0}),
+  n=R.length,PL=[],i;
+ for(i=0;i<n;i++)PL.push({});
+ function ban(r){return r.kind==="b"||r.ban}
+ function mo(r){return String(colVal(r,"mwezi")||"")}
+ var ms=[];
+ for(i=0;i<n;i++){var r=R[i],p=R[i-1];
+  ms[i]=!(i>0&&!ban(r)&&!ban(p)&&mo(r)&&mo(r)===mo(p)&&r.term===p.term)}
+ function span(k,st,val){var a=0;for(var q=0;q<st.length;q++){if(st[q]){a=q;PL[q][k]={n:1,v:val[q]}}else{PL[a][k].n++;PL[q][k]=0}}}
+ var mst=[],mval=[];
+ for(i=0;i<n;i++){mst[i]=!ban(R[i])&&ms[i];mval[i]=colVal(R[i],"mwezi")}
+ /* mwezi: ndani ya kila kikundi cha mwezi; safu za kichwa (banner) hazibadilishwi */
+ var a0=-1;
+ for(i=0;i<n;i++){
+  if(ban(R[i])){a0=-1;continue}
+  if(ms[i]||a0<0){a0=i;PL[i].mwezi={n:1}}else{PL[a0].mwezi.n++;PL[i].mwezi=0}}
+ TK.forEach(function(k){
+  var carry="",blk=-1;
+  for(i=0;i<n;i++){var r=R[i];
+   if(ban(r)){blk=-1;continue}
+   if(r.kind){blk=-1;continue}
+   var v=String(colVal(r,k)==null?"":colVal(r,k)),hasV=v.trim()!=="";
+   var startMonth=ms[i]||blk<0;
+   var diff=hasV&&v!==carry;
+   if(hasV)carry=v;
+   if(startMonth||diff){blk=i;PL[i][k]={n:1,v:carry}}
+   else{PL[blk][k].n++;PL[i][k]=0}
+  }
+ });
+ /* Rejea: kikundi cha safu za mwezi mmoja chenye rejea ile ile huunganishwa kuwa seli moja (hukaa katikati) */
+ ["rejea","zanaUjifunzaji"].forEach(function(mk2){
+  if(keys.indexOf(mk2)<0)return;
+  var rb=-1,rp=null;
+  for(i=0;i<n;i++){var rr=R[i];
+   if(ban(rr)||rr.kind){rb=-1;rp=null;continue}
+   var rv=String(colVal(rr,mk2)==null?"":colVal(rr,mk2));
+   if(rb<0||ms[i]||rv!==rp){rb=i;rp=rv;PL[i][mk2]={n:1,v:rv}}
+   else{PL[rb][mk2].n++;PL[i][mk2]=0}
+  }
+ });
+
+ /* Maoni: chumba kimoja kizima kwa kila mada, sawa na chumba cha shughuli za mada hiyo */
+ if(keys.indexOf("maoni")>=0&&TK.length){
+  var tc=TK[TK.length-1],mb=-1;
+  for(i=0;i<n;i++){var mr=R[i];
+   if(ban(mr)||mr.kind){mb=-1;continue}
+   var tv=String(mr.maoni==null?"":mr.maoni).trim();
+   if(mb<0||PL[i][tc]!==0){mb=i;PL[i].maoni={n:1,v:tv}}
+   else{var mh=PL[mb].maoni;mh.n++;PL[i].maoni=0;if(tv&&mh.v.split("\n").indexOf(tv)<0)mh.v=mh.v?mh.v+"\n"+tv:tv}
+  }
+ }
+ return PL}
 function renderRows(){
  try{rwSplitWeeks()}catch(e){}
  var b=$("rows"),lt=-2;
  if(!S.rows.length){b.innerHTML="<tr><td colspan='"+CS()+"' class='empty'><b>Hakuna safu bado</b><br>Bonyeza “Jaza azimio” kuanza.<br><button type='button' class='acc' data-rw='gen' style='margin-top:10px'>Jaza azimio</button></td></tr>";return}
+ var PL=azPlan(S.rows);
  b.innerHTML=S.rows.map(function(r,i){
-  var c=COLS().map(function(f,j){return "<td"+(isSmallK(f[0])?" class='n'":"")+">"+esc(colVal(r,f[0]))+"</td>"}).join("");
+  var c=COLS().map(function(f,j){var p=PL[i][f[0]];if(p===0)return "";var k=f[0],sm=isSmallK(k),cl=(sm?"n":"")+(k==="rejea"?" rj":"")+(k==="zanaUjifunzaji"?" zl":"")+(k==="maoni"?" mn":"")+(k==="mwezi"?(/\u2013/.test(String(colVal(r,k)))?" mh":" mv"):""),rs=(p&&p.n>1)?" rowspan='"+p.n+"'":"",v=(p&&p.v!==undefined)?p.v:colVal(r,k);return "<td"+(cl?" class='"+cl.trim()+"'":"")+rs+">"+esc(v)+"</td>"}).join("");
   var sep="";if(r.term!==undefined&&r.term!==lt){lt=r.term;sep=termRow(lt)}
   if(r.kind==="b"||r.ban)return sep+"<tr class='"+(r.kind==="b"?"brk":"exm")+" ban'><td colspan='"+CS()+"' style='text-align:center;font-weight:700'>"+esc(r.shughuliKuu)+" <span class='noprint'><button class='warn' data-e='"+i+"'>Hariri</button> <button class='dng' data-d='"+i+"'>Futa</button></span></td></tr>";
   return sep+"<tr"+(r.kind==="b"?" class='brk'":r.kind==="x"?" class='exm'":"")+">"+c+"<td class='act noprint'><button class='warn' data-e='"+i+"'>Hariri</button> <button class='dng' data-d='"+i+"'>Futa</button></td></tr>";
@@ -2749,6 +2858,8 @@ function fixEnd7(rows,somo){var re=/PSLE|MAANDALIZI|MARUDIO|REVISION|MITIHANI YA
  [en?"REVISION":"MARUDIO",en?"END OF STANDARD VII EXAMINATIONS":"MITIHANI YA KUMALIZA DARASA LA SABA"].forEach(function(t){rows.push({kind:"b",term:1,umahiriMkuu:"",umahiriMahususi:"",shughuliKuu:t,shughuliMahususi:"",mwezi:"",wiki:"",vipindi:"",mbinu:"",zanaUjifunzaji:"",zanaUpimaji:"",rejea:"",maoni:""})});
  return rows}
 function remap7(src,somo,y){
+ /* Zana tupu: rudia zana za safu iliyotangulia ya somo hilo */
+ (function(){var lz="";src=src.map(function(r){if(r.kind)return r;var z=String(r.zanaUjifunzaji||"").trim();if(z){lz=r.zanaUjifunzaji;return r}return lz?Object.assign({},r,{zanaUjifunzaji:lz}):r})})();
  var cl="La Saba",en=isEn(),info=[],tw=[],wk=0,lastT=-1,cal=buildCal(y),i,k;
  cal.forEach(function(c){var o={c:c};
   if(c.tp==="b"){info.push(o);return}
@@ -2769,7 +2880,7 @@ function remap7(src,somo,y){
    var gs=idx[s0],ge=Math.min(idx[e0],segEnd[gs]);
    (pcs[gs]=pcs[gs]||[]).push({r:r,s:gs,e:ge});cum+=ws[j]})});
  /* Vipindi: kila wiki ina vipindi vyake; mada zikibanwa kwenye wiki chache, vipindi hugawanywa upya */
- var PW7={"Sayansi":5,"English":6,"Uraia na Maadili":5,"Kiswahili":5,"Hisabati":5,"Stadi za Kazi":2},pw=PW7[somo];
+ var PW7={"Sayansi":5,"English":6,"Uraia na Maadili":5,"Kiswahili":5,"Hisabati":5,"Stadi za Kazi":2,"Maarifa ya Jamii":3},pw=PW7[somo];
  if(pw){var all=[];Object.keys(pcs).forEach(function(k){pcs[k].forEach(function(p){all.push(p)})});
   var par=all.map(function(_,x){return x}),own={},gp={};
   var fnd=function(x){while(par[x]!==x){par[x]=par[par[x]];x=par[x]}return x};
@@ -2777,7 +2888,12 @@ function remap7(src,somo,y){
   all.forEach(function(p,x){var g=fnd(x);(gp[g]=gp[g]||[]).push(p)});
   Object.keys(gp).forEach(function(g){var G=gp[g],sl={};G.forEach(function(p){for(var t=p.s;t<=p.e;t++)sl[t]=1});
    var a=cxAlloc(G.map(function(p){return Math.max(1,parseInt(p.r.vipindi,10)||0)}),Object.keys(sl).length*pw);
-   G.forEach(function(p,i){p.v=a[i]})})}
+   G.forEach(function(p,i){p.v=a[i]});
+   /* Mpangilio kwa mfuatano: kila safu inachukua vipindi vyake halisi kwa wiki (pw kwa wiki), bila kuingiliana */
+   var slots=Object.keys(sl).map(Number).sort(function(x,y){return x-y}),cu=0;
+   G.forEach(function(p){var v=p.v>0?p.v:0,i0=Math.min(slots.length-1,Math.floor(cu/pw)),i1=v>0?Math.min(slots.length-1,Math.floor((cu+v-1)/pw)):i0;
+    p.s=slots[i0];p.e=slots[i1];p.c0=cu;p.pw=pw;p.slots=slots;cu+=v})})
+  var all2=all.map(function(p,x){return{p:p,x:x}}).sort(function(A,B){return A.p.s-B.p.s||A.x-B.x});pcs={};all2.forEach(function(o){(pcs[o.p.s]=pcs[o.p.s]||[]).push(o.p)})}
  var rows=[];
  info.forEach(function(o){
   var c=o.c,d=c.d,mz=(en?MEN:MIEZI)[d.getMonth()],skip=terms().indexOf(c.t2)<0;
@@ -2787,6 +2903,11 @@ function remap7(src,somo,y){
   if(c.tp==="x"){if(skip||c.rm||!c.bn)return;rows.push({kind:"x",ban:1,term:c.t2,umahiriMkuu:"",umahiriMahususi:"",shughuliKuu:sfnaLb(c,S.info.darasa),shughuliMahususi:"",mwezi:mz,wiki:wiki,vipindi:"",mbinu:"",zanaUjifunzaji:"",zanaUpimaji:q("Mitihani na majaribio","Tests and exams"),rejea:"",maoni:""});return}
   if(skip)return;
   (pcs[o.ti]||[]).forEach(function(pc){
+   if(pc.v>10&&pc.e>pc.s&&pc.c0!==undefined&&pc.pw){var fs7=true;
+    for(var t7=pc.s;t7<=pc.e;t7++){var k7=pc.slots.indexOf(t7),lo7=Math.max(pc.c0,k7*pc.pw),hi7=Math.min(pc.c0+pc.v,(k7+1)*pc.pw),vt7=hi7-lo7;if(vt7<=0)continue;
+     var r7=JSON.parse(JSON.stringify(pc.r));r7.term=c.t2;r7.mwezi=(en?MEN:MIEZI)[tw[t7].d.getMonth()];r7.vipindi=String(vt7);r7.wiki=tw[t7].wk+" ("+wl(tw[t7].d)+")";
+     if(!fs7){r7.umahiriMkuu="";r7.umahiriMahususi=""}fs7=false;rows.push(r7)}
+    return}
    var w1=tw[pc.s].wk,w2=tw[pc.e].wk,lb=w1===w2?String(w1):(w2===w1+1?w1+" & "+w2:w1+"\u2013"+w2),r=JSON.parse(JSON.stringify(pc.r));
    r.term=c.t2;r.mwezi=mz;if(pc.v)r.vipindi=String(pc.v);r.wiki=lb+" ("+wlSp(tw[pc.s].d,tw[pc.e].d)+")";rows.push(r)})});
  return rows}
@@ -2817,13 +2938,15 @@ $("gen").onclick=function(){
  items.forEach(function(it,ii){var va=it.a.filter(function(a){return a[0]&&!/^\d+$/.test(a[0].trim())&&!/^\(/.test(a[0].trim())});if(!va.length)va=[it.a[0]||["","","",""]];
   va.forEach(function(a,jj){acts.push({it:it,a:a,item:ii,nv:va.length})})});
  var vv=cxAlloc(cxA(acts,somo),C);
+ /* Zana tupu: rudia zana za shughuli iliyotangulia ya mada hiyo hiyo (kisha ya mwisho ya somo), kwa shughuli zote bila kujali muhula */
+ (function(){var lz={},la="";acts.forEach(function(ac){var z=String(ac.a[3]||"").trim();if(z){lz[ac.item]=ac.a[3];la=ac.a[3];ac.zn=ac.a[3]}else ac.zn=lz[ac.item]||la||""})})();
  /* 3. weka kwenye wiki kwa mpangilio; shughuli haivuki muhula, mtihani wala likizo */
  var pcs={},cum=0;
  acts.forEach(function(ac,k){var rem=vv[k];
   while(rem>0){var s0=Math.floor(cum/ppw),room=(segEnd[s0]+1)*ppw-cum,take=Math.min(rem,room),e0=Math.floor((cum+take-1)/ppw);
-   (pcs[s0]=pcs[s0]||[]).push({ac:ac,v:take,s:s0,e:e0});cum+=take;rem-=take}});
+   (pcs[s0]=pcs[s0]||[]).push({ac:ac,v:take,s:s0,e:e0,c0:cum});cum+=take;rem-=take}});
  /* 4. safu za azimio */
- var rows=[],lastU="",lastItem=-1,lastTerm=-1;
+ var rows=[],lastU="",lastItem=-1,lastTerm=-1,lastZ={},lastZany="";
  info.forEach(function(o){
   var c=o.c,d=c.d,mz=(en?MEN:MIEZI)[d.getMonth()],skip=terms().indexOf(c.t2)<0;
   if(isEnd6(c,cl)){if(terms().indexOf(1)>=0)vi6(c,rows,cl);return}
@@ -2837,7 +2960,16 @@ $("gen").onclick=function(){
    var ac=pc.ac,a=ac.a,it=ac.it,first=ac.item!==lastItem;if(first)lastItem=ac.item;
    var u=it.u||"",showU=first&&u!==lastU;if(first)lastU=u||lastU;
    var w1=tw[pc.s].wk,w2=tw[pc.e].wk,wl2=w1===w2?String(w1):(w2===w1+1?w1+" & "+w2:w1+"–"+w2);
-   rows.push({term:c.t2,umahiriMkuu:showU?u:"",umahiriMahususi:first?it.m:"",shughuliKuu:it.m,shughuliMahususi:adClr(a[0]),mwezi:mz,wiki:wl2+" ("+wlSp(tw[pc.s].d,tw[pc.e].d)+")",vipindi:String(pc.v),mbinu:a[1],zanaUjifunzaji:a[3],zanaUpimaji:tl2,rejea:rej,maoni:""})})});
+   /* Zana tupu: rudia zana za safu iliyotangulia ya mada hiyo hiyo (kisha ya mwisho ya somo) */
+   var zn=ac.zn||"";
+   /* Safu inayovuka wiki nyingi (vipindi zaidi ya 10): gawanya kwa wiki kulingana na nafasi halisi ya vipindi vya kila wiki (ppw), si sawasawa */
+   if(pc.v>10&&pc.e>pc.s&&pc.c0!==undefined){
+    var fs=true;
+    for(var t=pc.s;t<=pc.e;t++){
+     var lo=Math.max(pc.c0,t*ppw),hi=Math.min(pc.c0+pc.v,(t+1)*ppw),vt=hi-lo;if(vt<=0)continue;
+     rows.push({term:c.t2,umahiriMkuu:(fs&&showU)?u:"",umahiriMahususi:(fs&&first)?it.m:"",shughuliKuu:it.m,shughuliMahususi:adClr(a[0]),mwezi:(en?MEN:MIEZI)[tw[t].d.getMonth()],wiki:tw[t].wk+" ("+wl(tw[t].d)+")",vipindi:String(vt),mbinu:a[1],zanaUjifunzaji:zn,zanaUpimaji:tl2,rejea:rej,maoni:""});fs=false}
+    return}
+   rows.push({term:c.t2,umahiriMkuu:showU?u:"",umahiriMahususi:first?it.m:"",shughuliKuu:it.m,shughuliMahususi:adClr(a[0]),mwezi:mz,wiki:wl2+" ("+wlSp(tw[pc.s].d,tw[pc.e].d)+")",vipindi:String(pc.v),mbinu:a[1],zanaUjifunzaji:zn,zanaUpimaji:tl2,rejea:rej,maoni:""})})});
  S.rows=rows;S.calY=y;save();renderRows();
 };
 /* ===== Azimio la Sayansi na Teknolojia, Darasa la VII (2027) — kama lilivyo kwenye PDF ===== */
@@ -3194,11 +3326,11 @@ $("csv").onclick=function(){
  h+="<tr><td colspan='"+(CS()-1)+"' style='text-align:center;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;font-size:18pt;font-weight:bold;border:0'>"+cell((en?"SCHEME OF WORK FOR ":"AZIMIO LA ")+(i.somo||"").toUpperCase())+"</td></tr>";
  h+="<tr><td colspan='"+(CS()-1)+"' style='text-align:center;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;font-size:11pt;font-weight:bold;border:0;border-bottom:3px solid #2563EB'>"+cell($("pMeta").textContent.toUpperCase())+"</td></tr><tr><td colspan='"+(CS()-1)+"' style='border:0'></td></tr>";
  h+="<tr>"+COLS().map(function(f,j){return "<th style='"+B+"background:#dddddd;font-weight:bold;text-align:left'>"+cell(colLbl(f,j))+"</th>"}).join("")+"</tr>";
- var lt=-2;
- S.rows.forEach(function(r){
+ var lt=-2,XP=azPlan(S.rows);
+ S.rows.forEach(function(r,ri){
   if(r.term!==undefined&&r.term!==lt){lt=r.term;h+=termRow(lt).replace("<tr class='term'><td colspan='"+CS()+"'>","<tr><td colspan='"+(CS()-1)+"' style='"+B+"background:#e9e2c9;font-weight:bold;font-size:11pt'>")}
   var bg=r.kind==="b"?"background:#f3ecd2;font-style:italic;":r.kind==="x"?"background:#e8eeee;":"";
-  h+="<tr>"+COLS().map(function(f,j){return "<td style='"+B+bg+(isSmallK(f[0])?"text-align:center;":"")+"'>"+cell(colVal(r,f[0]))+"</td>"}).join("")+"</tr>"});
+  h+="<tr>"+COLS().map(function(f,j){var xm=(f[0]==="rejea"),xg=xm||f[0]==="zanaUjifunzaji"||f[0]==="maoni",xp=xg?XP[ri][f[0]]:null;if(xp===0)return "";var xs=(xp&&xp.n>1)?" rowspan='"+xp.n+"'":"",xc=xm?"text-align:center;vertical-align:middle;":(f[0]==="zanaUjifunzaji"?"text-align:left;vertical-align:top;":"");return "<td"+xs+" style='"+B+bg+(isSmallK(f[0])?"text-align:center;":"")+xc+"'>"+cell(xp&&xp.v!==undefined?xp.v:colVal(r,f[0]))+"</td>"}).join("")+"</tr>"});
  h+="</table></body></html>";
  var blob=new Blob(["﻿"+h],{type:"application/vnd.ms-excel;charset=utf-8"});
  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(window.rwFn?window.rwFn("az"):"azimio-la-kazi")+".xls";
@@ -4816,7 +4948,7 @@ window.rwPdfFb=function(){
   html2pdf().set({margin:8,filename:window.rwFn(t)+".pdf",image:{type:"jpeg",quality:.95},html2canvas:{scale:sc,backgroundColor:"#fff",windowWidth:W,scrollX:0,scrollY:0,logging:false},jsPDF:{unit:"mm",format:rwEff(opts(),t).p==="a3"?"a3":"a4",orientation:land?"landscape":"portrait"},pagebreak:{mode:["css","legacy"],avoid:["tr",".rw-sign"]}}).from(box).save().then(function(){toast("PDF imehifadhiwa ✓")}).catch(function(){note("Imeshindikana kutengeneza PDF.")}).then(function(){hold.remove();clean()})},
   function(){clean();note("PDF inahitaji mtandao mara ya kwanza. Washa intaneti kisha jaribu tena.")})};
 function wdoc(t){var m=MAP[t],el=$(m.id);if(el.hidden){note("Chagua darasa, somo na mwaka kwanza.");return}
- var l=land(t),c=mk(t,1),x='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>'+window.rwFn(t)+'</title><style>@page S{size:'+(rwEff(opts(),t).p==='a3'?(l?'1190.6pt 841.9pt;mso-page-orientation:landscape':'841.9pt 1190.6pt'):(l?'841.9pt 595.3pt;mso-page-orientation:landscape':'595.3pt 841.9pt'))+';margin:36pt}div.S{page:S}body{font:10pt Arial}table{border-collapse:collapse;width:100%}td,th{border:1px solid #000;padding:3pt;font:9pt Arial;vertical-align:top}th{background:#ddd}.pr-head{text-align:center;font-weight:bold}</style></head><body><div class="S">'+c.outerHTML+'</div></body></html>';
+ var l=land(t),c=mk(t,1);[].forEach.call(c.querySelectorAll('td.mv'),function(e){e.innerHTML=Array.from(e.textContent.trim().toUpperCase().replace(/\s+/g,'')).map(function(ch){return ch.replace(/&/g,'&amp;').replace(/</g,'&lt;')}).join('<br>');e.setAttribute('style','text-align:center;vertical-align:middle;font-weight:bold')});var x='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>'+window.rwFn(t)+'</title><style>@page S{size:'+(rwEff(opts(),t).p==='a3'?(l?'1190.6pt 841.9pt;mso-page-orientation:landscape':'841.9pt 1190.6pt'):(l?'841.9pt 595.3pt;mso-page-orientation:landscape':'595.3pt 841.9pt'))+';margin:36pt}div.S{page:S}body{font:10pt Arial}table{border-collapse:collapse;width:100%}td,th{border:1px solid #000;padding:3pt;font:9pt Arial;vertical-align:top}th{background:#ddd}.pr-head{text-align:center;font-weight:bold}</style></head><body><div class="S">'+c.outerHTML+'</div></body></html>';
  dlf(new Blob(["\ufeff",x],{type:"application/msword"}),window.rwFn(t)+".doc");toast("Word imehifadhiwa ✓")}
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-rw]");if(!b)return;var a=b.getAttribute("data-rw");
  if(a==="gen")$("gen").click();else if(a==="wn"){$("wN").scrollIntoView({behavior:"smooth"});$("wN").focus()}else if(a==="pdf")pdf(b.getAttribute("data-t"));else if(a==="wa")waShare(b.getAttribute("data-t"));else if(a==="doc")wdoc(b.getAttribute("data-t"))});
@@ -5756,6 +5888,41 @@ var SKIP='script,style,textarea,#azCover,#azComp,#pMeta,#prev .pr-head,#prev .wr
    t=/^[A-Z]{2}/.test(t)?t:t.charAt(0).toLowerCase()+t.slice(1);var pf=PFX[i][1];if(k.charAt(0)!==k.charAt(0).toLowerCase())pf=pf.charAt(0).toUpperCase()+pf.slice(1);
    return pf+t}
   return null}})();
+/* Tafsiri: kipindi cha michezo, ujumbe wa mgongano wa walimu na majina ya masomo ndani ya sentensi */
+(function(){
+ var hp=function(o,k){return Object.prototype.hasOwnProperty.call(o,k)};
+ Object.assign(MAP,{"Michezo":"Sports","madarasa yote muda mmoja":"all classes at the same time","kila darasa na muda wake":"each class at its own time","Vipindi (mfululizo)":"Periods (consecutive)","Kipindi cha kuanza":"Starting period","— Hakuna mwalimu —":"— No teacher —","— Hakuna mwalimu bado —":"— No teacher yet —","Fanya hivi":"Do this","Suluhisho:":"Solution:",
+  "Kipindi cha michezo kimeondolewa. Nafasi zake ziko wazi.":"The sports period has been removed. Its slots are now free.",
+  "Michezo itaondolewa kwenye ratiba na nafasi zake zitakuwa wazi.":"Sports will be removed from the timetable and its slots will be free.",
+  "Haikuwezekana kuhamisha masomo mengine ili kupata nafasi. Tengeneza ratiba kwanza kisha ujaribu tena.":"It was not possible to move other subjects to make room. Generate the timetable first, then try again.",
+  "Andika jina la somo.":"Enter the subject name.","Jina hili ni la somo la mtaala. Tumia jina lingine.":"This name belongs to a curriculum subject. Use another name.","Chagua darasa moja au zaidi.":"Choose one or more classes.",
+  "Kila somo lazima lipate vipindi vyake vyote. Vilivyokosekana vimekwama kwa sababu mwalimu wa somo hilo yuko darasa lingine wakati huo (mgongano). Chagua suluhisho hapa chini:":"Every subject must get all of its lessons. The missing ones are stuck because the teacher of that subject is in another class at that time (a clash). Choose a solution below:"});
+ function sj(x){x=String(x).trim();var S=EX.s||{};if(hp(S,x))return S[x];if(hp(MAP,x)&&x!=="Michezo")return MAP[x];if(x==="Michezo")return "Sports";return x}
+ var C=function(x){return x.replace(/^DRS /,'Class ')};
+ var P=[
+  [/^DRS ([IVX]+): (.+)$/,function(m){return 'Class '+m[1]+': '+sj(m[2])}],
+  [/^Darasa ([IVX]+)$/,function(m){return 'Class '+m[1]}],
+  [/^\(kipindi (\d+) kinakosekana\)$/,function(m){return '('+m[1]+' lesson(s) missing)'}],
+  [/^Weka (.+?) kwenye (\S+ kipindi \d+)(?: \(mwalimu (.+) yuko huru\))?$/,function(m){return 'Place '+sj(m[1])+' in '+m[2]+(m[3]?' (teacher '+m[3]+' is free)':'')}],
+  [/^Mgongano: (.+?) yuko (DRS [IVX]+) \((.+?)\) (\S+ kipindi \d+)\. Mpe (.+?) kipindi hicho cha (DRS [IVX]+), kisha weka (.+?) kwenye (\S+ kipindi \d+)\.$/,function(m){return 'Clash: '+m[1]+' is in '+C(m[2])+' ('+sj(m[3])+') on '+m[4]+'. Give '+m[5]+' that lesson of '+C(m[6])+', then place '+sj(m[7])+' in '+m[8]+'.'}],
+  [/^Mgongano: (.+?) yuko (DRS [IVX]+) \((.+?)\) (\S+ kipindi \d+)\. Hamisha (.+?) ya (DRS [IVX]+) kwenda (\S+ kipindi \d+) \((.+?) yuko huru\), kisha weka (.+?) kwenye (\S+ kipindi \d+)\.$/,function(m){return 'Clash: '+m[1]+' is in '+C(m[2])+' ('+sj(m[3])+') on '+m[4]+'. Move '+sj(m[5])+' of '+C(m[6])+' to '+m[7]+' ('+m[8]+' is free), then place '+sj(m[9])+' in '+m[10]+'.'}],
+  [/^Mgongano: (\S+ kipindi \d+) ni tupu kwa (DRS [IVX]+), lakini (.+?) yuko (DRS [IVX]+) \((.+?)\) wakati huo\.$/,function(m){return 'Clash: '+m[1]+' is empty for '+C(m[2])+', but '+m[3]+' is in '+C(m[4])+' ('+sj(m[5])+') at that time.'}],
+  [/^(.+?): ana vipindi (\d+) kati ya (\d+) vya wiki(?: na masomo anayofundisha peke yake yanahitaji vipindi (\d+) \(haiwezekani, ni zaidi ya (\d+)\))?$/,function(m){return m[1]+': has '+m[2]+' of '+m[3]+' lessons per week'+(m[4]?' and the subjects they teach alone need '+m[4]+' lessons (impossible, more than '+m[5]+')':'')}],
+  [/^Darasa hili halina nafasi tupu: vipindi vyote (\d+) vimejaa\. Jumla ya vipindi vya masomo ni nyingi kuliko vipindi vilivyopo\.$/,function(m){return 'This class has no empty slots: all '+m[1]+' lessons are full. The total lessons of the subjects is more than the lessons available.'}],
+  [/^sajili mwalimu mwingine anayefundisha (.+) kwa (DRS [IVX]+) \(Hatua ya 2\), au punguza vipindi vya mwalimu aliyejaa\.$/,function(m){return 'register another teacher who teaches '+sj(m[1])+' for '+C(m[2])+' (Step 2), or reduce the lessons of the overloaded teacher.'}],
+  [/^(\S+) vipindi (\d+)–(\d+)$/,function(m){return m[1]+' lessons '+m[2]+'–'+m[3]}],
+  [/^(\d+) na (\d+)$/,function(m){return m[1]+' and '+m[2]}],
+  [/^Darasa ([IVX]+): (\S+) ina vipindi (\d+) tu\.$/,function(m){return 'Class '+m[1]+': '+m[2]+' has only '+m[3]+' lessons.'}],
+  [/^Darasa ([IVX]+): vipindi viwili havipaswi kuvuka mapumziko au chakula \(baada ya kipindi (\d+)\)\.$/,function(m){return 'Class '+m[1]+': two lessons must not cross the break or lunch (after lesson '+m[2]+').'}],
+  [/^Darasa ([IVX]+): (\S+) kipindi (\d+) tayari kina (.+)\.$/,function(m){return 'Class '+m[1]+': '+m[2]+' lesson '+m[3]+' already has '+sj(m[4])+'.'}],
+  [/^Darasa ([IVX]+): nafasi wazi hazitoshi \(zimebaki (\d+), unahitaji (\d+)\)\.$/,function(m){return 'Class '+m[1]+': not enough free slots ('+m[2]+' left, you need '+m[3]+').'}],
+  [/^Kipindi cha michezo kimewekwa kwenye madarasa (\d+)\. Masomo (\d+) yamehamishiwa nafasi wazi; kama kuna tahadhari za walimu kugongana, bonyeza Tengeneza ratiba\. Hubaki hata ukitengeneza ratiba upya\.$/,function(m){return 'The sports period has been placed in '+m[1]+' classes. '+m[2]+' subjects were moved to free slots; if there are teacher clash warnings, press Generate timetable. It stays even if you generate the timetable again.'}],
+  [/^Kipindi cha michezo kimewekwa kwenye madarasa (\d+)\. Hubaki hata ukitengeneza ratiba upya\.$/,function(m){return 'The sports period has been placed in '+m[1]+' classes. It stays even if you generate the timetable again.'}]
+ ];
+ var _p=trRule;trRule=function(k){
+  for(var i=0;i<P.length;i++){var m=P[i][0].exec(k);if(m)return post(P[i][1](m))}
+  return _p(k)};
+})();
 var lang='sw', obs=null, TITLE_SW=document.title;
 var DAYS={Jumatatu:'Monday',Jumanne:'Tuesday',Jumatano:'Wednesday',Alhamisi:'Thursday',Ijumaa:'Friday',Jumamosi:'Saturday',Jumapili:'Sunday'},MONS={Januari:'January',Februari:'February',Machi:'March',Aprili:'April',Mei:'May',Juni:'June',Julai:'July',Agosti:'August',Septemba:'September',Oktoba:'October',Novemba:'November',Desemba:'December'};
 function trDate(k){var m=k.match(/^(Jumatatu|Jumanne|Jumatano|Alhamisi|Ijumaa|Jumamosi|Jumapili),? (\d{1,2}) (Januari|Februari|Machi|Aprili|Mei|Juni|Julai|Agosti|Septemba|Oktoba|Novemba|Desemba) (\d{4})$/);return m?DAYS[m[1]]+', '+m[2]+' '+MONS[m[3]]+' '+m[4]:null}
@@ -5990,7 +6157,7 @@ html body #v-nyumbani.rm-fit>#rmGreet span{font-size:11px!important;margin-top:0
 <script id="rm-fit-screen-js">
 (function(){var d=document.documentElement,busy=0;
 function rmClip(v){var cs=v.querySelectorAll(".acts .act-card");for(var i=0;i<cs.length;i++){var c=cs[i],sp=c.querySelector("span:not(.md-ico)");if(c.scrollHeight>c.clientHeight+1)return true;if(sp&&getComputedStyle(sp).display!=="none"&&sp.scrollHeight>sp.clientHeight+1)return true}return false}
-function rmc(v,ok){v.classList.remove("rm-s","rm-c1","rm-c2","rm-c3");if(!ok||!v.querySelector(".acts .act-card"))return;if(!rmClip(v))return;var st=["rm-s","rm-c1","rm-c2","rm-c3"];for(var i=0;i<st.length;i++){v.classList.add(st[i]);if(!rmClip(v))return}}
+function rmc(v,ok){v.classList.remove("rm-s","rm-c1","rm-c2","rm-c3");if(!ok||!v.querySelector(".acts .act-card"))return;if((window.innerWidth||0)<600)return;/* simu: saizi za kadi ni za kudumu (rm-card-phone) */if(!rmClip(v))return;var st=["rm-s","rm-c1","rm-c2","rm-c3"];for(var i=0;i<st.length;i++){v.classList.add(st[i]);if(!rmClip(v))return}}
 function fit(){if(busy)return;busy=1;try{var v=document.getElementById("v-nyumbani"),n=document.querySelector(".tabs");if(!v||!n)return;
 var ok=false;
 if(true){var on=v.classList.contains("on");
