@@ -494,6 +494,10 @@ ol.how{margin:0 0 12px;padding-left:22px;color:var(--mut);font-size:calc(14px*va
 .rzt{display:flex;gap:8px;margin-top:4px}.rzt label{flex:1;margin:0}
 #rTbl .rkn td.ozc{text-transform:uppercase;letter-spacing:1px;font-size:calc(20px*var(--fs,1))!important;font-weight:800;line-height:1.2;text-align:center;vertical-align:middle;padding:6px 6px;min-width:92px;overflow-wrap:break-word;background:rgba(37,99,235,.07)}
 #rTbl .rkn td.ozc small{text-transform:none;letter-spacing:0;display:block;font-weight:600;font-size:.82em;margin-top:2px;white-space:nowrap}
+#rTbl .rkn td.ozv5{padding:2px;min-width:0;width:1%}
+#rTbl .rkn td.ozv5 .ozvt{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:calc(18px*var(--fs,1));line-height:1.1}
+#rPrev #rTbl .rkn td.ozv5 .ozvt{font-size:13px;letter-spacing:1px}
+@media print{#rTbl .rkn td.ozv5 .ozvt{font-size:12px!important;letter-spacing:1px}}
 #rPrev #rTbl .rkn td.ozc{font-size:14px!important;padding:3px 4px;min-width:0}
 @media print{#rTbl .rkn td.ozc{font-size:13px!important;padding:1px 2px!important;min-width:0!important}}
 .ckok{margin:0;color:#15803d;font-weight:700}
@@ -767,6 +771,11 @@ h1.rttl{font-size:10.5px;font-weight:800;text-align:center;text-decoration:under
 #rTbl .rkn td.scd small.tn{display:none}
 #rTbl .rkn td.cc small.tn{display:block;font-size:calc(6.5px*var(--fs,1));white-space:normal;overflow-wrap:anywhere}
 }
+
+/* Majina marefu (mf. Kujisomea/Maktaba) yagawanyike mistari miwili ndani ya kisanduku */
+#rTbl .sp{display:inline-block;max-width:100%}
+@media print{#rTbl .rkn .cell,#rTbl .rkn td.cc{overflow-wrap:anywhere;word-break:normal;hyphens:none}#rTbl .rkn .cell .sp,#rTbl .rkn td.cc .sp{font-size:.92em}}
+@media screen and (max-width:700px){#rTbl .rkn .cell .sp,#rTbl .rkn td.cc .sp{font-size:.9em;overflow-wrap:anywhere}}
 #csv,#adXls,#rXls{display:none!important}
 
 @media print{
@@ -4170,9 +4179,10 @@ function rHue(n){if(HUE[n]!==undefined)return HUE[n];var h=0,i;for(i=0;i<n.lengt
 function rSc(n){if(!n)return"";RU[n]=1;return" sc' style='--h:"+rHue(n)}
 var SAB={"Kiswahili":"Kiswahili","English":"Eng","Hisabati":"Hisb","Sayansi":"Say","Jiografia na Mazingira":"Jiog","Historia ya Tanzania na Maadili":"Hist","Sanaa na Michezo":"Sanaa","Elimu ya Dini":"Dini","Kujisomea/Maktaba":"Kujis"},DAB=["Jtt","Jnn","Jtn","Alh","Ijm"];
 function sAb(n){n=(n||"").trim();return n;if(SAB[n])return SAB[n];var w=n.split(/\s+/);return w.length>1?w.map(function(x){return x.charAt(0).toUpperCase()}).join(""):n.slice(0,4)}
+function sH(x){x=esc(x||"");if(x.indexOf("/")<0)return x;return x.split("/").map(function(q,i,r){return"<span class='sp'>"+q+(i<r.length-1?"/":"")+"</span>"}).join("")}
 function wSur(n){var i=wIni(n);return i?"Mwl. "+i:""}
 function mF(f,a){return"<span class='mfl'>"+f+"</span><span class='mab'>"+a+"</span>"}
-function rCellH(v){return v&&(v.s||v.t)?mF(esc(v.s||"").replace("/","/<wbr>"),esc(sAb(v.s)))+(v.t?"<br><small class='tn'>"+mF(esc(wShort(v.t)),esc(wSur(v.t)))+"</small>":""):""}
+function rCellH(v){return v&&(v.s||v.t)?mF(sH(v.s),esc(sAb(v.s)))+(v.t?"<br><small class='tn'>"+mF(esc(wShort(v.t)),esc(wSur(v.t)))+"</small>":""):""}
 function ratR(){
  var i=S.info,tc=rTchs(),h,items=ratItems();RU={};
  var rGened=CLS.some(function(c){return R.M&&R.M[c]&&Object.keys(R.M[c]).length});if(!rGened)rMode="k";$("rModeCard").hidden=!rGened;$("rPrint").style.display=rGened?"":"none";
@@ -4200,22 +4210,22 @@ function ratR(){
     items.forEach(function(x){
      if(x.b){h+=bkc(x);return}
      if(rOff(c,d,x.p)){h+="<td class='rc off'>&mdash;</td>";return}
-     var v=rCell(c,d,x.p),t=v&&v.s?mF(esc(v.s).replace("/","/<wbr>"),esc(sAb(v.s)))+"<br><small class='tn"+(v.t?"":" no")+"'>"+(v.t?mF(esc(wShort(v.t)),esc(wSur(v.t))):mF("halina mwalimu","!"))+"</small>":rCellH(v);
+     var v=rCell(c,d,x.p),t=v&&v.s?mF(sH(v.s),esc(sAb(v.s)))+"<br><small class='tn"+(v.t?"":" no")+"'>"+(v.t?mF(esc(wShort(v.t)),esc(wSur(v.t))):mF("halina mwalimu","!"))+"</small>":rCellH(v);
      h+="<td class='rc'><button type='button' class='cell"+(t?"":" e")+rSc(v&&v.s)+"' data-c='"+c+"' data-d='"+d+"' data-p='"+x.p+"'>"+(t||"+")+"</button></td>"});
     h+=rzCell(oz,"a",d,ci,CLS.length);h+="</tr>"})})
  }else{
   RD.forEach(function(dn,d){
    h+="<tr><td class='k n dk'><b>"+mF(dn,DAB[d]||dn.slice(0,3))+"</b></td>";
-   h+=rzCell(oz,"b",d,0,1);
+   h+=rzCellV(oz,"b",d);
    items.forEach(function(x){
     if(x.b){h+=bkc(x);return}
     if(rMode==="c"){
      if(rOff(cls,d,x.p)){h+="<td class='cc off'>&mdash;</td>";return}
      var v=rCell(cls,d,x.p);h+="<td class='cc"+(v&&v.s?" scd"+rSc(v.s):"")+"'>"+rCellH(v)+"</td>";return}
     var t="",f="";
-    if(tch)CLS.forEach(function(c){if(rOff(c,d,x.p))return;var v=rCell(c,d,x.p);if(v&&v.t===tch){t+=(t?"<br>":"")+"<b>"+esc(rom(c))+"</b>"+(v.s?"<br><small class='tn'>"+mF(esc(v.s).replace("/","/<wbr>"),esc(sAb(v.s)))+"</small>":"");f=f||v.s}});
+    if(tch)CLS.forEach(function(c){if(rOff(c,d,x.p))return;var v=rCell(c,d,x.p);if(v&&v.t===tch){t+=(t?"<br>":"")+"<b>"+esc(rom(c))+"</b>"+(v.s?"<br><small class='tn'>"+mF(sH(v.s),esc(sAb(v.s)))+"</small>":"");f=f||v.s}});
     h+="<td class='cc"+(f?" scd"+rSc(f):"")+"'>"+t+"</td>"});
-   h+=rzCell(oz,"a",d,0,1);h+="</tr>"})
+   h+=rzCellV(oz,"a",d);h+="</tr>"})
  }
  var dt=new Date();$("rFoot").innerHTML="<span><span>Tarehe</span>: "+dt.getDate()+"/"+(dt.getMonth()+1)+"/"+dt.getFullYear()+"</span><span>Sahihi ya Mtaaluma: ______________________</span><span>Sahihi ya Mkuu wa Shule: ______________________</span>";
  var lg=Object.keys(RU).sort().map(function(n){return"<span class='lgd sc"+"' style='--h:"+rHue(n)+"'><b class='mab'>"+esc(sAb(n))+"</b> "+esc(n)+"</span>"}).join("");
@@ -4372,6 +4382,8 @@ function rzCell(oz,k,d,ci,n){if(!oz[k]||ci>0)return"";var x=(R.oz||[])[d],v=x&&x
  nm=esc(v.n);if(n>1)nm="<span class='ozv'>"+nm+"</span>";
  if(!u)tm="<small>"+esc(k==="a"?hm(rzSpan()[1]):v.s)+" \u2013 "+esc(v.e)+"</small>";
  return"<td class='ozc' rowspan='"+n+"'><b>"+nm+"</b>"+tm+"</td>"}
+function rzRep(k){var o=R.oz||[],f=o[0]&&o[0][k];if(!f)return null;var j=JSON.stringify(f);for(var i=1;i<5;i++){if(!o[i]||!o[i][k]||JSON.stringify(o[i][k])!==j)return null}return f}
+function rzCellV(oz,k,d){if(!oz[k])return"";var f=rzRep(k);if(!f)return rzCell(oz,k,d,0,1);if(d>0)return"";return"<td class='ozc ozv5' rowspan='5'><span class='ozvt'>"+esc(f.n)+"</span></td>"}
 function rzSpan(){var it=ratItems();return it.length?[it[0].s,it[it.length-1].e]:[480,480]}
 function rzR(){var el=$("rOzL");if(!el)return;
  var h=RD.map(function(dn,d){var x=(R.oz||[])[d]||{},p=[];
