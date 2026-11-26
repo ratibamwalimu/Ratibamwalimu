@@ -1747,6 +1747,14 @@ html body main#v-nyumbani.view.rm-fit div.acts .act-card::after{display:none!imp
 #rSet>#rForm>div:nth-child(3)>label{min-height:0}
 #rSet>.grid>div>input,#rSet>.grid>div>select{width:100%;min-width:0;box-sizing:border-box}
 }
+
+/* Kujisomea/Maktaba: kisigawanyike mistari miwili ndani ya kisanduku wakati wa kuprint ratiba kuu */
+@media print{
+#rTbl .rkn td,#rPrev #rTbl .rkn td{overflow:hidden}
+#rTbl .rkn .cell,#rPrev #rTbl .rkn .cell,#rTbl .rkn td.cc{white-space:normal!important;overflow:hidden!important;overflow-wrap:anywhere!important;word-break:normal!important;min-width:0!important;max-width:100%!important}
+#rTbl .rkn .cell .mfl,#rTbl .rkn td.cc .mfl{display:block!important;min-width:0!important;max-width:100%!important;white-space:normal!important}
+#rTbl .rkn .cell .sp,#rTbl .rkn td.cc .sp{display:block!important;width:100%;max-width:100%!important;white-space:normal!important;overflow-wrap:anywhere!important;font-size:.88em!important;line-height:1.1!important;text-align:center}
+}
 </style>
 </head>
 <body>
