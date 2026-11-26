@@ -4792,7 +4792,7 @@ function rTotP(){return rCapAll()}
 function wPT(){var pl=wPlan(wSC),k=CLS.filter(function(c){return pl.by[c]});var tp=rTotP(),el=$("wPT");el.textContent=pl.tot?"Jumla ya vipindi vyake kwa wiki: "+pl.tot+" ("+k.map(function(c){return rom(c)+": "+pl.by[c]}).join(", ")+")":"Jumla ya vipindi vyake kwa wiki: 0 (chagua masomo na madarasa hapo juu)";
  el.style.color="";el.style.fontWeight="";
  if(tp&&pl.tot>tp){el.textContent+=" ⚠ ANGALIZO: kwa wiki kuna vipindi "+tp+" tu, lakini mwalimu huyu amepangiwa "+pl.tot+" (ziada "+(pl.tot-tp)+"). Mpunguzie masomo au darasa.";el.style.color="#B91C1C";el.style.fontWeight="700"}}
-function wChips(){wPT();$("wSub").innerHTML=WSUB.map(function(n){var c=wSC[n];return"<label class='wchip sc' data-so=\""+esc(n).replace(/"/g,"&quot;")+"\" style='--h:"+rHue(n)+"'><input type='checkbox' tabindex='-1'"+(c?" checked":"")+"> "+(c?"✓ ":"+ ")+esc(n)+(c?" <b>("+c.map(function(k){return rom(k)}).join(", ")+")</b>":"")+"</label>"}).join("")}
+function wChips(){wPT();$("wSub").innerHTML=WSUB.map(function(n){var c=wSC[n];return"<label class='wchip sc' data-so=\""+esc(n).replace(/"/g,"&quot;")+"\" style='--h:"+rHue(n)+"'><input type='checkbox' tabindex='-1'"+(c?" checked":"")+"> "+(c?"✓ ":"+ ")+esc(n)+(c?" <b>("+c.map(function(k){return rom(k)}).join(", ")+")</b>":"")+"</label>"}).join("");try{if($("gList")&&R&&R.W)wGapR()}catch(e){}}
 var wSC={},WEX=["Elimu ya Dini","Kujisomea/Maktaba","Klabu za Masomo","Uzalishaji Mali"];
 WSUB=WSUB.concat(["Maarifa ya Jamii","Uraia na Maadili","Stadi za Kazi"]);
 function wSubCls(so){return CLS.filter(function(c){return CUR[grpOf(c)].sb.some(function(x){return x[0]===so})})}
@@ -4828,9 +4828,9 @@ $("wdYes").onclick=function(){wVib(30);var sel=[].map.call($("wdB").querySelecto
 $("wdRm").onclick=function(){delete wSC[wdSo];$("wdlg").close();wChips()};
 $("wdNo").onclick=function(){$("wdlg").close()};
 $("wdlg").addEventListener("click",function(e){if(e.target===this)this.close()});
-function wGap(){return CLS.map(function(c){var sb=CUR[grpOf(c)].sb.map(function(x){return x[0]}).filter(function(n){return WEX.indexOf(n)<0}),m=R.M[c]||{},tt={};Object.keys(m).forEach(function(k){if(m[k].t&&m[k].s)tt[m[k].s]=1});
- var miss=sb.filter(function(so){return!tt[so]&&!R.W.some(function(w){return wTeaches(w,c,so)})});return{c:c,tot:sb.length,miss:miss,all:sb}})}
-function wGapR(){var g=wGap(),m=0;
+function wGap(live){var ws=R.W.slice();if(live){var pn={sc:wSC};if(wEd>=0&&R.W[wEd])ws[wEd]=pn;else if(Object.keys(wSC).length)ws.push(pn)}return CLS.map(function(c){var sb=CUR[grpOf(c)].sb.map(function(x){return x[0]}).filter(function(n){return WEX.indexOf(n)<0}),m=R.M[c]||{},tt={};Object.keys(m).forEach(function(k){if(m[k].t&&m[k].s)tt[m[k].s]=1});
+ var miss=sb.filter(function(so){return!tt[so]&&!ws.some(function(w){return wTeaches(w,c,so)})});return{c:c,tot:sb.length,miss:miss,all:sb}})}
+function wGapR(){var g=wGap(true),m=0;
  $("gList").innerHTML=g.map(function(x){m+=x.miss.length;var ok=x.tot-x.miss.length,pc=Math.round(ok/x.tot*100);
   return"<div class='gp'><h3><span>"+rom(x.c)+"</span><small>"+ok+"/"+x.tot+" yana mwalimu</small></h3><div class='gdots' aria-hidden='true'>"+x.all.map(function(so){var h=x.miss.indexOf(so)<0;return "<i class='"+(h?"ok":"no")+"' title=\""+esc(so).replace(/"/g,"&quot;")+"\"></i>"}).join("")+"</div><div class='gbar"+(pc<50?" low":"")+"'><i style='width:"+pc+"%'></i></div>"+(x.miss.length?"<div class='gmiss'>"+x.miss.map(function(so){return"<button type='button' data-gs=\""+esc(so).replace(/"/g,"&quot;")+"\" data-gc='"+x.c+"'>"+esc(so)+"</button>"}).join("")+"</div>":"<p class='gok'>Masomo yote yana walimu &#10003;</p>")+"</div>"}).join("");
  $("gCard").className="card noprint "+(m?"gw":"gd");$("gTot").textContent=m?"Masomo "+m+" bado hayana mwalimu kwenye madarasa yote.":"Masomo yote ya madarasa yote yana walimu."}
