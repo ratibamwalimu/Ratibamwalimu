@@ -456,6 +456,46 @@ ol.how{margin:0 0 12px;padding-left:22px;color:var(--mut);font-size:calc(14px*va
 .rxe select{width:auto;flex:0 1 110px}
 #rxErr{margin:8px 0 0;color:var(--dng);font-weight:600;font-size:calc(13.5px*var(--fs,1))}
 #rxErr:empty{display:none}
+#rzErr{margin:8px 0 0;color:var(--dng);font-weight:600;font-size:calc(13.5px*var(--fs,1))}#rzErr:empty{display:none}
+.rzd{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}.rzrp+.rzd{margin-top:0;padding-top:0;border-top:0}
+.rzdn{font-size:calc(16px*var(--fs,1))}.rzd>small{display:block;color:var(--mut);margin-bottom:4px}
+.rzl{display:block;margin-top:8px;font-weight:700;font-size:calc(13.5px*var(--fs,1))}
+.rzh{display:flex;align-items:center;gap:4px}.rzh select{flex:1 1 0;min-width:0}.rzh input[type=text]{flex:0 0 52px;width:52px;text-align:center}dialog.md.sm#rzdlg{width:min(560px,calc(96*var(--vw,1vw)))}
+#rSet>h2{margin:0 0 12px;padding:12px 14px;border-radius:14px;text-align:center;font-weight:800;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#0F766E,#2563EB);box-shadow:0 6px 16px -8px rgba(15,118,110,.6);font-size:calc(17px*var(--fs,1));line-height:1.25}
+#rSet>h2 #rSetN{display:block;margin-top:3px;font-size:calc(15px*var(--fs,1));font-weight:800;font-style:italic;color:#FFD966;word-break:break-word}
+#rSet>h2 #rSetN[hidden]{display:none}
+#rSet{border:6px solid #FFD966;border-radius:18px}
+#rzdlg .rzw{margin:6px 0 0;padding:8px 10px;border:1px solid var(--rxr);border-left:4px solid var(--rxr);border-radius:10px;background:var(--bg);color:var(--rxr);font-size:calc(13px*var(--fs,1))}
+#rzdlg .rzh select.rzmn{flex:0 0 78px;width:78px}
+#rzdlg .md-body{padding:14px 14px}
+#rzdlg .rzrp{border-left:4px solid var(--rxh);background:var(--bg);cursor:pointer}
+#rzdlg .rzrp .rk{font-weight:800;font-style:italic;color:var(--rxh)}
+#rzdlg .rzrp .rb{font-weight:800;font-style:italic;color:var(--rxk)}
+#rzdlg .rzrp small{display:block;margin-top:3px;font-size:12px;font-weight:500;color:var(--mut)}
+
+#rzIntro{margin:0 0 10px;font-size:13px;line-height:1.55;color:var(--ink)}
+#rzIntro .zk{font-weight:800;font-style:italic;color:var(--rxk)}
+#rzIntro .zb{font-weight:800;font-style:italic;color:var(--rxb)}
+#rzIntro .zh{font-weight:800;font-style:italic;color:var(--rxh)}
+#rzIntro .zc{margin:8px 0 0;padding:9px 11px;border:1px solid var(--line);border-left:4px solid var(--rxk);border-radius:10px;background:var(--bg)}
+#rzIntro .zc.a{border-left-color:var(--rxb)}
+#rzIntro .zc.s{border-left-color:var(--rxh)}
+#rzIntro .zc.n{border-left-color:var(--rxr)}
+#rzIntro .zc>b.t{display:block;margin-bottom:3px;font-size:13px}
+#rzIntro .zc small{display:block;margin-top:3px;font-size:12px;color:var(--mut)}
+
+#rzdlg .rzt{gap:10px}
+#rzdlg .rzh input.rzro{flex:1 1 0;min-width:0;width:auto;padding-left:8px;padding-right:8px;text-overflow:clip;white-space:nowrap}
+#rzdlg .rzh select{padding-left:8px;padding-right:22px}
+.rzro{background:var(--line)!important;color:var(--mut)!important;font-weight:700;text-align:center}#rTbl .rkn .ozv{font-size:inherit;display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;line-height:1.2}
+.rzrp{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-weight:700}.rzrp input{width:24px;height:24px;flex:none;margin:0}
+.rzd[hidden]{display:none}
+#rzdlg [hidden]{display:none!important}
+.rzt{display:flex;gap:8px;margin-top:4px}.rzt label{flex:1;margin:0}
+#rTbl .rkn td.ozc{text-transform:uppercase;letter-spacing:1px;font-size:calc(20px*var(--fs,1))!important;font-weight:800;line-height:1.2;text-align:center;vertical-align:middle;padding:6px 6px;min-width:92px;overflow-wrap:break-word;background:rgba(37,99,235,.07)}
+#rTbl .rkn td.ozc small{text-transform:none;letter-spacing:0;display:block;font-weight:600;font-size:.82em;margin-top:2px;white-space:nowrap}
+#rPrev #rTbl .rkn td.ozc{font-size:14px!important;padding:3px 4px;min-width:0}
+@media print{#rTbl .rkn td.ozc{font-size:13px!important;padding:1px 2px!important;min-width:0!important}}
 .ckok{margin:0;color:#15803d;font-weight:700}
 .ckbad{margin:0 0 6px;color:var(--dng);font-weight:700}
 .ckwr{margin:10px 0 6px;color:#9a6a00;font-weight:700}
@@ -1636,7 +1676,8 @@ html body main#v-nyumbani.view div.acts .act-card .md-ico svg{width:20px!importa
 html body main#v-nyumbani.view div.acts .act-card b{font-size:calc(17px*var(--fs,1))!important;line-height:1.2!important}
 html body main#v-nyumbani.view div.acts .act-card span:not(.md-ico){font-size:calc(13px*var(--fs,1))!important;line-height:1.3!important;display:block!important;overflow:visible!important}
 html body main#v-nyumbani.view.rm-fit>div.acts{flex:0 0 auto!important;height:auto!important;grid-template-rows:auto auto!important;grid-auto-rows:auto!important}
-html body main#v-nyumbani.view.rm-fit>.rw-hero{flex:1 1 0!important;min-height:0!important}
+html body main#v-nyumbani.view.rm-fit>.rw-hero{flex:1 0 auto!important;min-height:clamp(200px,58vw,280px)!important}
+html body main#v-nyumbani.view.rm-fit.on{overflow-y:auto!important;-webkit-overflow-scrolling:touch}
 }
 @media screen and (max-width:599px) and (max-height:640px){
 html body main#v-nyumbani.view div.acts .act-card{display:grid!important;grid-template-columns:28px minmax(0,1fr)!important;grid-template-rows:auto 1fr!important;column-gap:7px!important;align-content:start!important;padding:8px 9px!important}
@@ -1645,6 +1686,14 @@ html body main#v-nyumbani.view div.acts .act-card b{grid-column:2;grid-row:1;ali
 html body main#v-nyumbani.view div.acts .act-card span:not(.md-ico){grid-column:1/-1;grid-row:2}
 html body main#v-nyumbani.view div.acts .act-card::after{display:none!important}
 }
+</style>
+<style id="rm-rset-soft">
+/* Mipangilio ya ratiba kuu: vijumba vina ufito laini unaovizunguka */
+#rSet .grid>div>input,#rSet .grid>div>select{border:1.5px solid #93B4F5!important;border-radius:12px!important;box-shadow:0 0 0 3px rgba(59,130,246,.10),0 1px 2px rgba(15,23,42,.06)!important;transition:border-color .15s,box-shadow .15s}
+#rSet .grid>div>input:focus,#rSet .grid>div>select:focus{border-color:#2563EB!important;box-shadow:0 0 0 4px rgba(37,99,235,.20)!important;outline:none}
+#rSet .grid>div>input[readonly]{background:rgba(147,180,245,.10)!important}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #rSet .grid>div>input,:root:not([data-theme="light"]) #rSet .grid>div>select{border-color:#4F6FB8!important;box-shadow:0 0 0 3px rgba(96,140,255,.14)!important}}
+:root[data-theme="dark"] #rSet .grid>div>input,:root[data-theme="dark"] #rSet .grid>div>select{border-color:#4F6FB8!important;box-shadow:0 0 0 3px rgba(96,140,255,.14)!important}
 </style>
 </head>
 <body>
@@ -1767,7 +1816,7 @@ html body main#v-nyumbani.view div.acts .act-card::after{display:none!important}
   <p style="margin:0 0 8px;font-weight:700">Unapaswa kufanya nini kwenye hatua hii:</p>
   <ol class="how"><li><span><b>Hakiki mipangilio</b> hapa chini: jina la shule, mwaka, muhula, muda wa kuanza, dakika za kipindi, mapumziko na chakula.</span></li><li><span><b>Hakiki masomo na vipindi kwa wiki</b> vya kila darasa (vinafuata mtaala).</span></li><li><span>Bonyeza <b>Tengeneza ratiba</b>. Walimu wanajazwa wenyewe kulingana na masomo na madarasa uliyosajili; soma <b>ukaguzi</b> kuona kama kuna mwalimu anayegongana.</span></li><li><span>Chagua kuona <b>Ratiba kuu</b>, <b>ratiba ya darasa</b> au <b>ratiba ya mwalimu</b>. Bonyeza kiboksi cha kipindi kubadilisha somo lake.</span></li><li><span>Ukiridhika, bonyeza <b>Chapisha / PDF</b> (au <b>Pakua Excel</b>).</span></li></ol>
   <button type="button" class="sec" id="rBack">&larr; Rudi hatua ya 2 (Walimu)</button></section>
- <section class="card noprint" id="rSet"><h2>Mipangilio ya ratiba kuu</h2>
+ <section class="card noprint" id="rSet"><h2>Mipangilio ya ratiba kuu<span id="rSetN" hidden></span></h2>
   <div class="grid" style="margin-top:10px"><div><label for="rShule">Jina la shule</label><input id="rShule" autocomplete="off"></div><div><label for="rMwaka">Mwaka</label><select id="rMwaka"><option value="">Chagua...</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select></div><div><label for="rMuhula">Muhula</label><select id="rMuhula"><option value="Muhula wa I">Muhula wa I</option><option value="Muhula wa II">Muhula wa II</option><option value="Muhula wa I na II">Muhula wa I na II</option></select></div></div>
   <div class="grid" id="rForm" style="margin-top:10px"></div>
   <details id="rSubDet" class="rsd"><summary class="rsd-s"><span class="rsd-t"><b>Masomo na vipindi kwa wiki</b><small>(vinafuata mtaala wa darasa husika)</small></span><span class="rsd-w" id="rSubWarn" hidden>&#9888;</span><span class="rsd-h"><i class="o">Tafadhari Angalia</i><i class="c">Funga</i><em aria-hidden="true"></em></span></summary>
@@ -1775,7 +1824,9 @@ html body main#v-nyumbani.view div.acts .act-card::after{display:none!important}
   <div class="dini" id="rDini"><span class="dot" aria-hidden="true"></span><label class="dsw"><input type="checkbox" id="rDiniOn"> <span><b>Elimu ya Dini kipindi kimoja kwa madarasa yote</b><br><small>Imezimwa = mfumo unachagua wenyewe (random). Imewashwa = madarasa yote yanafundishwa Dini siku moja na kipindi kimoja.</small></span></label>
   <div id="rDiniBox" hidden><span id="rDiniSum" style="font-weight:700"></span> <button class="warn" type="button" id="rDiniEdit" style="margin-left:6px;padding:4px 10px;min-height:0">Badilisha</button><div hidden><label for="rDiniP" style="display:inline">Kipindi cha:</label> <input type="number" id="rDiniP" min="1" max="12" value="4" style="width:80px;display:inline-block">
    <label for="rDiniD" style="display:inline;margin-left:10px">Siku:</label> <select id="rDiniD" style="width:auto;display:inline-block"><option value="-1">Mfumo uchague</option><option value="0">Jumatatu</option><option value="1">Jumanne</option><option value="2">Jumatano</option><option value="3">Alhamisi</option><option value="4">Ijumaa</option></select></div></div></div>
+  <div class="rex" id="rSd0" style="border:2px solid var(--rxk);border-radius:14px;padding:12px 14px"><b class="rxh" style="font-size:calc(17px*var(--fs,1))">Mbadala: shule zenye vipindi 6 siku moja</b><br><b class="rxk b">Siku yoyote, ikiwemo Ijumaa</b><br><small>Vipindi vya mtaala havibadiliki (jumla ni ile ile). Chagua <b class="rxk">siku moja</b> ambayo <b class="rxk b">madarasa yote</b> yanaishia <b class="rxk">kipindi cha 6</b>; siku nyingine zinabaki na vipindi vyote.</small><div style="margin-top:8px"><label for="rSdSel" style="display:inline">Siku yenye vipindi 6:</label> <select id="rSdSel" style="width:auto;display:inline-block"><option value="-1">Hakuna (kawaida)</option><option value="0">Jumatatu</option><option value="1">Jumanne</option><option value="2">Jumatano</option><option value="3">Alhamisi</option><option value="4">Ijumaa</option></select></div><div id="rSdL"></div></div>
   <div class="rex" id="rEx0"><b class="rxh">Kipindi cha michezo</b><br><small>Kiweke kwenye <b class="rxk">nafasi wazi</b>: <b class="rxk b">kipindi kimoja au viwili</b>, kwa <b class="rxk">madarasa yote muda mmoja</b> au <b class="rxk b">kila darasa na muda wake</b>.</small><div id="rExL"></div><button class="info" type="button" id="rExAdd" style="margin-top:8px">+ Ongeza kipindi cha michezo</button></div>
+  <div class="rex" id="rOz0"><b class="rxh">Shughuli za Mwanzo na Mwisho wa siku</b><br><small>Ongeza shughuli <b class="rxk">kabla ya vipindi</b> (mf. Usafi na Gwaride) na <b class="rxk b">baada ya vipindi</b> (mf. Usafi na Gwaride). Hazigusi ratiba ya mtaala; zinaonekana nje ya vipindi, mwanzoni na mwishoni mwa ratiba.</small><div id="rOzL"></div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><button class="info" type="button" id="rOzAdd">+ Ongeza Mwanzo / Mwisho</button><button class="dng" type="button" id="rOzDel" hidden>Futa zote</button></div></div>
   <div class="bar" style="margin-top:0;margin-bottom:12px"></div>
   <div class="bar"><button class="acc" id="rGen" type="button">Tengeneza ratiba</button><button class="info" id="rPrint" type="button">Chapisha / PDF</button><button class="info" id="rXls" type="button">Pakua Excel</button><button class="dng" id="rClr" type="button">Futa vipindi</button></div>
   <p style="margin:10px 0 0;color:var(--mut);font-size:13px">Kwenye Ratiba kuu, gusa kisanduku kuweka somo na mwalimu. Ratiba ya darasa na ya mwalimu hutokana na ratiba kuu.</p></section>
@@ -2063,6 +2114,14 @@ main#v-mipangilio.view.on>#rwGuide{order:3;grid-column:1/-1!important}
   <p id="rxErr" role="alert"></p>
  </div>
  <div class="md-foot"><button class="sec" id="rxNo" type="button">Ghairi</button><button id="rxYes" type="button">Hifadhi</button></div>
+</div></dialog>
+<dialog id="rzdlg" class="md sm" aria-labelledby="rzT"><div class="md-card">
+ <div class="md-head"><h2 id="rzT">Mwanzo na Mwisho wa siku</h2></div>
+ <div class="md-body">
+  <div id="rzIntro"></div>
+  <div id="rzB"></div><p id="rzErr" role="alert"></p>
+ </div>
+ <div class="md-foot"><button class="sec" id="rzNo" type="button">Ghairi</button><button id="rzYes" type="button">Hifadhi</button></div>
 </div></dialog>
 <dialog id="wdec" class="md sm" aria-labelledby="wdecT" aria-describedby="wdecM"><div class="md-card">
  <div class="cf-body"><span class="md-ico" id="wdecI" aria-hidden="true"></span><h2 id="wdecT">Darasa lina mwalimu</h2><p id="wdecM"></p></div>
@@ -3995,7 +4054,7 @@ function rFreeTxt(k,nfree){
  return "Vipindi 2 vilivyo wazi: Kifaransa/Kiarabu (somo la kuchagua) 2."}
 function rTotR(){
  var el=$("rTot"),bad=false,GR=[["34","III\u2013IV"],["56","V\u2013VI"],["7","VII"]];
- var tx=GR.map(function(g){var c=CUR[g[0]],t=c.sb.reduce(function(a,x){return a+x[1]},0),cap=5*c.n-(c.fri?c.n-c.fri:0);
+ var tx=GR.map(function(g){var c=CUR[g[0]],t=c.sb.reduce(function(a,x){return a+x[1]},0),cap=rCapG(g[0],c.n);
   if(t>cap){bad=true;return g[1]+": jumla "+t+" kwa wiki, lakini nafasi ni "+cap+" (vipindi "+(t-cap)+" havitaingia)."}
   return g[1]+": jumla "+t+" kwa wiki (nafasi "+cap+")"+(t<cap?", "+(cap-t)+" vitabaki wazi.":".")+"\n"+(t<cap?rFreeTxt(g[0],cap-t):"")});
  el.className="rtot"+(bad?" bad":"");var sw=$("rSubWarn");if(sw)sw.hidden=!bad;
@@ -4054,8 +4113,12 @@ if(!R.str)R.str={};
 if(R.cfg===undefined)R.cfg=(R.W.length>0||Object.keys(R.M||{}).length>0);
 setCLS();
 function grpOf(c){c=baseOf(c);return(c==="La Tatu"||c==="La Nne")?"34":c==="La Saba"?"7":"56"}
-function rOff(c,d,p){var f=CUR[grpOf(c)].fri;return !!(d===4&&f&&p>f&&!(R.M&&R.M[c]&&R.M[c][d+"_"+p]))}
-function rOffK(c,k){var f=CUR[grpOf(c)].fri,q=k.split("_");return !!(+q[0]===4&&f&&+q[1]>f)}
+function rLastG(g,d,n){var c=CUR[g],v,s;n=n||+R.n||c.n;v=n;var alt=R.sd&&Object.keys(R.sd).some(function(x){return+R.sd[x]>0});if(d===4&&c.fri&&!alt)v=Math.min(v,c.fri);s=R.sd?+R.sd[d]:0;if(s>0)v=Math.min(v,s);return v}
+function rLast(c,d){return rLastG(grpOf(c),d)}
+function rCapG(g,n){var t=0,d;for(d=0;d<5;d++)t+=rLastG(g,d,n);return t}
+function rCapAll(){var t=0;CLS.forEach(function(c){t=Math.max(t,rCapG(grpOf(c)))});return t}
+function rOff(c,d,p){return !!(p>rLast(c,d)&&!(R.M&&R.M[c]&&R.M[c][d+"_"+p]))}
+function rOffK(c,k){var q=k.split("_");return !!(+q[1]>rLast(c,+q[0]))}
 function rCell(c,d,p){var m=R.M[c];return m&&m[d+"_"+p]||null}
 function rTchs(){var o={};(R.W||[]).forEach(function(w){o[w.n]=1});CLS.forEach(function(c){var m=R.M[c]||{};Object.keys(m).forEach(function(k){if(m[k].t)o[m[k].t]=1})});return Object.keys(o).sort()}
 var HUE={"Kiswahili":215,"English":145,"Hisabati":36,"Sayansi":275,"Jiografia na Mazingira":2,"Historia ya Tanzania na Maadili":168,"Sanaa na Michezo":335,"Elimu ya Dini":18,"Kujisomea/Maktaba":190},RU={};
@@ -4079,25 +4142,27 @@ function ratR(){
  $("rSn").textContent=sch||"JINA LA SHULE";$("rPrev").setAttribute("data-sch",sch);
  $("rMeta").innerHTML=esc("Mwaka wa Masomo: "+(R.yr||i.mwaka||"________")+(MU?" \u00b7 "+MU:""))+(rMode==="m"?"<br>"+esc("Mwalimu: "+(tch||"________")):"");
  $("rH1").textContent=rMode==="k"?"RATIBA KUU YA SHULE \u2014 MASTER TIMETABLE (MADARASA YOTE)":rMode==="c"?"RATIBA YA DARASA: "+rom(cls).toUpperCase():"RATIBA YA MWALIMU: "+(tch||"________").toUpperCase();
- var NC=items.length+1;
+ var oz=rzUse(),NC=items.length+1+(oz.b?1:0)+(oz.a?1:0);
  function tm(x){return hm(x.s)+" \u2013 "+hm(x.e)}
  function thc(x){return x.b?"<th class='bk'>"+mF(x.b+"<small>"+tm(x)+"</small>",x.b==="MAPUMZIKO"?"Map.":"Chak.")+"</th>":"<th>"+mF(hm(x.s)+"-"+hm(x.e),hm(x.s)+"<br>"+hm(x.e))+"</th>"}
  function bkc(x){return "<td class='bkc'>"+mF(x.b+"<small>"+tm(x)+"</small>","<i class='vt2'>"+x.b+"</i>")+"</td>"}
- h="<table class='rt rkn'><thead><tr><th class='fc'>"+(rMode==="k"?"DARASA / SIKU":"SIKU")+"</th>"+items.map(thc).join("")+"</tr></thead><tbody>";
+ h="<table class='rt rkn'><thead><tr><th class='fc'>"+(rMode==="k"?"DARASA / SIKU":"SIKU")+"</th>"+rzTh(oz,"b")+items.map(thc).join("")+rzTh(oz,"a")+"</tr></thead><tbody>";
  if(rMode==="k"){
   RD.forEach(function(dn,d){
    h+="<tr class='dayr'><td colspan='"+NC+"'><span class='dsp'>"+dn+"</span></td></tr>";
-   CLS.forEach(function(c){
+   CLS.forEach(function(c,ci){
     h+="<tr><td class='k n'><b>"+mF(esc(rom(c).replace(/^DRS/,"Darasa")),esc(rom(c).replace(/^DRS\s*/,"")))+"</b></td>";
+    h+=rzCell(oz,"b",d,ci,CLS.length);
     items.forEach(function(x){
      if(x.b){h+=bkc(x);return}
      if(rOff(c,d,x.p)){h+="<td class='rc off'>&mdash;</td>";return}
      var v=rCell(c,d,x.p),t=v&&v.s?mF(esc(v.s).replace("/","/<wbr>"),esc(sAb(v.s)))+"<br><small class='tn"+(v.t?"":" no")+"'>"+(v.t?mF(esc(wShort(v.t)),esc(wSur(v.t))):mF("halina mwalimu","!"))+"</small>":rCellH(v);
      h+="<td class='rc'><button type='button' class='cell"+(t?"":" e")+rSc(v&&v.s)+"' data-c='"+c+"' data-d='"+d+"' data-p='"+x.p+"'>"+(t||"+")+"</button></td>"});
-    h+="</tr>"})})
+    h+=rzCell(oz,"a",d,ci,CLS.length);h+="</tr>"})})
  }else{
   RD.forEach(function(dn,d){
    h+="<tr><td class='k n dk'><b>"+mF(dn,DAB[d]||dn.slice(0,3))+"</b></td>";
+   h+=rzCell(oz,"b",d,0,1);
    items.forEach(function(x){
     if(x.b){h+=bkc(x);return}
     if(rMode==="c"){
@@ -4106,14 +4171,14 @@ function ratR(){
     var t="",f="";
     if(tch)CLS.forEach(function(c){if(rOff(c,d,x.p))return;var v=rCell(c,d,x.p);if(v&&v.t===tch){t+=(t?"<br>":"")+"<b>"+esc(rom(c))+"</b>"+(v.s?"<br><small class='tn'>"+mF(esc(v.s).replace("/","/<wbr>"),esc(sAb(v.s)))+"</small>":"");f=f||v.s}});
     h+="<td class='cc"+(f?" scd"+rSc(f):"")+"'>"+t+"</td>"});
-   h+="</tr>"})
+   h+=rzCell(oz,"a",d,0,1);h+="</tr>"})
  }
  var dt=new Date();$("rFoot").innerHTML="<span><span>Tarehe</span>: "+dt.getDate()+"/"+(dt.getMonth()+1)+"/"+dt.getFullYear()+"</span><span>Sahihi ya Mtaaluma: ______________________</span><span>Sahihi ya Mkuu wa Shule: ______________________</span>";
  var lg=Object.keys(RU).sort().map(function(n){return"<span class='lgd sc"+"' style='--h:"+rHue(n)+"'><b class='mab'>"+esc(sAb(n))+"</b> "+esc(n)+"</span>"}).join("");
  var tl={};if(rMode!=="m")CLS.forEach(function(c){if(rMode==="c"&&c!==cls)return;RD.forEach(function(dn,d){items.forEach(function(x){if(x.b)return;var v=rCell(c,d,x.p);if(v&&v.t)tl[v.t]=1})})});
  var tlg=Object.keys(tl).sort().map(function(n){return"<span class='tli'><b>"+esc(wShort(n))+"</b> = "+esc(n.replace(/^mwl\.?\s*/i,""))+"</span>"}).join("");
  $("rTbl").innerHTML=h+"</tbody></table>"+(lg?"<div class='lg'>"+lg+"</div>":"")+(tlg?"<div class='tlg'><div class='tlh'>Majina kamili ya walimu</div><div class='tll'>"+tlg+"</div></div>":"");
- rChkR();rExR();rTotR();
+ rChkR();rExR();try{rSdR()}catch(e){}try{rzR()}catch(e){}rTotR();
  try{var nr=rMode==="k"?(CLS.length+1)*RD.length:0;$("rPrev").style.setProperty("--rz",nr>31?String(Math.max(.45,Math.round(31/nr*100)/100)):"1")}catch(e){}
 }
 $("rModes").addEventListener("click",function(e){var b=e.target.closest("[data-m]");if(!b)return;rMode=b.getAttribute("data-m");ratR()});
@@ -4243,10 +4308,129 @@ function rExDel(e){CLS.forEach(function(c){var m=(R.M||{})[c];((e.at&&e.at[c])||
  R.ex=(R.ex||[]).filter(function(x){return x!==e});rsave();ratR();note("Kipindi cha michezo kimeondolewa. Nafasi zake ziko wazi.")}
 $("rExL").addEventListener("click",function(ev){var b=ev.target.closest("[data-xdel]");if(!b)return;var e=(R.ex||[])[+b.getAttribute("data-xdel")];if(!e)return;
  ask({title:"Futa kipindi cha michezo?",msg:"Michezo itaondolewa kwenye ratiba na nafasi zake zitakuwa wazi.",ok:"Futa",danger:1},function(){rExDel(e)})});
+
+
+/* ===== Mbadala: siku moja yenye vipindi 6 kwa madarasa yote ===== */
+function rSdR(){var el=$("rSdSel");if(!el)return;var sd=R.sd||{},k=Object.keys(sd).filter(function(d){return +sd[d]>0});el.value=k.length?k[0]:"-1";$("rSdL").innerHTML=k.length?"<p class='rxf'>"+RD[+k[0]]+rzE(": madarasa yote yanaisha kipindi cha ",": all classes end at period ")+sd[k[0]]+rzE(". Bonyeza <b>Tengeneza ratiba</b> kupanga upya.",". Press <b>Generate timetable</b> to rearrange.")+"</p>":""}
+$("rSdSel").onchange=function(){var d=+this.value;R.sd=d>=0?(function(o){o[d]=Math.min(6,(+R.n||8)-1);return o})({}):{};rsave();ratR();
+ note(d>=0?RD[d]+rzE(" itakuwa na vipindi 6 kwa madarasa yote. Bonyeza Tengeneza ratiba."," will have 6 periods for all classes. Press Generate timetable."):rzE("Siku zote zitakuwa na vipindi vyote. Bonyeza Tengeneza ratiba.","All days will have all periods. Press Generate timetable."))};
+
+/* ===== Shughuli za Mwanzo (kabla ya vipindi) na Mwisho (baada ya vipindi) kwa kila siku; hazigusi mtaala ===== */
+function rzE(sw,en){return document.documentElement.lang==="en"?en:sw}
+function rzM(s){var q=/^(\d{1,2}):(\d{2})$/.exec(String(s||""));return q?(+q[1])*60+(+q[2]):null}
+function rzUse(){var o={b:false,a:false};(R.oz||[]).forEach(function(x){if(x&&x.b)o.b=true;if(x&&x.a)o.a=true});return o}
+function rzUni(k){var sp=rzSpan(),a=(R.oz||[]).map(function(x){return x&&x[k]}).filter(Boolean);if(!a.length)return null;
+ var s0=k==="a"?hm(sp[1]):a[0].s,e0=a[0].e;for(var i=1;i<a.length;i++){if((k==="a"?hm(sp[1]):a[i].s)!==s0||a[i].e!==e0)return null}return[s0,e0]}
+function rzTh(oz,k){if(!oz[k])return"";var u=rzUni(k);
+ return"<th class='oz'>"+(u?mF(u[0]+"-"+u[1],u[0]+"<br>"+u[1]):(k==="b"?rzE("MWANZO","START"):rzE("MWISHO","END")))+"</th>"}
+function rzCell(oz,k,d,ci,n){if(!oz[k]||ci>0)return"";var x=(R.oz||[])[d],v=x&&x[k],u=rzUni(k),nm,tm="";
+ if(!v)return"<td class='ozc' rowspan='"+n+"'>&mdash;</td>";
+ nm=esc(v.n);if(n>1)nm="<span class='ozv'>"+nm+"</span>";
+ if(!u)tm="<small>"+esc(k==="a"?hm(rzSpan()[1]):v.s)+" \u2013 "+esc(v.e)+"</small>";
+ return"<td class='ozc' rowspan='"+n+"'><b>"+nm+"</b>"+tm+"</td>"}
+function rzSpan(){var it=ratItems();return it.length?[it[0].s,it[it.length-1].e]:[480,480]}
+function rzR(){var el=$("rOzL");if(!el)return;
+ var h=RD.map(function(dn,d){var x=(R.oz||[])[d]||{},p=[];
+  if(x.b)p.push(rzE("Mwanzo","Start")+": <b>"+esc(x.b.n)+"</b> "+esc(x.b.s)+"\u2013"+esc(x.b.e));
+  if(x.a)p.push(rzE("Mwisho","End")+": <b>"+esc(x.a.n)+"</b> "+hm(rzSpan()[1])+"\u2013"+esc(x.a.e));
+  return p.length?"<div class='rxi'><b>"+dn+"</b><span class='rxs'>"+p.join(" \u00b7 ")+"</span></div>":""}).join("");
+ el.innerHTML=h;var u=rzUse(),any=u.b||u.a;$("rOzDel").hidden=!any;$("rOzAdd").textContent=any?rzE("Hariri Mwanzo / Mwisho","Edit Start / End"):rzE("+ Ongeza Mwanzo / Mwisho","+ Add Start / End")}
+function rzLb(t){return hm(t)+" "+(t<720?rzE("asubuhi","morning"):t<960?rzE("mchana","afternoon"):rzE("jioni","evening"))}
+function rzOpt(k,r,cur,sp){var lo=k==="b"?420:sp[1],hi=k==="b"?sp[0]:990,a,z,o="<option value=''>\u2014</option>",t,seen={};
+ if(hi<lo)hi=lo;a=r==="s"?lo:Math.min(lo+5,hi);z=r==="s"?Math.max(hi-5,lo):hi;
+ for(t=a;t<=z;t+=5){seen[hm(t)]=1;o+="<option value='"+hm(t)+"'"+(hm(t)===cur?" selected":"")+">"+rzLb(t)+"</option>"}
+ if(!seen[hm(z)]&&r==="e"){seen[hm(z)]=1;o+="<option value='"+hm(z)+"'"+(hm(z)===cur?" selected":"")+">"+rzLb(z)+"</option>"}
+ if(cur&&!seen[cur])o+="<option value='"+esc(cur)+"' selected>"+esc(cur)+"</option>";
+ return o}
+function rzNm(id,cur){var P=["Usafi na Gwaride"],c=cur||"",sel=!c?"":P.indexOf(c)>=0?c:"__x",o="<option value=''>\u2014 "+rzE("Chagua shughuli","Choose activity")+" \u2014</option>"+P.map(function(x){return"<option value='"+x+"'"+(sel===x?" selected":"")+">"+rzE(x,"Cleaning and Parade")+"</option>"}).join("")+"<option value='__x'"+(sel==="__x"?" selected":"")+">"+rzE("Andika yako","Write your own")+"</option>";
+ return"<select data-rzn='"+id+"_n' aria-label='Shughuli'>"+o+"</select><input type='text' maxlength='40' autocomplete='off' placeholder='"+rzE("Andika shughuli yako","Write your activity")+"' data-rz='"+id+"_n' value=\""+esc(c).replace(/"/g,"&quot;")+"\""+(sel==="__x"?"":" hidden")+" style='margin-top:6px'><div class='rzw' data-rzw='"+id+"' hidden>\u26A0 <b><i>"+rzE("Jaza kwanza shughuli","Fill in the activity first")+"</i></b>"+rzE(", kisha weka saa.",", then set the time.")+"</div>"}
+document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribute)return;var id=t.getAttribute("data-rzn");if(id===null)return;
+ var inp=$("rzB").querySelector("[data-rz='"+id+"']");if(!inp)return;var v=t.value;
+ if(v==="__x"){inp.value="";inp.hidden=false;try{inp.focus()}catch(e){}}else{inp.value=v;inp.hidden=true}});
+function rzFix(id,cur){var q=/^(\d{1,2}):(\d{2})$/.exec(cur||""),mm=q&&+q[1]===7?q[2]:"",mo="<option value=''>"+rzE("dk","min")+"</option>",i;
+ for(i=0;i<60;i++){var x=(i<10?"0":"")+i;mo+="<option value='"+x+"'"+(x===mm?" selected":"")+">"+x+"</option>"}
+ return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa (imewekwa)' value='"+rzE("07 asubuhi","07 morning")+"'><b>:</b><select class='rzmn' data-rzm='"+id+"' aria-label='Dakika ya kuanza'>"+mo+"</select><input type='hidden' data-rzh='"+id+"' value='7'><input type='hidden' data-rz='"+id+"' value='07:"+mm+"'></div>"}
+function rzAuto(id,sp){return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Anza (huwekwa yenyewe)' value='"+rzLb(sp[1])+"'><input type='hidden' data-rz='"+id+"' value='"+hm(sp[1])+"'></div>"}
+function rzLim(k,sp){var lo=k==="b"?420:sp[1],hi=k==="b"?sp[0]:990;if(hi<lo)hi=lo;return[lo,hi]}
+function rzTm(id,k,cur,sp){var L=rzLim(k,sp),q=/^(\d{1,2}):(\d{2})$/.exec(cur||""),ch=q?+q[1]:-1,cm=q?q[2]:"",o="<option value=''>\u2014</option>",h,a=Math.floor(L[0]/60),z=Math.floor(L[1]/60);
+ if(ch>=0&&(ch<a||ch>z)){if(ch<a)a=ch;else z=ch}
+ for(h=a;h<=z;h++)o+="<option value='"+h+"'"+(h===ch?" selected":"")+">"+(h<10?"0":"")+h+" "+(h*60<720?rzE("asubuhi","morning"):h*60<960?rzE("mchana","afternoon"):rzE("jioni","evening"))+"</option>";
+ return"<div class='rzh'><select data-rzh='"+id+"' aria-label='Saa'>"+o+"</select><b>:</b><input type='text' inputmode='numeric' maxlength='2' autocomplete='off' placeholder='"+rzE("dk","min")+"' data-rzm='"+id+"' aria-label='Dakika' value='"+cm+"'><input type='hidden' data-rz='"+id+"' value='"+esc(cur||"")+"'></div>"}
+function rzSync(id,fin){var B=$("rzB"),hs=B.querySelector("[data-rzh='"+id+"']"),mi=B.querySelector("[data-rzm='"+id+"']"),hid=B.querySelector("[data-rz='"+id+"']"),k=id.split("_")[1];
+ if(!hs||!mi||!hid)return;if(hs.value===""){hid.value="";mi.value="";return}
+ var h=+hs.value,m=parseInt(mi.value,10);if(isNaN(m))m=fin?0:0;m=Math.max(0,Math.min(59,m));
+ if(fin){var L=rzLim(k,rzSpan()),ro=id.split("_")[2];if(ro==="e"){var sv=rzM((B.querySelector("[data-rz='"+id.slice(0,-1)+"s']")||{}).value);if(k==="b"&&sv!==null)L[0]=Math.max(L[0],sv+1);if(k==="a")L[0]=L[0]+1;if(L[1]<L[0])L[1]=L[0]}var t=Math.max(L[0],Math.min(L[1],h*60+m));m=Math.max(0,Math.min(59,t-h*60));mi.value=(m<10?"0":"")+m}
+ hid.value=hm(h*60+m);
+ if(fin&&k==="b"&&id.split("_")[2]==="s"){var ei=id.slice(0,-1)+"e",es=B.querySelector("[data-rzh='"+ei+"']");if(es&&es.value!=="")rzSync(ei,true)}}
+document.addEventListener("input",function(ev){var t=ev.target;if(!t.getAttribute)return;var id=t.getAttribute("data-rzm");if(id===null)return;t.value=t.value.replace(/\D/g,"").slice(0,2);rzSync(id,false)});
+document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribute)return;var id=t.getAttribute("data-rzh");if(id===null)id=t.getAttribute("data-rzm");if(id===null)return;rzSync(id,true)});
+(function(){var last=null;function sync(){var i=document.getElementById("rShule"),n=document.getElementById("rSetN");if(!i||!n)return;var v=(i.value||"").trim();if(v===last)return;last=v;n.textContent=v;n.hidden=!v}
+document.addEventListener("input",function(e){if(e.target&&e.target.id==="rShule")sync()});
+document.addEventListener("change",function(e){if(e.target&&e.target.id==="rShule")sync()});
+setInterval(sync,400);sync()})();
+(function(){function B(){return $("rzB")}
+function bs(t){var a=t.getAttribute("data-rzh");if(a===null)a=t.getAttribute("data-rzm");return a===null?null:a.split("_").slice(0,2).join("_")}
+function nmv(b){var i=B().querySelector("[data-rz='"+b+"_n']");return i?i.value.trim():""}
+function wn(b,on){var w=B().querySelector("[data-rzw='"+b+"']");if(w)w.hidden=!on}
+document.addEventListener("focusin",function(ev){var t=ev.target;if(!t.getAttribute||!B()||!B().contains(t))return;var b=bs(t);if(b===null)return;
+ if(!nmv(b)){wn(b,true);try{t.blur()}catch(e){}var sel=B().querySelector("[data-rzn='"+b+"_n']");if(sel){try{sel.focus();sel.scrollIntoView({block:"center"})}catch(e){}}return}
+ var id=t.getAttribute("data-rzh");if(id===null)id=t.getAttribute("data-rzm");var pp=id.split("_");
+ if(pp[1]==="b"&&pp[2]==="e"){var am=B().querySelector("select[data-rzm='"+b+"_s']");if(am&&!am.value){w2(b,true);try{t.blur()}catch(e){}try{am.focus();am.scrollIntoView({block:"center"})}catch(e){}}}});
+function w2(b,on){var w=B().querySelector("[data-rzw2='"+b+"']");if(w)w.hidden=!on}
+function chk(ev){var t=ev.target;if(!t.getAttribute||!B()||!B().contains(t))return;var a=t.getAttribute("data-rzn"),c=t.getAttribute("data-rz");var b=a!==null?a.replace(/_n$/,""):(c!==null&&/_n$/.test(c)?c.replace(/_n$/,""):null);if(b===null){var m=t.getAttribute("data-rzm");if(m&&/_b_s$/.test(m)&&t.value)w2(m.slice(0,-2),false);return}if(nmv(b))wn(b,false)}
+document.addEventListener("change",chk);document.addEventListener("input",chk)})();
+function rzSw(m){if(document.documentElement.lang==="en")return hm(m);var h=Math.floor(m/60)%24,mi=m%60,N=["","moja","mbili","tatu","nne","tano","sita","saba","nane","tisa","kumi","kumi na moja","kumi na mbili"],n=((h+5)%12)+1;
+ return"saa "+N[n]+(mi===0?" kamili":mi===30?" na nusu":" na dakika "+mi)+" ("+hm(m)+")"}
+function rzIntro(sp){var nm=(($("rShule")||{}).value||"").trim(),en=document.documentElement.lang==="en",
+ sc=en?(nm?"<span class='zh'>"+esc(nm)+"</span> school":"Your school"):(nm?"Shule ya <span class='zh'>"+esc(nm)+"</span>":"Shule yako"),
+ T=function(m,c){return"<span class='"+(c||"zh")+"'>"+rzSw(m)+"</span>"};
+ if(en)return"<div class='zc s'><b class='t'>School timetable</b>"+sc+" starts at "+T(sp[0])+" and periods end at "+T(sp[1])+".<small>Each day you can set two schedules outside the periods.</small></div>"
+ +"<div class='zc'><b class='t zk'>1. Start (before the periods)</b>From "+T(420,"zk")+" until "+T(sp[0],"zk")+" when periods begin.<small>Start is fixed at "+hm(420)+" (adjust minutes only). End by "+hm(sp[0])+".</small></div>"
+ +"<div class='zc a'><b class='t zb'>2. End (after the periods)</b>From "+T(sp[1],"zb")+" when the last period ends, then they go home.<small>Start is set automatically. Adjust End only; it must not go past "+T(990,"zb")+", which is the <span class='zb'>system limit</span>.</small></div>"
+ +"<div class='zc n'>Write the name, start time and end time as on the timetable. <span style='font-weight:800;font-style:italic;color:var(--rxr)'>If you leave Start or End empty, it will not appear on the timetable.</span></div>";
+ return"<div class='zc s'><b class='t'>Ratiba ya shule</b>"+sc+" inaanza "+T(sp[0])+" na vipindi vinaisha "+T(sp[1])+".<small>Kila siku unaweza kuweka ratiba mbili nje ya vipindi.</small></div>"
+ +"<div class='zc'><b class='t zk'>1. Mwanzo (kabla ya vipindi)</b>Kuanzia "+T(420,"zk")+" hadi "+T(sp[0],"zk")+" vipindi vinapoanza.<small>Anza huwekwa "+hm(420)+" (rekebisha dakika tu). Isha hadi "+hm(sp[0])+".</small></div>"
+ +"<div class='zc a'><b class='t zb'>2. Mwisho (baada ya vipindi)</b>Kuanzia "+T(sp[1],"zb")+" kipindi cha mwisho kinapoisha, kisha wanarudi nyumbani.<small>Anza huwekwa yenyewe. Rekebisha Isha tu; isizidi "+T(990,"zb")+", huo ndio <span class='zb'>ukomo wa mfumo</span>.</small></div>"
+ +"<div class='zc n'>Andika jina, saa ya kuanza na saa ya kuisha kama kwenye ratiba. <span style='font-weight:800;font-style:italic;color:var(--rxr)'>Ukiacha Mwanzo au Mwisho wazi, haitaonekana kwenye ratiba.</span></div>"}
+function rzOpen(){var sp=rzSpan(),G=[["b",rzE("Mwanzo (kabla ya vipindi)","Start (before the periods)"),""],["a",rzE("Mwisho (baada ya vipindi)","End (after the periods)"),""]];
+ $("rzB").innerHTML=RD.map(function(dn,d){var x=(R.oz||[])[d]||{};
+  return"<div class='rzd' data-rzd='"+d+"'><b class='rzdn'>"+dn+"</b><small>"+rzE("Vipindi","Periods")+": "+hm(sp[0])+" \u2013 "+hm(sp[1])+"</small>"+G.map(function(g){var v=x[g[0]]||{},id=d+"_"+g[0];
+   return"<span class='rzl'>"+g[1]+"</span>"+rzNm(id,v.n)+"<div class='rzt'><label>"+rzE("Anza","Start")+(g[0]==="a"?rzAuto(id+"_s",sp):g[0]==="b"?rzFix(id+"_s",v.s):rzTm(id+"_s",g[0],v.s,sp))+"</label><label>"+rzE("Isha","End")+rzTm(id+"_e",g[0],v.e,sp)+"</label></div>"+(g[0]==="b"?"<div class='rzw' data-rzw2='"+id+"' hidden>\u26A0 <b><i>"+rzE("Chagua kwanza dakika ya Anza","First choose the Start minutes")+"</i></b>"+rzE(", kisha jaza Isha saa na dakika.",", then fill in End hour and minutes.")+"</div>":"")}).join("")+"</div>"}).join("");
+ var same=function(){var j=function(x){return JSON.stringify([x&&x.b||null,x&&x.a||null])},o=R.oz||[],f=j(o[0]),i;for(i=1;i<5;i++)if(j(o[i])!==f)return false;return true};
+ $("rzB").insertAdjacentHTML("afterbegin","<label class='rzrp'><input type='checkbox' id='rzRep'><span><span class='rk'>"+rzE("Rudia kila siku","Repeat every day")+"</span> "+rzE("(Jumatatu hadi Ijumaa)","(Monday to Friday)")+"<small id='rzRepS'></small></span></label>");
+ $("rzRep").checked=same();rzRepApply(false);$("rzRep").onchange=function(){rzRepApply(true)};
+ $("rzIntro").innerHTML=rzIntro(sp);$("rzErr").textContent="";$("rzdlg").showModal()}
+function rzRepApply(fromUser){var on=$("rzRep").checked,B=$("rzB"),hs=$("rzRepS");
+ if(hs)hs.innerHTML=document.documentElement.lang==="en"?(on?"Ticked: <span class='rb'>fill in once only</span>, it applies to <span class='rb'>all five days</span>. If you untick, you fill in <span class='rk'>each day</span> yourself.":"Unticked: <span class='rk'>fill in each day</span> yourself (Monday to Friday). If you tick again, you fill in once only."):(on?"Tiki imewekwa tayari: <span class='rb'>jaza mara moja tu</span>, itatumika <span class='rb'>siku zote tano</span>. Ukiitoa tiki, utajaza <span class='rk'>kila siku</span> mwenyewe.":"Tiki imetolewa: <span class='rk'>jaza kila siku</span> mwenyewe (Jumatatu hadi Ijumaa). Ukiweka tiki tena, utajaza mara moja tu.");
+ [].forEach.call(B.querySelectorAll(".rzd"),function(e){var d=+e.getAttribute("data-rzd");if(d>0)e.hidden=on;else e.querySelector(".rzdn").textContent=on?rzE("Siku zote (Jumatatu \u2013 Ijumaa)","All days (Monday \u2013 Friday)"):RD[0]});
+ if(!on&&fromUser){[].forEach.call(B.querySelectorAll("[data-rz],[data-rzh],[data-rzm],[data-rzn]"),function(el){var at=el.hasAttribute("data-rz")?"data-rz":el.hasAttribute("data-rzh")?"data-rzh":el.hasAttribute("data-rzn")?"data-rzn":"data-rzm",id=el.getAttribute(at);if(id.charAt(0)!=="0")return;for(var d=1;d<5;d++){var t=B.querySelector("["+at+"='"+d+id.slice(1)+"']");if(t){t.value=el.value;if(at==="data-rz"&&/_n$/.test(id))t.hidden=el.hidden}}})}}
+function rzGather(){var sp=rzSpan(),out=[],er="";
+ RD.forEach(function(dn,d){if(er)return;if($("rzRep").checked&&d>0){out.push(JSON.parse(JSON.stringify(out[0]||{})));return}var o={};
+  ["b","a"].forEach(function(k){if(er)return;
+   var q=function(f){return $("rzB").querySelector("[data-rz='"+d+"_"+k+"_"+f+"']")},n=q("n").value.trim().replace(/\s+/g," "),s=k==="a"?"":(k==="b"&&!n&&!e?"":q("s").value),e=q("e").value,w=k==="b"?rzE("Mwanzo","Start"):rzE("Mwisho","End");
+   if(!n&&!s&&!e)return;
+   if(k==="a")s=hm(sp[1]);
+   if(!n){er=dn+" ("+w+"): "+rzE("andika jina.","write the name.");return}
+   var a=rzM(s),b=rzM(e);
+   if(a===null||b===null){er=dn+" ("+w+"): "+rzE("jaza saa ya kuanza na ya kuisha.","fill in the start and end time.");return}
+   if(b<=a){er=dn+" ("+w+"): "+rzE("saa ya kuisha lazima iwe baada ya ya kuanza.","the end time must be after the start time.");return}
+   if(k==="b"&&a<420){er=dn+" ("+w+"): "+rzE("inaanza saa 07:00 asubuhi au baadaye.","it starts at 07:00 in the morning or later.");return}
+   if(k==="a"&&b>990){er=dn+" ("+w+"): "+rzE("inaisha saa 16:30 jioni au kabla.","it ends at 16:30 in the evening or earlier.");return}
+   if(k==="b"&&b>sp[0]){er=dn+" ("+w+"): "+rzE("lazima iishe kabla ya vipindi kuanza (","it must end before the periods start (")+hm(sp[0])+").";return}
+   if(k==="a"&&a<sp[1]){er=dn+" ("+w+"): "+rzE("lazima ianze baada ya vipindi kuisha (","it must start after the periods end (")+hm(sp[1])+").";return}
+   o[k]={n:n,s:s,e:e}});
+  out.push(o)});
+ return{er:er,v:out}}
+$("rOzAdd").onclick=rzOpen;
+$("rzNo").onclick=function(){$("rzdlg").close()};
+$("rzYes").onclick=function(){var g=rzGather();if(g.er){$("rzErr").textContent=g.er;return}
+ if(!g.v.some(function(x){return x&&(x.b||x.a)})){$("rzErr").textContent=rzE("\u26A0 Hujajaza kitu. Jaza shughuli, saa ya kuanza na ya kuisha kwenye Mwanzo au Mwisho, kisha bonyeza Hifadhi.","\u26A0 You have not filled in anything. Fill in the activity, start and end time under Start or End, then press Save.");return}
+ R.oz=g.v;rsave();ratR();$("rzdlg").close();note(rzE("Mwanzo na Mwisho wa siku vimehifadhiwa.","Start and End of day saved."))};
+$("rOzDel").onclick=function(){ask({title:rzE("Futa Mwanzo na Mwisho?","Delete Start and End?"),msg:rzE("Shughuli zote za kabla na baada ya vipindi zitaondolewa kwenye ratiba.","All activities before and after the periods will be removed from the timetable."),ok:rzE("Futa","Delete"),danger:1},function(){R.oz=[];rsave();ratR()})};
 function rPlan(sb,n,fri){
  var g={},free=[],d,i,miss=0,a1=(+R.a1>0&&+R.a1<n)?+R.a1:Math.ceil(n/2),a2=(+R.a2>a1&&+R.a2<=n)?+R.a2:n;
  var PR=["Hisabati","English","Kiswahili"];
- for(d=0;d<5;d++){free[d]=[];for(i=1;i<=(d===4&&fri?fri:n);i++)free[d].push(i)}
+ for(d=0;d<5;d++){free[d]=[];for(i=1;i<=Math.min(n,(d===4&&fri?fri:n),(R.sd&&+R.sd[d]>0?+R.sd[d]:n));i++)free[d].push(i)}
  function rank(s){var k=PR.indexOf(s.n);return k>=0?k:(s.n==="Sayansi"?3:4)}
  var L=sb.filter(function(s){return s.n.trim()&&s.c>0}).sort(function(x,y){var a=rank(x),b=rank(y);return a!==b?a-b:y.c-x.c});
  function pen(nm,p){
@@ -4305,7 +4489,7 @@ function rPickAny(c,s,k,M){var all=R.W.filter(function(w){return wTeaches(w,c,s)
 function rSolve(){return rForce(rSolveX())}
 function rSolveX(){var best=null,lv,r,di=R.dini&&R.dini.on?Math.min(+R.dini.p||4,+R.n||8):0,days=di?[3,2,1,0,4]:[null],j,fx,ch=R.dini&&R.dini.d>=0&&R.dini.d<=4?+R.dini.d:-1;
  var mxl=0;CLS.forEach(function(c){CUR[grpOf(c)].sb.forEach(function(x){if(DBLP.indexOf(x[0])>=0&&x[1]>0)mxl=Math.max(mxl,Math.floor(x[1]/3))})});
- var okd=function(d){return d===null||CLS.every(function(c){var f=CUR[grpOf(c)].fri;return!(d===4&&f&&di>f)})};
+ var okd=function(d){return d===null||CLS.every(function(c){return di<=rLast(c,d)})};
  if(di&&ch>=0&&okd(ch))days=[ch];else days=days.filter(okd);
  for(j=0;j<days.length;j++){fx=days[j]===null?null:days[j]+"_"+di;
   for(lv=0;lv<=mxl;lv++){r=rSolveL(lv,fx);if(!best||r.miss<best.miss||(r.miss===best.miss&&r.adj<best.adj))best=r;if(!best.miss&&!best.adj)return best}}
@@ -4317,7 +4501,7 @@ function rSolveL(lv,FXK){
   if(nm==="Sayansi")return p===a1+1?0:(p>a1&&p<=a2)?1+(p-a1-1)*0.5:(p>a2?8+(p-a2):30);
   return p<=a1?12:0}
  function rank(sn){var k=PR.indexOf(sn);return k>=0?k:(sn==="Sayansi"?3:4)}
- function slots(c){var f=CUR[grpOf(c)].fri,o=[],d,p,rv=rExKeys(c);for(d=0;d<5;d++)for(p=1;p<=(d===4&&f?f:n);p++)if(!rv[d+"_"+p])o.push([d,p]);return o}
+ function slots(c){var o=[],d,p,rv=rExKeys(c);for(d=0;d<5;d++)for(p=1;p<=rLast(c,d);p++)if(!rv[d+"_"+p])o.push([d,p]);return o}
  CLS.forEach(function(c,ci){ci0[c]=ci;CUR[grpOf(c)].sb.forEach(function(x){
   if(x[0]==="Kiarabu/Kifaransa/Kichina"||!String(x[0]).trim()||!(x[1]>0))return;
   var cands=R.W.filter(function(w){return wTeaches(w,c,x[0])}).map(function(w){return w.n});
@@ -4379,7 +4563,7 @@ function rSolveL(lv,FXK){
    return false}
   unp.slice().forEach(function(l){if(tryPlace(l,3,{}))unp.splice(unp.indexOf(l),1)});
   var adj=0;CLS.forEach(function(c){var f=CUR[grpOf(c)].fri,m=M[c],d,p,u,v,lim;
-   for(d=0;d<5;d++){lim=(d===4&&f)?f:n;for(p=1;p<lim;p++){if(p===a1||p===a2)continue;u=m[d+"_"+p];v=m[d+"_"+(p+1)];if(u&&v&&u.s&&u.s===v.s)adj++}
+   for(d=0;d<5;d++){lim=rLast(c,d);for(p=1;p<lim;p++){if(p===a1||p===a2)continue;u=m[d+"_"+p];v=m[d+"_"+(p+1)];if(u&&v&&u.s&&u.s===v.s)adj++}
    if(n>=3&&a1!==1&&a1!==2){u=m[d+"_1"];v=m[d+"_3"];if(u&&v&&u.s&&u.s===v.s)adj++}}});
   return{M:M,miss:unp.length,adj:adj}}
  var best=null,i;
@@ -4393,7 +4577,7 @@ function rCheck(){
  var byK={},cnt={};
  CLS.forEach(function(c){var m=R.M[c]||{},f=CUR[grpOf(c)].fri,sc={};
   Object.keys(m).forEach(function(k){var v=m[k],q=k.split("_"),d=+q[0],p=+q[1];if(!v||!(v.s||v.t))return;
-   if(d===4&&f&&p>f&&!v.x)E.push({l:"e",m:rom(c)+": kuna somo kwenye "+sl(k)+", ambacho si kipindi cha masomo."});
+   if(p>rLast(c,d)&&!v.x)E.push({l:"e",m:rom(c)+": kuna somo kwenye "+sl(k)+", ambacho si kipindi cha masomo."});
    if(v.s){sc[v.s]=(sc[v.s]||0)+1;}
    if(v.t){(byK[k]=byK[k]||{});(byK[k][v.t]=byK[k][v.t]||[]).push(c);cnt[v.t]=(cnt[v.t]||0)+1;
     var w=R.W.filter(function(x){return x.n===v.t})[0];
@@ -4406,7 +4590,7 @@ function rCheck(){
  if(R.dini&&R.dini.on){var dk={};CLS.forEach(function(c){var m=R.M[c]||{};Object.keys(m).forEach(function(k){if(m[k]&&m[k].s==="Elimu ya Dini")dk[k]=1})});
  var dks=Object.keys(dk);if(dks.length>1)E.push({l:"w",m:"Elimu ya Dini haiko kipindi kimoja kwa madarasa yote ("+dks.map(sl).join(", ")+"). Bonyeza Tengeneza ratiba."})}
  Object.keys(byK).forEach(function(k){Object.keys(byK[k]).forEach(function(t){var cs=byK[k][t];if(cs.length>1)E.push({l:"w",m:t+" yupo kwenye madarasa "+({2:"mawili",3:"matatu",4:"manne",5:"matano",6:"sita",7:"saba"}[cs.length]||cs.length)+" kwa wakati mmoja ("+(cs.length>1?cs.slice(0,-1).map(rom).join(", ")+" na "+rom(cs[cs.length-1]):cs.map(rom).join(""))+"), "+sl(k)+"."})})});
- var tot=0;CLS.forEach(function(c){var f=CUR[grpOf(c)].fri;tot=Math.max(tot,n*5-(f?(n-f):0))});
+ var tot=rCapAll();
  R.W.forEach(function(w){var L=wPlan(w.sc).tot;if(L>tot)E.push({l:"e",m:wFull(w.n)+" amepangiwa vipindi "+L+" kwa wiki, lakini kuna vipindi "+tot+" tu. Mpunguzie vipindi "+(L-tot)+" (mpe mwalimu mwingine somo au darasa moja kwenye Hatua ya 2) ili vipindi vyote vya mtaala vipate mwalimu."})});
  Object.keys(cnt).forEach(function(t){if(cnt[t]>tot)E.push({l:"e",m:t+" ana vipindi "+cnt[t]+" kwa wiki, zaidi ya vipindi "+tot+" vilivyopo."})});
  if(nomt)E.push({l:"w",m:kpN(nomt,"hv")+" mwalimu ingawa kuna walimu waliosajiliwa kwa masomo hayo: "+nomL.join("; ")+". Gusa kisanduku kuchagua mwalimu."});
@@ -4414,7 +4598,7 @@ function rCheck(){
  return E}
 
 function kpN(n,k){n=+n;var w=n===1?"kimoja":n===2?"viwili":String(n);if(k==="hv")return n===1?"Kipindi kimoja hakina":(n===2?"Vipindi viwili havina":"Vipindi "+n+" havina");if(k==="hv2")return n===1?"kipindi kimoja hakina":(n===2?"vipindi viwili havina":"vipindi "+n+" havina");if(k==="pw")return n===1?"kipindi kimoja kimepewa":(n===2?"vipindi viwili vimepewa":"vipindi "+n+" vimepewa");return w}
-function rSlotsOf(c){var f=CUR[grpOf(c)].fri,n=+R.n,o=[],d,p;for(d=0;d<5;d++)for(p=1;p<=(d===4&&f?f:n);p++)o.push(d+"_"+p);return o}
+function rSlotsOf(c){var o=[],d,p;for(d=0;d<5;d++)for(p=1;p<=rLast(c,d);p++)o.push(d+"_"+p);return o}
 function rSlN(k){var q=k.split("_");return RD[+q[0]]+" kipindi "+q[1]}
 var RFX=[];
 function rDiag(){
@@ -4540,7 +4724,7 @@ rSubR();ratR();
 var WSUB=["Kiswahili","English","Hisabati","Sayansi","Jiografia na Mazingira","Historia ya Tanzania na Maadili","Sanaa na Michezo","Elimu ya Dini","Kujisomea/Maktaba"],wEd=-1,WRN={"La Kwanza":"I","La Pili":"II","La Tatu":"III","La Nne":"IV","La Tano":"V","La Sita":"VI","La Saba":"VII"};
 function wCnt(n){var by={},tot=0,dy=[0,0,0,0,0];CLS.forEach(function(c){var m=R.M[c]||{};Object.keys(m).forEach(function(k){if(m[k].t===n){by[c]=(by[c]||0)+1;tot++;dy[+k.split("_")[0]]++}})});return{tot:tot,by:by,dy:dy}}
 function wPlan(sc){var by={},tot=0;Object.keys(sc||{}).forEach(function(so){(sc[so]||[]).forEach(function(c){var r=CUR[grpOf(c)].sb.filter(function(x){return x[0]===so})[0];if(r){by[c]=(by[c]||0)+r[1];tot+=r[1]}})});return{tot:tot,by:by}}
-function rTotP(){var n=+R.n||0,t=0;CLS.forEach(function(c){var f=CUR[grpOf(c)].fri;t=Math.max(t,n*5-(f?(n-f):0))});return t}
+function rTotP(){return rCapAll()}
 function wPT(){var pl=wPlan(wSC),k=CLS.filter(function(c){return pl.by[c]});var tp=rTotP(),el=$("wPT");el.textContent=pl.tot?"Jumla ya vipindi vyake kwa wiki: "+pl.tot+" ("+k.map(function(c){return rom(c)+": "+pl.by[c]}).join(", ")+")":"Jumla ya vipindi vyake kwa wiki: 0 (chagua masomo na madarasa hapo juu)";
  el.style.color="";el.style.fontWeight="";
  if(tp&&pl.tot>tp){el.textContent+=" ⚠ ANGALIZO: kwa wiki kuna vipindi "+tp+" tu, lakini mwalimu huyu amepangiwa "+pl.tot+" (ziada "+(pl.tot-tp)+"). Mpunguzie masomo au darasa.";el.style.color="#B91C1C";el.style.fontWeight="700"}}
@@ -5859,6 +6043,8 @@ Object.keys(NEWM).forEach(function(k){MAP[k]=NEWM[k]});Object.assign(MAP,{"kutam
 Object.assign(MAP,{"Kuimarisha kuigiza kwa kutumia vitendo na sauti na vitendo bila sauti":"Strengthen acting using actions with sound and actions without sound","Kuimarisha kuigiza kwa kutumia vitendo na sauti na vitendo bila sauti (mime)":"Strengthen acting using actions with sound and actions without sound (mime)","Kuimarisha kuigiza":"Strengthen acting","Kuigiza kwa kutumia vitendo na sauti na vitendo bila sauti":"Act using actions with sound and actions without sound","Vitendo na sauti na vitendo bila sauti":"Actions with sound and actions without sound","Vitendo na sauti na vitendo bila sauti (mime)":"Actions with sound and actions without sound (mime)","Mstatili":"Rectangle","Mraba":"Square","Pembetatu":"Triangle","Duara":"Circle","Mviringo":"Oval","Pembenne":"Quadrilateral","Pembe nne":"Quadrilateral","Pembetano":"Pentagon","Pembesita":"Hexagon","Mchemraba":"Cube","Kisanduku":"Cuboid","Silinda":"Cylinder","Tufe":"Sphere","Umbo":"Shape","Maumbo":"Shapes","Maumbo ya pande mbili":"Two-dimensional shapes","Maumbo ya pande tatu":"Three-dimensional shapes","Mstari":"Line","Mistari":"Lines","Pembe":"Angle","Pande":"Sides","Mzunguko":"Perimeter","Eneo":"Area","Ujazo":"Volume","Urefu":"Length","Uzito":"Mass","Ujazo wa vimiminika":"Capacity","Muda":"Time","Pesa":"Money","Namba":"Numbers","Kujumlisha":"Addition","Kutoa":"Subtraction","Kuzidisha":"Multiplication","Kugawanya":"Division","Sehemu":"Fractions","Desimali":"Decimals","Asilimia":"Percentages","Uwiano":"Ratio","Takwimu":"Statistics","Mchoro":"Diagram","Mpangilio":"Pattern","Mifumo":"Patterns","Mstatili na mraba":"Rectangle and square","Kubaini mihimili ya dola (Serikali, Bunge na Mahakama) inavyotekeleza Katiba ya JMT":"Identify how the pillars of the state (Government, Parliament and Judiciary) implement the Constitution of the URT","Kuonesha sehemu kwa kutumia namba ( 1, 1 n.k) 4 2":"Show fractions using numbers (1/4, 1/2 etc.)"});
 Object.assign(MAP,{"Mandhari, lugha na kusakinisha app.":"Theme, language and app installation."});
 Object.assign(MAP,{"Nukuu za somo":"Lesson notes","Nukuu na maelezo ya kufundishia kwa kila somo.":"Teaching notes and guidance for each subject.","Nukuu za Somo":"Lesson Notes","Ukurasa huu uko tayari. Nukuu za somo zitawekwa hapa hivi karibuni.":"This page is ready. Lesson notes will be added here soon.","Uko kwenye menyu ya Nukuu za Somo. Maudhui yataongezwa hivi karibuni.":"You are on the Lesson Notes menu. Content will be added soon."});
+Object.assign(MAP,{"Siku yoyote, ikiwemo Ijumaa":"Any day, including Friday","Vipindi vya mtaala havibadiliki (jumla ni ile ile). Chagua":"Curriculum periods do not change (the total stays the same). Choose","siku moja":"one day","ambayo":"on which","madarasa yote":"all classes","yanaishia":"end at","kipindi cha 6":"period 6","; siku nyingine zinabaki na vipindi vyote.":"; the other days keep all periods.","Shughuli za Mwanzo na Mwisho wa siku":"Start-of-day and End-of-day activities","Ongeza shughuli":"Add activities","kabla ya vipindi":"before the periods","baada ya vipindi":"after the periods","(mf. Usafi na Gwaride) na":"(e.g. Cleaning and Parade) and","(mf. Usafi na Gwaride). Hazigusi ratiba ya mtaala; zinaonekana nje ya vipindi, mwanzoni na mwishoni mwa ratiba.":"(e.g. Cleaning and Parade). They do not affect the curriculum timetable; they appear outside the periods, at the start and end of the timetable.","+ Ongeza Mwanzo / Mwisho":"+ Add Start / End","Hariri Mwanzo / Mwisho":"Edit Start / End","Mwanzo na Mwisho wa siku":"Start and End of day","Futa zote":"Delete all"});
+Object.assign(MAP,{"Mbadala: shule zenye vipindi 6 siku moja":"Alternative: schools with 6 periods on one day","Siku yenye vipindi 6:":"Day with 6 periods:","Hakuna (kawaida)":"None (normal)"});
 Object.assign(MAP,{"(vinafuata mtaala wa darasa husika)":"(they follow the curriculum of the relevant class)","Tafadhari Angalia":"Please Check","Funga":"Close","Rejea:":"Reference:","Idadi ya vipindi (Darasa III–VI) inatokana na Mtaala Mpya 2023, uk. 20, Jedwali Na. 6.":"The number of periods (Classes III–VI) comes from the New Curriculum 2023, p. 20, Table No. 6.","Kipindi cha michezo":"Sports period","Kiweke kwenye nafasi wazi: kipindi kimoja au viwili, kwa madarasa yote muda mmoja au kila darasa na muda wake.":"Place it in free slots: one or two periods, for all classes at the same time or each class at its own time.","+ Ongeza kipindi cha michezo":"+ Add sports period","Ongeza kipindi cha michezo":"Add sports period","Nafasi wazi zilizobaki:":"Free slots left:","Vipindi kwa kila darasa":"Periods per class","Kipindi 1":"1 period","Vipindi 2 (mfululizo)":"2 periods (consecutive)","Madarasa yote muda mmoja":"All classes at the same time","Kila darasa na muda wake":"Each class at its own time","Kipindi cha kuanza":"Starting period","Mwalimu (si lazima)":"Teacher (optional)","Futa kipindi cha michezo?":"Delete the sports period?","Madarasa yote yatakuwa tupu, pamoja na vipindi vya michezo. Mipangilio itabaki.":"All classes will be empty, including sports periods. Settings will stay."});
 Object.assign(MAP,{"Kiweke kwenye":"Place it in","nafasi wazi":"free slots","kipindi kimoja au viwili":"one or two periods",", kwa":", for"});
 Object.assign(MAP,{"Chagua njia moja ya kupata kodi":"Choose one way to get a code","Njia 1: Tumia simu yako":"Option 1: Use your phone","Chukua simu yako, fungua WhatsApp, kisha tuma ujumbe \"Naomba kodi\" na feedback yako kwenye namba hii:":"Take your phone, open WhatsApp, then send the message \"I would like a code\" and your feedback to this number:","Njia 2: Tumia kompyuta":"Option 2: Use your computer","Bonyeza kitufe cha kijani hapa chini kufungua WhatsApp Web. Ukiombwa, skani QR code kwa simu yako.":"Click the green button below to open WhatsApp Web. If asked, scan the QR code with your phone.","Nakili namba":"Copy number","Imenakiliwa!":"Copied!"});
@@ -6051,7 +6237,7 @@ html body .act-card[data-go="nukuu"],html body .act-card[data-go="mipangilio"]{b
 </style>
 <script id="rm-greet">
 (function(){
-var wI=0,WS=["Karibu! Ungependa kuandaa maazimio ya kazi leo?","Ungependa kuandaa maandalio ya somo leo?","Karibu! Ungependa kuandaa ratiba ya vipindi leo?"],WE=["Would you like to prepare schemes of work today?","Would you like to prepare lesson plans today?","Would you like to prepare a timetable today?"];
+var wI=0,WS=["Ungependa kuandaa maazimio ya kazi leo?","Ungependa kuandaa maandalio ya somo leo?","Karibu! Ungependa kuandaa ratiba ya vipindi leo?","Tafadhari pakua app"],WE=["Would you like to prepare schemes of work today?","Would you like to prepare lesson plans today?","Would you like to prepare a timetable today?","Please download the app"];
 function txt(){var h=new Date().getHours(),en=(document.documentElement.getAttribute("lang")||"").indexOf("en")===0;
 if(en)return[(h<12?"Good morning":h<16?"Good afternoon":"Good evening")+", Teacher",WE[wI%WE.length]];
 return["Habari za "+(h<12?"asubuhi":h<16?"mchana":"jioni")+", Mwalimu",WS[wI%WS.length]]}
