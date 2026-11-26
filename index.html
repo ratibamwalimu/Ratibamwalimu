@@ -1679,7 +1679,7 @@ html body main#v-nyumbani.view.rm-fit>div.acts{flex:0 0 auto!important;height:au
 html body main#v-nyumbani.view.rm-fit>.rw-hero{flex:1 0 auto!important;min-height:clamp(200px,58vw,280px)!important}
 html body main#v-nyumbani.view.rm-fit.on{overflow-y:auto!important;-webkit-overflow-scrolling:touch}
 }
-@media screen and (max-width:599px) and (max-height:640px){
+@media screen and (max-width:599px) and (max-height:720px){
 html body main#v-nyumbani.view div.acts .act-card{display:grid!important;grid-template-columns:28px minmax(0,1fr)!important;grid-template-rows:auto 1fr!important;column-gap:7px!important;align-content:start!important;padding:8px 9px!important}
 html body main#v-nyumbani.view div.acts .act-card .md-ico{grid-column:1;grid-row:1;width:28px!important;height:28px!important;min-height:28px!important;margin:0!important;align-self:center!important}
 html body main#v-nyumbani.view div.acts .act-card b{grid-column:2;grid-row:1;align-self:center;padding-right:8px}
@@ -1694,6 +1694,18 @@ html body main#v-nyumbani.view div.acts .act-card::after{display:none!important}
 #rSet .grid>div>input[readonly]{background:rgba(147,180,245,.10)!important}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #rSet .grid>div>input,:root:not([data-theme="light"]) #rSet .grid>div>select{border-color:#4F6FB8!important;box-shadow:0 0 0 3px rgba(96,140,255,.14)!important}}
 :root[data-theme="dark"] #rSet .grid>div>input,:root[data-theme="dark"] #rSet .grid>div>select{border-color:#4F6FB8!important;box-shadow:0 0 0 3px rgba(96,140,255,.14)!important}
+</style>
+<style id="rm-short-phone">
+/* Simu fupi: kadi zote 4 zionekane bila kusogeza; picha ya juu ibaki kubwa kiasi */
+@media screen and (max-width:599px) and (max-height:780px){
+html body main#v-nyumbani.view.rm-fit div.acts{gap:6px!important}
+html body main#v-nyumbani.view.rm-fit div.acts .act-card{display:grid!important;grid-template-columns:28px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:7px!important;row-gap:3px!important;align-content:start!important;padding:8px 9px!important;min-height:0!important;height:auto!important}
+html body main#v-nyumbani.view.rm-fit div.acts .act-card .md-ico{grid-column:1!important;grid-row:1!important;width:28px!important;height:28px!important;min-height:28px!important;margin:0!important;align-self:center!important}
+html body main#v-nyumbani.view.rm-fit div.acts .act-card .md-ico svg{width:17px!important;height:17px!important}
+html body main#v-nyumbani.view.rm-fit div.acts .act-card b{grid-column:2!important;grid-row:1!important;align-self:center!important;font-size:calc(15px*var(--fs,1))!important;line-height:1.15!important;padding-right:10px!important}
+html body main#v-nyumbani.view.rm-fit div.acts .act-card span:not(.md-ico){grid-column:1/-1!important;grid-row:2!important;font-size:calc(11.5px*var(--fs,1))!important;line-height:1.25!important;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden!important}
+html body main#v-nyumbani.view.rm-fit div.acts .act-card::after{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -5793,36 +5805,6 @@ html:not(.rw-unl) [data-rw="wa"][data-t="az"],html:not(.rw-unl) [data-rw="wa"][d
     <label class="q" for="rwdOngeza">Ungependa tuongeze nini?</label>
     <textarea id="rwdOngeza" placeholder="Wazo lako hapa"></textarea>
   </fieldset>
-  <fieldset id="rwdPayQ">
-    <legend>Je, mfumo uwe wa kulipia?</legend>
-    <div class="opts one">
-      <label><input type="radio" name="lipa" value="Ndiyo"><span>Ndiyo</span></label>
-      <label><input type="radio" name="lipa" value="Hapana"><span>Hapana</span></label>
-    </div>
-  </fieldset>
-  <div id="rwdPayYes" hidden>
-    <fieldset>
-      <legend>Ungeweza kulipa kiasi gani?</legend>
-      <div class="opts one">
-        <label><input type="radio" name="kiasi" value="TSh 500"><span>TSh 500</span></label>
-        <label><input type="radio" name="kiasi" value="TSh 1,000"><span>TSh 1,000</span></label>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Kiasi hicho ni kwa:</legend>
-      <div class="opts one">
-        <label><input type="radio" name="kwa" value="Maazimo yote"><span>Maazimo yote</span></label>
-        <label><input type="radio" name="kwa" value="Maandalio yote"><span>Maandalio yote</span></label>
-      </div>
-    </fieldset>
-  </div>
-  <fieldset id="rwdPayNo" hidden>
-    <legend>Je, uko tayari kuchangia bando ili mfumo uboreshwe zaidi?</legend>
-    <div class="opts one">
-      <label><input type="radio" name="bando" value="Ndiyo"><span>Ndiyo</span></label>
-      <label><input type="radio" name="bando" value="Hapana"><span>Hapana</span></label>
-    </div>
-  </fieldset>
 </div>
 
   
@@ -5849,8 +5831,8 @@ html:not(.rw-unl) [data-rw="wa"][data-t="az"],html:not(.rw-unl) [data-rw="wa"][d
  function all(n){return Array.prototype.map.call(f.querySelectorAll('input[name="'+n+'"]:checked'),function(e){return e.value}).join(", ")}
  function txt(id){return $(id).value.trim()}
  var steps=f.querySelectorAll(".step"),cur=0,tmr,nav=$("rwdN");
- var Q=[["wadhifa","Wewe ni nani?",0],["kifaa","Unatumia kifaa gani?",0],["rate","Mfumo ni rahisi kiasi gani kutumia?",0],["sehemu","Unatumia sehemu gani zaidi?",1],["muda","Je, mfumo umekuokolea muda?",1],["rwdTatizo","Umekumbana na tatizo lolote?",2],["rwdOngeza","Ungependa tuongeze nini?",2],["lipa","Je, mfumo uwe wa kulipia?",2],["kiasi","Ungeweza kulipa kiasi gani?",2],["kwa","Kiasi hicho ni kwa:",2],["bando","Je, uko tayari kuchangia bando ili mfumo uboreshwe zaidi?",2]];
- function need(k){var v=val("lipa");return k==="kiasi"||k==="kwa"?v==="Ndiyo":k==="bando"?v==="Hapana":true}
+ var Q=[["wadhifa","Wewe ni nani?",0],["kifaa","Unatumia kifaa gani?",0],["rate","Mfumo ni rahisi kiasi gani kutumia?",0],["sehemu","Unatumia sehemu gani zaidi?",1],["muda","Je, mfumo umekuokolea muda?",1],["rwdTatizo","Umekumbana na tatizo lolote?",2],["rwdOngeza","Ungependa tuongeze nini?",2]];
+ function need(k){return true}
  function answered(k){return k==="sehemu"?!!f.querySelector('input[name="sehemu"]:checked'):(k==="rwdTatizo"||k==="rwdOngeza")?!!txt(k):!!val(k)}
  function missing(step){for(var i=0;i<Q.length;i++){if((step===undefined||Q[i][2]===step)&&need(Q[i][0])&&!answered(Q[i][0]))return Q[i]}return null}
  function complete(n){return n<2&&!missing(n)}
@@ -5886,8 +5868,8 @@ html:not(.rw-unl) [data-rw="wa"][data-t="az"],html:not(.rw-unl) [data-rw="wa"][d
   hideAnswered();
   auto(e.target.type==="checkbox"?1300:350);
  });
- function payUI(){var v=val("lipa");$("rwdPayYes").hidden=v!=="Ndiyo";$("rwdPayNo").hidden=v!=="Hapana"}
- f.addEventListener("change",function(e){if(e.target&&e.target.name==="lipa")payUI()});
+ 
+ 
  f.addEventListener("input",function(){err.textContent="";err.classList.remove("soft")});
  f.addEventListener("focusin",function(e){
   if(e.target.tagName!=="TEXTAREA")return;
@@ -5907,10 +5889,6 @@ html:not(.rw-unl) [data-rw="wa"][data-t="az"],html:not(.rw-unl) [data-rw="wa"][d
   function tr(s){return en&&TR[s]?TR[s]:s}
   function trAll(s){return s?s.split(", ").map(tr).join(", "):s}
   TR["Ndiyo"]="Yes";TR["Maazimo yote"]="All schemes of work";TR["Maandalio yote"]="All lesson plans";
-  function pay(){var p=val("lipa"),L=en?["*Should the system be paid?* ","*Amount:* ","*Bundle contribution:* ","-"]:["*Mfumo uwe wa kulipia?* ","*Kiasi:* ","*Tayari kuchangia bando:* ","-"];
-   if(!p)return L[0]+L[3];var o=L[0]+tr(p);
-   if(p==="Ndiyo")o+="\n"+L[1]+(val("kiasi")||L[3])+" ("+(tr(val("kwa"))||L[3])+")";
-   else o+="\n"+L[2]+(tr(val("bando"))||L[3]);return o}
   var m=en?["I am one of the Ratibamwalimu users. Here are my questionnaire answers:","","*Ratibamwalimu Questionnaire*","",
    "*Role:* "+(tr(val("wadhifa"))||"-"),
    "*Device:* "+(tr(val("kifaa"))||"-"),
@@ -5918,7 +5896,7 @@ html:not(.rw-unl) [data-rw="wa"][data-t="az"],html:not(.rw-unl) [data-rw="wa"][d
    "*Parts I use:* "+(trAll(all("sehemu"))||"-"),
    "*Saved time:* "+(tr(val("muda"))||"-"),
    "*Problem:* "+(txt("rwdTatizo")||"-"),
-   "*Suggestion:* "+(txt("rwdOngeza")||"-"),pay(),"","I have participated."].join("\n"):
+   "*Suggestion:* "+(txt("rwdOngeza")||"-"),"","I have participated."].join("\n"):
   ["Mimi ni mmoja wa watumiaji wa Ratibamwalimu. Haya ni majibu yangu ya dodoso:","","*Dodoso la Ratibamwalimu*","",
    "*Wadhifa:* "+(val("wadhifa")||"-"),
    "*Kifaa:* "+(val("kifaa")||"-"),
@@ -5926,7 +5904,7 @@ html:not(.rw-unl) [data-rw="wa"][data-t="az"],html:not(.rw-unl) [data-rw="wa"][d
    "*Sehemu ninazotumia:* "+(all("sehemu")||"-"),
    "*Umeokoa muda:* "+(val("muda")||"-"),
    "*Tatizo:* "+(txt("rwdTatizo")||"-"),
-   "*Pendekezo:* "+(txt("rwdOngeza")||"-"),pay(),"","Nimeshiriki."].join("\n");
+   "*Pendekezo:* "+(txt("rwdOngeza")||"-"),"","Nimeshiriki."].join("\n");
   window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank","noopener");
   showDone();
  });
