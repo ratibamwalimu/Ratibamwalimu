@@ -1708,6 +1708,37 @@ html body main#v-nyumbani.view.rm-fit>.rw-hero{min-height:clamp(150px,44vw,200px
 html body main#v-nyumbani.view.rm-fit div.acts .act-card::after{display:none!important}
 }
 </style>
+<style id="rm-rz-phone">
+/* Dirisha la Mwanzo/Mwisho: lisizidi upana wa simu; Anza na Isha vipangwe chini ya kila kimoja */
+#rzdlg .md-body{overflow-x:hidden!important;box-sizing:border-box}
+#rzdlg .md-body *{box-sizing:border-box;max-width:100%}
+#rzdlg .rzt,#rzdlg .rzt label,#rzdlg .rzh,#rzdlg fieldset,#rzdlg .rzd{min-width:0}
+#rzdlg .rzh select,#rzdlg .rzh input{min-width:0}
+@media screen and (max-width:560px){
+#rzdlg .rzt{flex-direction:column!important;gap:8px!important}
+#rzdlg .rzt label{width:100%!important;flex:none!important}
+#rzdlg .rzh{width:100%}
+#rzdlg .rzh select{flex:1 1 0!important}
+#rzdlg .rzh select.rzmn{flex:0 0 96px!important;width:96px!important}
+#rzdlg .rzh input[type=text]{flex:0 0 72px!important;width:72px!important}
+#rzdlg .rzh input.rzro{flex:1 1 0!important;width:auto!important}
+}
+</style>
+<style id="rm-rset-phone">
+/* Mipangilio ya ratiba kuu kwenye simu: vijumba vinavyohusiana vikae pamoja (safu 2), vifupi na vilivyopangwa */
+@media screen and (max-width:599px){
+#rSet>.grid{grid-template-columns:1fr 1fr!important;gap:10px 10px!important}
+#rSet>.grid>div{min-width:0}
+#rSet>.grid>div>label{display:flex;align-items:flex-end;min-height:2.7em;line-height:1.25;font-size:calc(13px*var(--fs,1))}
+#rSet>.grid>div:first-child:nth-last-child(3){grid-column:1/-1}
+#rSet>.grid:first-of-type{grid-template-columns:.8fr 1.4fr!important}
+#rSet>.grid>div>select{font-size:calc(14px*var(--fs,1))!important;padding-left:10px!important;padding-right:26px!important}
+#rSet>.grid>div:first-child:nth-last-child(3)>label{min-height:0}
+#rSet>#rForm>div:nth-child(3){grid-column:1/-1}
+#rSet>#rForm>div:nth-child(3)>label{min-height:0}
+#rSet>.grid>div>input,#rSet>.grid>div>select{width:100%;min-width:0;box-sizing:border-box}
+}
+</style>
 </head>
 <body>
 <header>
@@ -4363,7 +4394,7 @@ document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribu
 function rzFix(id,cur){var q=/^(\d{1,2}):(\d{2})$/.exec(cur||""),mm=q&&+q[1]===7?q[2]:"",mo="<option value=''>"+rzE("dk","min")+"</option>",i;
  for(i=0;i<60;i++){var x=(i<10?"0":"")+i;mo+="<option value='"+x+"'"+(x===mm?" selected":"")+">"+x+"</option>"}
  return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa (imewekwa)' value='"+rzE("07 asubuhi","07 morning")+"'><b>:</b><select class='rzmn' data-rzm='"+id+"' aria-label='Dakika ya kuanza'>"+mo+"</select><input type='hidden' data-rzh='"+id+"' value='7'><input type='hidden' data-rz='"+id+"' value='07:"+mm+"'></div>"}
-function rzAuto(id,sp){return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Anza (huwekwa yenyewe)' value='"+rzLb(sp[1])+"'><input type='hidden' data-rz='"+id+"' value='"+hm(sp[1])+"'></div>"}
+function rzAuto(id,sp){return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa ya kuanza (huwekwa yenyewe)' value='"+rzLb(sp[1])+"'><input type='hidden' data-rz='"+id+"' value='"+hm(sp[1])+"'></div>"}
 function rzLim(k,sp){var lo=k==="b"?420:sp[1],hi=k==="b"?sp[0]:990;if(hi<lo)hi=lo;return[lo,hi]}
 function rzTm(id,k,cur,sp){var L=rzLim(k,sp),q=/^(\d{1,2}):(\d{2})$/.exec(cur||""),ch=q?+q[1]:-1,cm=q?q[2]:"",o="<option value=''>\u2014</option>",h,a=Math.floor(L[0]/60),z=Math.floor(L[1]/60);
  if(ch>=0&&(ch<a||ch>z)){if(ch<a)a=ch;else z=ch}
@@ -4398,17 +4429,17 @@ function rzIntro(sp){var nm=(($("rShule")||{}).value||"").trim(),en=document.doc
  sc=en?(nm?"<span class='zh'>"+esc(nm)+"</span> school":"Your school"):(nm?"Shule ya <span class='zh'>"+esc(nm)+"</span>":"Shule yako"),
  T=function(m,c){return"<span class='"+(c||"zh")+"'>"+rzSw(m)+"</span>"};
  if(en)return"<div class='zc s'><b class='t'>School timetable</b>"+sc+" starts at "+T(sp[0])+" and periods end at "+T(sp[1])+".<small>Each day you can set two schedules outside the periods.</small></div>"
- +"<div class='zc'><b class='t zk'>1. Start (before the periods)</b>From "+T(420,"zk")+" until "+T(sp[0],"zk")+" when periods begin.<small>Start is fixed at "+hm(420)+" (adjust minutes only). End by "+hm(sp[0])+".</small></div>"
- +"<div class='zc a'><b class='t zb'>2. End (after the periods)</b>From "+T(sp[1],"zb")+" when the last period ends, then they go home.<small>Start is set automatically. Adjust End only; it must not go past "+T(990,"zb")+", which is the <span class='zb'>system limit</span>.</small></div>"
+ +"<div class='zc'><b class='t zk'>1. Start (before the periods)</b>From "+T(420,"zk")+" until "+T(sp[0],"zk")+" when periods begin.<small>Start time is fixed at "+hm(420)+" (adjust minutes only). End by "+hm(sp[0])+".</small></div>"
+ +"<div class='zc a'><b class='t zb'>2. End (after the periods)</b>From "+T(sp[1],"zb")+" when the last period ends, then they go home.<small>Start time is set automatically. Adjust the end time only; it must not go past "+T(990,"zb")+", which is the <span class='zb'>system limit</span>.</small></div>"
  +"<div class='zc n'>Write the name, start time and end time as on the timetable. <span style='font-weight:800;font-style:italic;color:var(--rxr)'>If you leave Start or End empty, it will not appear on the timetable.</span></div>";
  return"<div class='zc s'><b class='t'>Ratiba ya shule</b>"+sc+" inaanza "+T(sp[0])+" na vipindi vinaisha "+T(sp[1])+".<small>Kila siku unaweza kuweka ratiba mbili nje ya vipindi.</small></div>"
- +"<div class='zc'><b class='t zk'>1. Mwanzo (kabla ya vipindi)</b>Kuanzia "+T(420,"zk")+" hadi "+T(sp[0],"zk")+" vipindi vinapoanza.<small>Anza huwekwa "+hm(420)+" (rekebisha dakika tu). Isha hadi "+hm(sp[0])+".</small></div>"
- +"<div class='zc a'><b class='t zb'>2. Mwisho (baada ya vipindi)</b>Kuanzia "+T(sp[1],"zb")+" kipindi cha mwisho kinapoisha, kisha wanarudi nyumbani.<small>Anza huwekwa yenyewe. Rekebisha Isha tu; isizidi "+T(990,"zb")+", huo ndio <span class='zb'>ukomo wa mfumo</span>.</small></div>"
+ +"<div class='zc'><b class='t zk'>1. Mwanzo (kabla ya vipindi)</b>Kuanzia "+T(420,"zk")+" hadi "+T(sp[0],"zk")+" vipindi vinapoanza.<small>Saa ya kuanza huwekwa "+hm(420)+" (rekebisha dakika tu). Saa ya kuisha ni hadi "+hm(sp[0])+".</small></div>"
+ +"<div class='zc a'><b class='t zb'>2. Mwisho (baada ya vipindi)</b>Kuanzia "+T(sp[1],"zb")+" kipindi cha mwisho kinapoisha, kisha wanarudi nyumbani.<small>Saa ya kuanza huwekwa yenyewe. Rekebisha saa ya kuisha tu; isizidi "+T(990,"zb")+", huo ndio <span class='zb'>ukomo wa mfumo</span>.</small></div>"
  +"<div class='zc n'>Andika jina, saa ya kuanza na saa ya kuisha kama kwenye ratiba. <span style='font-weight:800;font-style:italic;color:var(--rxr)'>Ukiacha Mwanzo au Mwisho wazi, haitaonekana kwenye ratiba.</span></div>"}
 function rzOpen(){var sp=rzSpan(),G=[["b",rzE("Mwanzo (kabla ya vipindi)","Start (before the periods)"),""],["a",rzE("Mwisho (baada ya vipindi)","End (after the periods)"),""]];
  $("rzB").innerHTML=RD.map(function(dn,d){var x=(R.oz||[])[d]||{};
   return"<div class='rzd' data-rzd='"+d+"'><b class='rzdn'>"+dn+"</b><small>"+rzE("Vipindi","Periods")+": "+hm(sp[0])+" \u2013 "+hm(sp[1])+"</small>"+G.map(function(g){var v=x[g[0]]||{},id=d+"_"+g[0];
-   return"<span class='rzl'>"+g[1]+"</span>"+rzNm(id,v.n)+"<div class='rzt'><label>"+rzE("Anza","Start")+(g[0]==="a"?rzAuto(id+"_s",sp):g[0]==="b"?rzFix(id+"_s",v.s):rzTm(id+"_s",g[0],v.s,sp))+"</label><label>"+rzE("Isha","End")+rzTm(id+"_e",g[0],v.e,sp)+"</label></div>"+(g[0]==="b"?"<div class='rzw' data-rzw2='"+id+"' hidden>\u26A0 <b><i>"+rzE("Chagua kwanza dakika ya Anza","First choose the Start minutes")+"</i></b>"+rzE(", kisha jaza Isha saa na dakika.",", then fill in End hour and minutes.")+"</div>":"")}).join("")+"</div>"}).join("");
+   return"<span class='rzl'>"+g[1]+"</span>"+rzNm(id,v.n)+"<div class='rzt'><label>"+rzE("Saa ya kuanza","Start time")+(g[0]==="a"?rzAuto(id+"_s",sp):g[0]==="b"?rzFix(id+"_s",v.s):rzTm(id+"_s",g[0],v.s,sp))+"</label><label>"+rzE("Saa ya kuisha","End time")+rzTm(id+"_e",g[0],v.e,sp)+"</label></div>"+(g[0]==="b"?"<div class='rzw' data-rzw2='"+id+"' hidden>\u26A0 <b><i>"+rzE("Chagua kwanza dakika ya kuanza","First choose the start minutes")+"</i></b>"+rzE(", kisha jaza saa na dakika ya kuisha.",", then fill in the end hour and minutes.")+"</div>":"")}).join("")+"</div>"}).join("");
  var same=function(){var j=function(x){return JSON.stringify([x&&x.b||null,x&&x.a||null])},o=R.oz||[],f=j(o[0]),i;for(i=1;i<5;i++)if(j(o[i])!==f)return false;return true};
  $("rzB").insertAdjacentHTML("afterbegin","<label class='rzrp'><input type='checkbox' id='rzRep'><span><span class='rk'>"+rzE("Rudia kila siku","Repeat every day")+"</span> "+rzE("(Jumatatu hadi Ijumaa)","(Monday to Friday)")+"<small id='rzRepS'></small></span></label>");
  $("rzRep").checked=same();rzRepApply(false);$("rzRep").onchange=function(){rzRepApply(true)};
