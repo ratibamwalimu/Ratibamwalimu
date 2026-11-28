@@ -485,6 +485,12 @@ ol.how{margin:0 0 12px;padding-left:22px;color:var(--mut);font-size:calc(14px*va
 #rzIntro .zc small{display:block;margin-top:3px;font-size:12px;color:var(--mut)}
 
 #rzdlg .rzt{gap:10px}
+/* Kadi ya "Rudia kila siku": rangi inayoonekana wazi */
+#rzdlg .rzrp{--rc:#f59e0b;border:2px solid var(--rc)!important;border-left-width:6px!important;border-radius:16px!important;padding:13px 14px!important;background:linear-gradient(90deg,color-mix(in srgb,var(--rc) 24%,var(--card)),color-mix(in srgb,var(--rc) 9%,var(--card)))!important;box-shadow:0 8px 20px -12px var(--rc)}
+#rzdlg .rzrp:has(input:checked){--rc:#16a34a}
+#rzdlg .rzrp input{accent-color:var(--rc)}
+#rzdlg .rzrp .rk{color:var(--rc)!important;font-size:calc(16px*var(--fs,1))}
+#rzdlg .rzrp small{color:var(--ink)!important;font-weight:600!important;opacity:.85}
 #rzdlg .rzh input.rzro{flex:1 1 0;min-width:0;width:auto;padding-left:8px;padding-right:8px;text-overflow:clip;white-space:nowrap}
 #rzdlg .rzh select{padding-left:8px;padding-right:22px}
 .rzro{background:var(--line)!important;color:var(--mut)!important;font-weight:700;text-align:center}#rTbl .rkn .ozv{font-size:inherit;display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;line-height:1.2}
@@ -968,6 +974,17 @@ header p:empty{display:none!important}
 #rDini.on::after{background:linear-gradient(rgba(22,163,74,.12),rgba(22,163,74,.12)),var(--card)}
 }
 @media print{#rDini{animation:none!important;box-shadow:none!important}#rDini::before,#rDini::after{display:none}}
+/* Kadi laini ya KIPINDI CHA DINI: jina katikati, maelezo chini */
+@media screen{
+#rDini{border-radius:20px!important;padding:14px 16px 14px!important;box-shadow:0 8px 22px -12px rgba(15,23,42,.35)}
+#rDini::after{inset:3px;border-radius:17px}
+#rDini .dtl{text-align:center;font-weight:900;font-size:calc(15px*var(--fs,1));letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:0 22px 10px;margin-bottom:10px;border-bottom:1px solid var(--line);line-height:1.2}
+#rDini .dsw{padding:2px 2px 0}
+#rDini .dtl,#rDini .dsw b{color:var(--rxg)!important}
+#rDini .muh{border-radius:14px}
+}
+@media print{#rDini .dtl{display:none}}
+
 
 /* Dirisha la Dini: lionekane juu ya skrini */
 dialog#dndlg{margin:calc(14px + env(safe-area-inset-top,0px)) auto auto!important}
@@ -1336,18 +1353,24 @@ dialog.pk::backdrop{background:rgba(14,22,38,.55);-webkit-backdrop-filter:blur(3
 #pkdlg .pk-o.pk-ph{color:var(--mut);font-weight:500;font-style:italic;box-shadow:none;background:transparent}
 #pkdlg .pk-o.pk-b0{background:color-mix(in srgb,#3b82f6 11%,var(--card));border-color:color-mix(in srgb,#3b82f6 28%,var(--line))}
 #pkdlg .pk-o.pk-b1{background:color-mix(in srgb,#f59e0b 16%,var(--card));border-color:color-mix(in srgb,#f59e0b 38%,var(--line))}
-#pkdlg .pk-o.pk-c0{background:color-mix(in srgb,#3b82f6 13%,var(--card));border-color:color-mix(in srgb,#3b82f6 32%,var(--line))}
-#pkdlg .pk-o.pk-c1{background:color-mix(in srgb,#10b981 13%,var(--card));border-color:color-mix(in srgb,#10b981 32%,var(--line))}
-#pkdlg .pk-o.pk-c2{background:color-mix(in srgb,#f59e0b 13%,var(--card));border-color:color-mix(in srgb,#f59e0b 32%,var(--line))}
-#pkdlg .pk-o.pk-c3{background:color-mix(in srgb,#ec4899 13%,var(--card));border-color:color-mix(in srgb,#ec4899 32%,var(--line))}
-#pkdlg .pk-o.pk-c4{background:color-mix(in srgb,#8b5cf6 13%,var(--card));border-color:color-mix(in srgb,#8b5cf6 32%,var(--line))}
-#pkdlg .pk-o.pk-c5{background:color-mix(in srgb,#06b6d4 13%,var(--card));border-color:color-mix(in srgb,#06b6d4 32%,var(--line))}
-#pkdlg .pk-o.pk-c6{background:color-mix(in srgb,#f97316 13%,var(--card));border-color:color-mix(in srgb,#f97316 32%,var(--line))}
-#pkdlg .pk-o.pk-c7{background:color-mix(in srgb,#84cc16 13%,var(--card));border-color:color-mix(in srgb,#84cc16 32%,var(--line))}
+#pkdlg .pk-o.pk-c0{--pc:#3b82f6;background:color-mix(in srgb,#3b82f6 13%,var(--card));border-color:color-mix(in srgb,#3b82f6 32%,var(--line))}
+#pkdlg .pk-o.pk-c1{--pc:#10b981;background:color-mix(in srgb,#10b981 13%,var(--card));border-color:color-mix(in srgb,#10b981 32%,var(--line))}
+#pkdlg .pk-o.pk-c2{--pc:#f59e0b;background:color-mix(in srgb,#f59e0b 13%,var(--card));border-color:color-mix(in srgb,#f59e0b 32%,var(--line))}
+#pkdlg .pk-o.pk-c3{--pc:#ec4899;background:color-mix(in srgb,#ec4899 13%,var(--card));border-color:color-mix(in srgb,#ec4899 32%,var(--line))}
+#pkdlg .pk-o.pk-c4{--pc:#8b5cf6;background:color-mix(in srgb,#8b5cf6 13%,var(--card));border-color:color-mix(in srgb,#8b5cf6 32%,var(--line))}
+#pkdlg .pk-o.pk-c5{--pc:#06b6d4;background:color-mix(in srgb,#06b6d4 13%,var(--card));border-color:color-mix(in srgb,#06b6d4 32%,var(--line))}
+#pkdlg .pk-o.pk-c6{--pc:#f97316;background:color-mix(in srgb,#f97316 13%,var(--card));border-color:color-mix(in srgb,#f97316 32%,var(--line))}
+#pkdlg .pk-o.pk-c7{--pc:#84cc16;background:color-mix(in srgb,#84cc16 13%,var(--card));border-color:color-mix(in srgb,#84cc16 32%,var(--line))}
 #pkdlg .pk-o.pk-bs{margin-top:18px;position:relative}
 #pkdlg .pk-o.pk-bs::before{content:"";position:absolute;left:10%;right:10%;top:-10px;border-top:2px dashed color-mix(in srgb,var(--mut) 45%,transparent)}
-#pkdlg .pk-o[aria-selected=true]{border-color:var(--t);color:var(--t);font-weight:800;background:linear-gradient(90deg,color-mix(in srgb,var(--t) 15%,var(--card)),var(--card));box-shadow:0 6px 16px -8px var(--t),inset 4px 0 0 var(--t)}
-#pkdlg .pk-o svg{width:24px;height:24px;flex:none;padding:4px;border-radius:50%;background:var(--t);color:#fff}
+#pkdlg .pk-o[aria-selected=true]{border-color:var(--pc,var(--t));color:var(--pc,var(--t));font-weight:800;background:linear-gradient(90deg,color-mix(in srgb,var(--pc,var(--t)) 24%,var(--card)),color-mix(in srgb,var(--pc,var(--t)) 8%,var(--card)));box-shadow:0 6px 16px -8px var(--pc,var(--t)),inset 4px 0 0 var(--pc,var(--t))}
+select.pk-tint{border-color:var(--pc)!important;color:var(--pc)!important;font-weight:700;background-color:color-mix(in srgb,var(--pc) 16%,var(--card))!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--pc) 18%,transparent)}
+/* Kusogeza orodha kwa ulaini */
+dialog.pk::backdrop{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:rgba(14,22,38,.66)!important}
+#pkB{overscroll-behavior:contain;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;touch-action:pan-y;will-change:scroll-position;transform:translateZ(0)}
+#pkdlg .pk-o{contain:layout style;transition:transform .12s ease,border-color .15s ease}
+@media(prefers-reduced-motion:reduce){#pkB{scroll-behavior:auto}}
+#pkdlg .pk-o svg{width:24px;height:24px;flex:none;padding:4px;border-radius:50%;background:var(--pc,var(--t));color:#fff}
 .pk-e{padding:22px;text-align:center;color:var(--mut)}
 dialog.md.pk:not(.sm){width:min(340px,calc(86*var(--vw,1vw)));max-width:none;margin:auto}
 dialog.md.pk:not(.sm) .md-card{max-height:calc(60*var(--vh,1vh));max-height:calc(60*var(--vh,1vh));border-radius:22px;border-bottom:1px solid var(--line)}
@@ -1717,20 +1740,60 @@ html body main#v-nyumbani.view.rm-fit>.rw-hero{min-height:clamp(150px,44vw,200px
 html body main#v-nyumbani.view.rm-fit div.acts .act-card::after{display:none!important}
 }
 </style>
+<style id="rm-ctr">
+#rEx0>b.rxh,#rOz0>b.rxh{display:block;text-align:center;text-transform:uppercase;font-weight:900;letter-spacing:.03em;color:var(--rxg)!important}
+#rEx0,#rOz0{border:1px solid color-mix(in srgb,var(--rxg) 25%,var(--line));border-radius:18px;padding:12px 14px;background:linear-gradient(180deg,color-mix(in srgb,var(--rxg) 9%,var(--card)),var(--card));box-shadow:0 8px 20px -14px var(--rxg)}
+</style>
+<style id="rm-muhimu">
+.muh{margin:6px 0 6px;padding:7px 10px;border:1px solid var(--line);border-left:4px solid var(--rxr);border-radius:10px;background:var(--bg);font-size:calc(13px*var(--fs,1));line-height:1.45}
+.muh .mr{color:var(--rxr);font-weight:900;letter-spacing:.03em}
+.muh .mg{color:var(--rxg);font-weight:700}
+</style>
 <style id="rm-rz-phone">
-/* Dirisha la Mwanzo/Mwisho: lisizidi upana wa simu; Anza na Isha vipangwe chini ya kila kimoja */
-#rzdlg .md-body{overflow-x:hidden!important;box-sizing:border-box}
-#rzdlg .md-body *{box-sizing:border-box;max-width:100%}
-#rzdlg .rzt,#rzdlg .rzt label,#rzdlg .rzh,#rzdlg fieldset,#rzdlg .rzd{min-width:0}
-#rzdlg .rzh select,#rzdlg .rzh input{min-width:0}
-@media screen and (max-width:560px){
-#rzdlg .rzt{flex-direction:column!important;gap:8px!important}
-#rzdlg .rzt label{width:100%!important;flex:none!important}
-#rzdlg .rzh{width:100%}
-#rzdlg .rzh select{flex:1 1 0!important}
-#rzdlg .rzh select.rzmn{flex:0 0 96px!important;width:96px!important}
-#rzdlg .rzh input[type=text]{flex:0 0 72px!important;width:72px!important}
-#rzdlg .rzh input.rzro{flex:1 1 0!important;width:auto!important}
+/* Dirisha la Mwanzo/Mwisho: linafaa simu zote (ndogo, kubwa, landscape) - hakuna kusogea kando */
+#rzdlg .md-card{max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px)}
+#rzdlg .md-body{min-width:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;padding:12px 12px 14px;scroll-padding:14px}
+#rzdlg .md-body *{box-sizing:border-box}
+#rzdlg .rzd,#rzdlg .rzt,#rzdlg .rzt label,#rzdlg .rzh,#rzdlg .rzc,#rzdlg fieldset{min-width:0}
+/* Maelezo yanafungika; onyo la msingi linabaki wazi */
+#rzdlg .rzinfo{margin:0 0 10px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+#rzdlg .rzinfo>summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;padding:11px 12px;min-height:44px;font-weight:800;font-size:calc(13.5px*var(--fs,1));color:var(--rxh)}
+#rzdlg .rzinfo>summary::-webkit-details-marker{display:none}
+#rzdlg .rzinfo>summary::after{content:"\25BE";margin-left:auto;font-size:16px;transition:transform .2s}
+#rzdlg .rzinfo[open]>summary::after{transform:rotate(180deg)}
+#rzdlg .rzinfo>#rzIntro{margin:0;padding:0 10px 10px}
+#rzNote{margin:0 0 10px}
+#rzNote:empty{display:none}
+#rzNote .zc{margin:0;padding:9px 11px;border:1px solid var(--line);border-left:4px solid var(--rxr);border-radius:10px;background:var(--bg);font-size:calc(12.5px*var(--fs,1));line-height:1.5;color:var(--ink)}
+/* Kila saa ni kisanduku chake: Saa : Dakika, vyote vina ukubwa sawa */
+#rzdlg .rzt{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:8px!important;margin-top:6px}
+#rzdlg .rzt label{display:block!important;width:auto!important;flex:none!important;margin:0;padding:8px 10px 10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);font-size:calc(13px*var(--fs,1));font-weight:700;line-height:1.3}
+#rzdlg .rzh{display:grid!important;grid-template-columns:minmax(0,1fr) 12px minmax(0,96px);align-items:end;column-gap:4px;width:100%;margin-top:4px}
+#rzdlg .rzh.one{grid-template-columns:minmax(0,1fr)}
+#rzdlg .rzc{display:flex;flex-direction:column;gap:3px}
+#rzdlg .rzcp{display:block;font-size:calc(11.5px*var(--fs,1));font-weight:600;line-height:1.2;color:var(--mut)}
+#rzdlg .rzs{display:flex;align-items:center;justify-content:center;height:44px;font-size:18px;font-weight:800;color:var(--mut)}
+#rzdlg .rzh select,#rzdlg .rzh input[type=text]{flex:none!important;width:100%!important;min-width:0!important;max-width:100%!important;height:44px;min-height:44px;margin:0;font-size:16px;line-height:1.2}
+#rzdlg .rzh select{padding:0 24px 0 10px!important;text-align:left}
+#rzdlg .rzh select.rzmn,#rzdlg .rzh input[data-rzm]{text-align:center;text-align-last:center}
+#rzdlg .rzh input[data-rzm]{padding:0 6px!important}
+#rzdlg .rzh input.rzro{padding:0 8px!important;text-align:center;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+/* Jina la shughuli */
+#rzdlg .rzd select[data-rzn],#rzdlg .rzd input[data-rz$="_n"]{display:block;width:100%!important;max-width:100%!important;height:44px;min-height:44px;font-size:16px}
+#rzdlg .rzd input[data-rz$="_n"]{margin-top:6px!important}
+/* Skrini pana: Kuanza na Kuisha vikae pamoja */
+@media screen and (min-width:561px){#rzdlg .rzt{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}}
+/* Simu ndogo sana (320px) */
+@media screen and (max-width:350px){
+#rzdlg .md-body{padding:10px 8px 12px}
+#rzdlg .rzt label{padding:7px 8px 9px}
+#rzdlg .rzh{grid-template-columns:minmax(0,1fr) 10px minmax(0,80px)}
+#rzdlg .rzh select{padding:0 20px 0 8px!important}
+}
+/* Landscape / skrini fupi */
+@media screen and (max-height:480px){
+#rzdlg .md-card{max-height:calc(100vh - 12px);max-height:calc(100dvh - 12px)}
+#rzdlg .md-head{padding-top:8px;padding-bottom:6px}
 }
 </style>
 <style id="rm-rset-phone">
@@ -1881,12 +1944,12 @@ html body main#v-nyumbani.view.rm-fit div.acts .act-card::after{display:none!imp
   <div class="grid" id="rForm" style="margin-top:10px"></div>
   <details id="rSubDet" class="rsd"><summary class="rsd-s"><span class="rsd-t"><b>Masomo na vipindi kwa wiki</b><small>(vinafuata mtaala wa darasa husika)</small></span><span class="rsd-w" id="rSubWarn" hidden>&#9888;</span><span class="rsd-h"><i class="o">Tafadhari Angalia</i><i class="c">Funga</i><em aria-hidden="true"></em></span></summary>
   <div class="rsd-b"><p class="rtot" id="rTot"></p><div id="rSub"></div><p class="rsd-r"><span class="rsd-d" aria-hidden="true">&#128994;</span><span><b>Rejea:</b> Idadi ya vipindi (Darasa III&ndash;VI) inatokana na Mtaala Mpya 2023, uk. 20, Jedwali Na. 6.</span></p></div></details>
-  <div class="dini" id="rDini"><span class="dot" aria-hidden="true"></span><label class="dsw"><input type="checkbox" id="rDiniOn"> <span><b>Elimu ya Dini kipindi kimoja kwa madarasa yote</b><br><small>Imezimwa = mfumo unachagua wenyewe (random). Imewashwa = madarasa yote yanafundishwa Dini siku moja na kipindi kimoja.</small></span></label>
+  <div class="dini" id="rDini"><span class="dot" aria-hidden="true"></span><div class="dtl">KIPINDI CHA DINI</div><label class="dsw"><input type="checkbox" id="rDiniOn"> <span><b>Elimu ya Dini kipindi kimoja kwa madarasa yote</b><br><small>Imezimwa = mfumo unachagua wenyewe (random). Imewashwa = madarasa yote yanafundishwa Dini siku moja na kipindi kimoja.</small></span></label><p class="muh"><b class="mr">MUHIMU:</b> <span class="mg">Washa tiki ukitaka madarasa yote yafundishwe Elimu ya Dini siku moja na kipindi kimoja.</span></p>
   <div id="rDiniBox" hidden><span id="rDiniSum" style="font-weight:700"></span> <button class="warn" type="button" id="rDiniEdit" style="margin-left:6px;padding:4px 10px;min-height:0">Badilisha</button><div hidden><label for="rDiniP" style="display:inline">Kipindi cha:</label> <input type="number" id="rDiniP" min="1" max="12" value="4" style="width:80px;display:inline-block">
    <label for="rDiniD" style="display:inline;margin-left:10px">Siku:</label> <select id="rDiniD" style="width:auto;display:inline-block"><option value="-1">Mfumo uchague</option><option value="0">Jumatatu</option><option value="1">Jumanne</option><option value="2">Jumatano</option><option value="3">Alhamisi</option><option value="4">Ijumaa</option></select></div></div></div>
-  <div class="rex" id="rSd0" style="border:2px solid var(--rxk);border-radius:14px;padding:12px 14px"><b class="rxh" style="font-size:calc(17px*var(--fs,1))">Mbadala: shule zenye vipindi 6 siku moja</b><br><b class="rxk b">Siku yoyote, ikiwemo Ijumaa</b><br><small>Vipindi vya mtaala havibadiliki (jumla ni ile ile). Chagua <b class="rxk">siku moja</b> ambayo <b class="rxk b">madarasa yote</b> yanaishia <b class="rxk">kipindi cha 6</b>; siku nyingine zinabaki na vipindi vyote.</small><div style="margin-top:8px"><label for="rSdSel" style="display:inline">Siku yenye vipindi 6:</label> <select id="rSdSel" style="width:auto;display:inline-block"><option value="-1">Hakuna (kawaida)</option><option value="0">Jumatatu</option><option value="1">Jumanne</option><option value="2">Jumatano</option><option value="3">Alhamisi</option><option value="4">Ijumaa</option></select></div><div id="rSdL"></div></div>
-  <div class="rex" id="rEx0"><b class="rxh">Kipindi cha michezo</b><br><small>Kiweke kwenye <b class="rxk">nafasi wazi</b>: <b class="rxk b">kipindi kimoja au viwili</b>, kwa <b class="rxk">madarasa yote muda mmoja</b> au <b class="rxk b">kila darasa na muda wake</b>.</small><div id="rExL"></div><button class="info" type="button" id="rExAdd" style="margin-top:8px">+ Ongeza kipindi cha michezo</button></div>
-  <div class="rex" id="rOz0"><b class="rxh">Shughuli za Mwanzo na Mwisho wa siku</b><br><small>Ongeza shughuli <b class="rxk">kabla ya vipindi</b> (mf. Usafi na Gwaride) na <b class="rxk b">baada ya vipindi</b> (mf. Usafi na Gwaride). Hazigusi ratiba ya mtaala; zinaonekana nje ya vipindi, mwanzoni na mwishoni mwa ratiba.</small><div id="rOzL"></div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><button class="info" type="button" id="rOzAdd">+ Ongeza Mwanzo / Mwisho</button><button class="dng" type="button" id="rOzDel" hidden>Futa zote</button></div></div>
+  <div class="rex" id="rSd0" style="border:2px solid var(--rxk);border-radius:14px;padding:12px 14px"><p class="muh"><b class="mr">MUHIMU:</b> <span class="mg">Shule zenye vipindi 6 siku moja tu; siku nyingine zinabaki na vipindi vyote.</span></p><b class="rxk b">Siku yoyote, ikiwemo Ijumaa</b><br><small>Vipindi vya mtaala havibadiliki (jumla ni ile ile). Chagua <b class="rxk">siku moja</b> ambayo <b class="rxk b">madarasa yote</b> yanaishia <b class="rxk">kipindi cha 6</b>; siku nyingine zinabaki na vipindi vyote.</small><div style="margin-top:8px"><label for="rSdSel" style="display:inline">Siku yenye vipindi 6:</label> <select id="rSdSel" style="width:auto;display:inline-block"><option value="-1">Hakuna (kawaida)</option><option value="0">Jumatatu</option><option value="1">Jumanne</option><option value="2">Jumatano</option><option value="3">Alhamisi</option><option value="4">Ijumaa</option></select></div><div id="rSdL"></div></div>
+  <div class="rex" id="rEx0"><b class="rxh">Kipindi cha michezo</b><br><p class="muh"><b class="mr">MUHIMU:</b> <span class="mg">Kiweke kwenye nafasi wazi; hubaki hata ukitengeneza ratiba upya.</span></p><small>Kiweke kwenye <b class="rxk">nafasi wazi</b>: <b class="rxk b">kipindi kimoja au viwili</b>, kwa <b class="rxk">madarasa yote muda mmoja</b> au <b class="rxk b">kila darasa na muda wake</b>.</small><div id="rExL"></div><button class="info" type="button" id="rExAdd" style="margin-top:8px">+ Ongeza kipindi cha michezo</button></div>
+  <div class="rex" id="rOz0"><b class="rxh">Shughuli za Mwanzo na Mwisho wa siku</b><br><p class="muh"><b class="mr">MUHIMU:</b> <span class="mg">Ukiacha Mwanzo au Mwisho wazi, haitaonekana kwenye ratiba.</span></p><small>Ongeza shughuli <b class="rxk">kabla ya vipindi</b> (mf. Usafi na Gwaride) na <b class="rxk b">baada ya vipindi</b> (mf. Usafi na Gwaride). Hazigusi ratiba ya mtaala; zinaonekana nje ya vipindi, mwanzoni na mwishoni mwa ratiba.</small><div id="rOzL"></div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><button class="info" type="button" id="rOzAdd">+ Ongeza Mwanzo / Mwisho</button><button class="dng" type="button" id="rOzDel" hidden>Futa zote</button></div></div>
   <div class="bar" style="margin-top:0;margin-bottom:12px"></div>
   <div class="bar"><button class="acc" id="rGen" type="button">Tengeneza ratiba</button><button class="info" id="rPrint" type="button">Chapisha / PDF</button><button class="info" id="rXls" type="button">Pakua Excel</button><button class="dng" id="rClr" type="button">Futa vipindi</button></div>
   <p style="margin:10px 0 0;color:var(--mut);font-size:13px">Kwenye Ratiba kuu, gusa kisanduku kuweka somo na mwalimu. Ratiba ya darasa na ya mwalimu hutokana na ratiba kuu.</p></section>
@@ -2178,7 +2241,8 @@ main#v-mipangilio.view.on>#rwGuide{order:3;grid-column:1/-1!important}
 <dialog id="rzdlg" class="md sm" aria-labelledby="rzT"><div class="md-card">
  <div class="md-head"><h2 id="rzT">Mwanzo na Mwisho wa siku</h2></div>
  <div class="md-body">
-  <div id="rzIntro"></div>
+   <details id="rzInfo" class="rzinfo"><summary id="rzInfoS">Maelezo</summary><div id="rzIntro"></div></details>
+   <div id="rzNote"></div>
   <div id="rzB"></div><p id="rzErr" role="alert"></p>
  </div>
  <div class="md-foot"><button class="sec" id="rzNo" type="button">Ghairi</button><button id="rzYes" type="button">Hifadhi</button></div>
@@ -2327,7 +2391,10 @@ $("cdlg").addEventListener("cancel",function(){cbk=null});
 
 /* Kichagua cha kisasa badala ya orodha ya kawaida ya simu */
 var pkSel=null,PK_OK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
-function pkLabel(sel){var l=sel.id&&document.querySelector('label[for="'+sel.id+'"]');if(l&&l.textContent.trim())return l.textContent.trim();var p=sel.previousElementSibling;if(p&&p.tagName==="LABEL")return p.textContent.trim();return sel.getAttribute("aria-label")||"Chagua"}
+function pkLabel(sel){var rz=sel.getAttribute&&(sel.getAttribute("data-rzh")||sel.getAttribute("data-rzm"));
+ if(rz){var m=/_([se])$/.exec(rz);if(m){var en=document.documentElement.lang==="en",h=sel.hasAttribute("data-rzh"),e=m[1]==="e";
+  return h?(en?(e?"End hour":"Start hour"):(e?"Saa ya kuisha":"Saa ya kuanza")):(en?(e?"End minutes":"Start minutes"):(e?"Dakika ya kuisha":"Dakika ya kuanza"))}}
+ var l=sel.id&&document.querySelector('label[for="'+sel.id+'"]');if(l&&l.textContent.trim())return l.textContent.trim();var p=sel.previousElementSibling;if(p&&p.tagName==="LABEL")return p.textContent.trim();return sel.getAttribute("aria-label")||"Chagua"}
 function pkRender(q){
  var b=$("pkB"),h="",last=null,n=0,bk=null,bi=0,bst="";q=(q||"").toLowerCase();
  var isCls=/darasa/i.test(pkLabel(pkSel))||/^(DRS|Awali|La )/i.test((pkSel.options[1]||{}).text||"");
@@ -2338,7 +2405,7 @@ function pkRender(q){
   var on=i===pkSel.selectedIndex;
   var km=/^(.*?)Kipindi\s+\d+\s*\/\s*(\d+)/.exec(t),bc="";
   if(km){var kk=km[1]+"|"+km[2];if(kk!==bk){if(bk!==null){bi=1-bi;bst=" pk-bs"}else bst="";bk=kk}else bst="";bc=" pk-b"+bi+bst}else{bk=null;bst=""}
-  if(!km&&o.value!==""&&isCls)bc=" pk-c"+(i%8);
+  if(!km&&(isCls?o.value!=="":pkSel.options.length<=12))bc=" pk-c"+(i%8);
   h+='<button type="button" class="pk-o'+bc+(o.value===""?" pk-ph":"")+'" role="option" data-i="'+i+'" aria-selected="'+on+'"><span>'+esc(t)+'</span>'+(on?PK_OK:'')+'</button>';n++}
  b.innerHTML=(q?'':(pkSel.options.length>10?'':''))+(h||'<div class="pk-e">Hakuna kilichopatikana</div>');
  return n}
@@ -2349,9 +2416,20 @@ function pkOpen(sel){
  if(sel.options.length>8){var q=document.createElement("input");q.type="search";q.className="pk-q";var en_=document.documentElement.lang==="en";q.placeholder=en_?"Search...":"Tafuta...";q.setAttribute("aria-label",en_?"Search":"Tafuta");
   q.oninput=function(){pkRender(q.value)};d.querySelector(".md-head").after(q)}
  pkRender("");d.showModal();
- var cur=d.querySelector('[aria-selected="true"]');if(cur&&cur.scrollIntoView)cur.scrollIntoView({block:"center"});
+ var cur=d.querySelector('[aria-selected="true"]');if(cur&&cur.scrollIntoView)cur.scrollIntoView({block:"center",behavior:"instant"});
  if(cur)cur.focus()}
 function pkClose(){var d=$("pkdlg");d.close();d.style.cssText="";d.querySelector(".md-card").style.cssText="";pkSel=null}
+/* Kiboksi cha select kinachukua rangi ya kadi iliyochaguliwa */
+var PK_COL=["#3b82f6","#10b981","#f59e0b","#ec4899","#8b5cf6","#06b6d4","#f97316","#84cc16"];
+function pkTint(sel){if(!sel||sel.closest("#pkdlg"))return;var n=sel.options.length,i=sel.selectedIndex,c=null;
+ if(n&&n<=12&&i>=0&&sel.value!==""){var o=sel.options[i];if(!/Kipindi\s+\d+\s*\/\s*\d+/.test(o.text)){
+  var isCls=/darasa/i.test(pkLabel(sel))||/^(DRS|Awali|La )/i.test((sel.options[1]||{}).text||"");
+  if(!isCls||sel.value!=="")c=PK_COL[i%8]}}
+ if(c){if(sel.style.getPropertyValue("--pc")!==c)sel.style.setProperty("--pc",c);sel.classList.add("pk-tint")}
+ else if(sel.classList.contains("pk-tint")){sel.classList.remove("pk-tint");sel.style.removeProperty("--pc")}}
+function pkTintAll(){var a=document.querySelectorAll("select");for(var k=0;k<a.length;k++)pkTint(a[k])}
+document.addEventListener("change",function(e){if(e.target&&e.target.tagName==="SELECT")pkTint(e.target)},true);
+pkTintAll();setInterval(pkTintAll,700);
 $("pkX").onclick=pkClose;
 $("pkdlg").addEventListener("click",function(e){
  if(e.target===this){pkClose();return}
@@ -4410,15 +4488,17 @@ function rzNm(id,cur){var P=["Usafi na Gwaride"],c=cur||"",sel=!c?"":P.indexOf(c
 document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribute)return;var id=t.getAttribute("data-rzn");if(id===null)return;
  var inp=$("rzB").querySelector("[data-rz='"+id+"']");if(!inp)return;var v=t.value;
  if(v==="__x"){inp.value="";inp.hidden=false;try{inp.focus()}catch(e){}}else{inp.value=v;inp.hidden=true}});
+function rzCap(t){return"<small class='rzcp'>"+t+"</small>"}
 function rzFix(id,cur){var q=/^(\d{1,2}):(\d{2})$/.exec(cur||""),mm=q&&+q[1]===7?q[2]:"",mo="<option value=''>"+rzE("dk","min")+"</option>",i;
  for(i=0;i<60;i++){var x=(i<10?"0":"")+i;mo+="<option value='"+x+"'"+(x===mm?" selected":"")+">"+x+"</option>"}
- return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa (imewekwa)' value='"+rzE("07 asubuhi","07 morning")+"'><b>:</b><select class='rzmn' data-rzm='"+id+"' aria-label='Dakika ya kuanza'>"+mo+"</select><input type='hidden' data-rzh='"+id+"' value='7'><input type='hidden' data-rz='"+id+"' value='07:"+mm+"'></div>"}
-function rzAuto(id,sp){return"<div class='rzh'><input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa ya kuanza (huwekwa yenyewe)' value='"+rzLb(sp[1])+"'><input type='hidden' data-rz='"+id+"' value='"+hm(sp[1])+"'></div>"}
+ return"<div class='rzh'><div class='rzc'>"+rzCap(rzE("Saa","Hour"))+"<input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa (imewekwa)' value='"+rzE("07 asubuhi","07 morning")+"'></div><b class='rzs'>:</b><div class='rzc'>"+rzCap(rzE("Dakika","Minutes"))+"<select class='rzmn' data-rzm='"+id+"' aria-label='Dakika ya kuanza'>"+mo+"</select></div><input type='hidden' data-rzh='"+id+"' value='7'><input type='hidden' data-rz='"+id+"' value='07:"+mm+"'></div>"}
+function rzAuto(id,sp){return"<div class='rzh one'><div class='rzc'>"+rzCap(rzE("Huwekwa yenyewe","Set automatically"))+"<input type='text' readonly tabindex='-1' class='rzro' aria-label='Saa ya kuanza (huwekwa yenyewe)' value='"+rzLb(sp[1])+"'></div><input type='hidden' data-rz='"+id+"' value='"+hm(sp[1])+"'></div>"}
 function rzLim(k,sp){var lo=k==="b"?420:sp[1],hi=k==="b"?sp[0]:990;if(hi<lo)hi=lo;return[lo,hi]}
+function rzMo(cm){var o="<option value=''>"+rzE("dk","min")+"</option>",i,x;for(i=0;i<60;i++){x=(i<10?"0":"")+i;o+="<option value='"+x+"'"+(x===cm?" selected":"")+">"+x+"</option>"}return o}
 function rzTm(id,k,cur,sp){var L=rzLim(k,sp),q=/^(\d{1,2}):(\d{2})$/.exec(cur||""),ch=q?+q[1]:-1,cm=q?q[2]:"",o="<option value=''>\u2014</option>",h,a=Math.floor(L[0]/60),z=Math.floor(L[1]/60);
  if(ch>=0&&(ch<a||ch>z)){if(ch<a)a=ch;else z=ch}
  for(h=a;h<=z;h++)o+="<option value='"+h+"'"+(h===ch?" selected":"")+">"+(h<10?"0":"")+h+" "+(h*60<720?rzE("asubuhi","morning"):h*60<960?rzE("mchana","afternoon"):rzE("jioni","evening"))+"</option>";
- return"<div class='rzh'><select data-rzh='"+id+"' aria-label='Saa'>"+o+"</select><b>:</b><input type='text' inputmode='numeric' maxlength='2' autocomplete='off' placeholder='"+rzE("dk","min")+"' data-rzm='"+id+"' aria-label='Dakika' value='"+cm+"'><input type='hidden' data-rz='"+id+"' value='"+esc(cur||"")+"'></div>"}
+ return"<div class='rzh'><div class='rzc'>"+rzCap(rzE("Saa","Hour"))+"<select data-rzh='"+id+"' aria-label='Saa'>"+o+"</select></div><b class='rzs'>:</b><div class='rzc'>"+rzCap(rzE("Dakika","Minutes"))+"<select class='rzmn' data-rzm='"+id+"' aria-label='Dakika'>"+rzMo(cm)+"</select></div><input type='hidden' data-rz='"+id+"' value='"+esc(cur||"")+"'></div>"}
 function rzSync(id,fin){var B=$("rzB"),hs=B.querySelector("[data-rzh='"+id+"']"),mi=B.querySelector("[data-rzm='"+id+"']"),hid=B.querySelector("[data-rz='"+id+"']"),k=id.split("_")[1];
  if(!hs||!mi||!hid)return;if(hs.value===""){hid.value="";mi.value="";return}
  var h=+hs.value,m=parseInt(mi.value,10);if(isNaN(m))m=fin?0:0;m=Math.max(0,Math.min(59,m));
@@ -4427,6 +4507,13 @@ function rzSync(id,fin){var B=$("rzB"),hs=B.querySelector("[data-rzh='"+id+"']")
  if(fin&&k==="b"&&id.split("_")[2]==="s"){var ei=id.slice(0,-1)+"e",es=B.querySelector("[data-rzh='"+ei+"']");if(es&&es.value!=="")rzSync(ei,true)}}
 document.addEventListener("input",function(ev){var t=ev.target;if(!t.getAttribute)return;var id=t.getAttribute("data-rzm");if(id===null)return;t.value=t.value.replace(/\D/g,"").slice(0,2);rzSync(id,false)});
 document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribute)return;var id=t.getAttribute("data-rzh");if(id===null)id=t.getAttribute("data-rzm");if(id===null)return;rzSync(id,true)});
+document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribute||t.tagName!=="SELECT")return;var id=t.getAttribute("data-rzh");if(id===null||t.value==="")return;
+ var B=$("rzB"),mi=B&&B.querySelector("select[data-rzm='"+id+"']");if(!mi)return;
+ setTimeout(function(){if(!$("pkdlg").open)pkOpen(mi)},180)});
+/* Dakika ya kuanza ikichaguliwa, ruka kwenye saa ya kuisha (kama bado haijachaguliwa) */
+document.addEventListener("change",function(ev){var t=ev.target;if(!t.getAttribute||t.tagName!=="SELECT")return;var id=t.getAttribute("data-rzm");if(id===null||!/_s$/.test(id))return;
+ var B=$("rzB"),eh=B&&B.querySelector("select[data-rzh='"+id.slice(0,-1)+"e']");if(!eh||eh.value!=="")return;
+ setTimeout(function(){if(!$("pkdlg").open)pkOpen(eh)},180)});
 (function(){var last=null;function sync(){var i=document.getElementById("rShule"),n=document.getElementById("rSetN");if(!i||!n)return;var v=(i.value||"").trim();if(v===last)return;last=v;n.textContent=v;n.hidden=!v}
 document.addEventListener("input",function(e){if(e.target&&e.target.id==="rShule")sync()});
 document.addEventListener("change",function(e){if(e.target&&e.target.id==="rShule")sync()});
@@ -4462,7 +4549,7 @@ function rzOpen(){var sp=rzSpan(),G=[["b",rzE("Mwanzo (kabla ya vipindi)","Start
  var same=function(){var j=function(x){return JSON.stringify([x&&x.b||null,x&&x.a||null])},o=R.oz||[],f=j(o[0]),i;for(i=1;i<5;i++)if(j(o[i])!==f)return false;return true};
  $("rzB").insertAdjacentHTML("afterbegin","<label class='rzrp'><input type='checkbox' id='rzRep'><span><span class='rk'>"+rzE("Rudia kila siku","Repeat every day")+"</span> "+rzE("(Jumatatu hadi Ijumaa)","(Monday to Friday)")+"<small id='rzRepS'></small></span></label>");
  $("rzRep").checked=same();rzRepApply(false);$("rzRep").onchange=function(){rzRepApply(true)};
- $("rzIntro").innerHTML=rzIntro(sp);$("rzErr").textContent="";$("rzdlg").showModal()}
+ $("rzIntro").innerHTML=rzIntro(sp);$("rzInfoS").textContent=rzE("Maelezo ya Mwanzo na Mwisho","About Start and End");$("rzInfo").open=false;$("rzNote").innerHTML="";var zn=$("rzIntro").querySelector(".zc.n");if(zn)$("rzNote").appendChild(zn);try{$("rzdlg").querySelector(".md-body").scrollTop=0}catch(e){}$("rzErr").textContent="";$("rzdlg").showModal()}
 function rzRepApply(fromUser){var on=$("rzRep").checked,B=$("rzB"),hs=$("rzRepS");
  if(hs)hs.innerHTML=document.documentElement.lang==="en"?(on?"Ticked: <span class='rb'>fill in once only</span>, it applies to <span class='rb'>all five days</span>. If you untick, you fill in <span class='rk'>each day</span> yourself.":"Unticked: <span class='rk'>fill in each day</span> yourself (Monday to Friday). If you tick again, you fill in once only."):(on?"Tiki imewekwa tayari: <span class='rb'>jaza mara moja tu</span>, itatumika <span class='rb'>siku zote tano</span>. Ukiitoa tiki, utajaza <span class='rk'>kila siku</span> mwenyewe.":"Tiki imetolewa: <span class='rk'>jaza kila siku</span> mwenyewe (Jumatatu hadi Ijumaa). Ukiweka tiki tena, utajaza mara moja tu.");
  [].forEach.call(B.querySelectorAll(".rzd"),function(e){var d=+e.getAttribute("data-rzd");if(d>0)e.hidden=on;else e.querySelector(".rzdn").textContent=on?rzE("Siku zote (Jumatatu \u2013 Ijumaa)","All days (Monday \u2013 Friday)"):RD[0]});
@@ -6074,6 +6161,7 @@ Object.assign(MAP,{"Mandhari, lugha na kusakinisha app.":"Theme, language and ap
 Object.assign(MAP,{"Nukuu za somo":"Lesson notes","Nukuu na maelezo ya kufundishia kwa kila somo.":"Teaching notes and guidance for each subject.","Nukuu za Somo":"Lesson Notes","Ukurasa huu uko tayari. Nukuu za somo zitawekwa hapa hivi karibuni.":"This page is ready. Lesson notes will be added here soon.","Uko kwenye menyu ya Nukuu za Somo. Maudhui yataongezwa hivi karibuni.":"You are on the Lesson Notes menu. Content will be added soon."});
 Object.assign(MAP,{"Siku yoyote, ikiwemo Ijumaa":"Any day, including Friday","Vipindi vya mtaala havibadiliki (jumla ni ile ile). Chagua":"Curriculum periods do not change (the total stays the same). Choose","siku moja":"one day","ambayo":"on which","madarasa yote":"all classes","yanaishia":"end at","kipindi cha 6":"period 6","; siku nyingine zinabaki na vipindi vyote.":"; the other days keep all periods.","Shughuli za Mwanzo na Mwisho wa siku":"Start-of-day and End-of-day activities","Ongeza shughuli":"Add activities","kabla ya vipindi":"before the periods","baada ya vipindi":"after the periods","(mf. Usafi na Gwaride) na":"(e.g. Cleaning and Parade) and","(mf. Usafi na Gwaride). Hazigusi ratiba ya mtaala; zinaonekana nje ya vipindi, mwanzoni na mwishoni mwa ratiba.":"(e.g. Cleaning and Parade). They do not affect the curriculum timetable; they appear outside the periods, at the start and end of the timetable.","+ Ongeza Mwanzo / Mwisho":"+ Add Start / End","Hariri Mwanzo / Mwisho":"Edit Start / End","Mwanzo na Mwisho wa siku":"Start and End of day","Futa zote":"Delete all"});
 Object.assign(MAP,{"Mbadala: shule zenye vipindi 6 siku moja":"Alternative: schools with 6 periods on one day","Siku yenye vipindi 6:":"Day with 6 periods:","Hakuna (kawaida)":"None (normal)"});
+Object.assign(MAP,{"KIPINDI CHA DINI":"RELIGION PERIOD","MUHIMU:":"IMPORTANT:","Washa tiki ukitaka madarasa yote yafundishwe Elimu ya Dini siku moja na kipindi kimoja.":"Tick this if you want all classes to be taught Religious Education on the same day and period.","Shule zenye vipindi 6 siku moja tu; siku nyingine zinabaki na vipindi vyote.":"For schools with 6 periods on one day only; other days keep all their periods.","Kiweke kwenye nafasi wazi; hubaki hata ukitengeneza ratiba upya.":"Place it in a free slot; it stays even if you regenerate the timetable.","Ukiacha Mwanzo au Mwisho wazi, haitaonekana kwenye ratiba.":"If you leave Start or End empty, it will not appear on the timetable."});
 Object.assign(MAP,{"(vinafuata mtaala wa darasa husika)":"(they follow the curriculum of the relevant class)","Tafadhari Angalia":"Please Check","Funga":"Close","Rejea:":"Reference:","Idadi ya vipindi (Darasa III–VI) inatokana na Mtaala Mpya 2023, uk. 20, Jedwali Na. 6.":"The number of periods (Classes III–VI) comes from the New Curriculum 2023, p. 20, Table No. 6.","Kipindi cha michezo":"Sports period","Kiweke kwenye nafasi wazi: kipindi kimoja au viwili, kwa madarasa yote muda mmoja au kila darasa na muda wake.":"Place it in free slots: one or two periods, for all classes at the same time or each class at its own time.","+ Ongeza kipindi cha michezo":"+ Add sports period","Ongeza kipindi cha michezo":"Add sports period","Nafasi wazi zilizobaki:":"Free slots left:","Vipindi kwa kila darasa":"Periods per class","Kipindi 1":"1 period","Vipindi 2 (mfululizo)":"2 periods (consecutive)","Madarasa yote muda mmoja":"All classes at the same time","Kila darasa na muda wake":"Each class at its own time","Kipindi cha kuanza":"Starting period","Mwalimu (si lazima)":"Teacher (optional)","Futa kipindi cha michezo?":"Delete the sports period?","Madarasa yote yatakuwa tupu, pamoja na vipindi vya michezo. Mipangilio itabaki.":"All classes will be empty, including sports periods. Settings will stay."});
 Object.assign(MAP,{"Kiweke kwenye":"Place it in","nafasi wazi":"free slots","kipindi kimoja au viwili":"one or two periods",", kwa":", for"});
 Object.assign(MAP,{"Chagua njia moja ya kupata kodi":"Choose one way to get a code","Njia 1: Tumia simu yako":"Option 1: Use your phone","Chukua simu yako, fungua WhatsApp, kisha tuma ujumbe \"Naomba kodi\" na feedback yako kwenye namba hii:":"Take your phone, open WhatsApp, then send the message \"I would like a code\" and your feedback to this number:","Njia 2: Tumia kompyuta":"Option 2: Use your computer","Bonyeza kitufe cha kijani hapa chini kufungua WhatsApp Web. Ukiombwa, skani QR code kwa simu yako.":"Click the green button below to open WhatsApp Web. If asked, scan the QR code with your phone.","Nakili namba":"Copy number","Imenakiliwa!":"Copied!"});
